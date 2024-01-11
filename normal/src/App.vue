@@ -1,8 +1,6 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link>
+  <nav class="mainNav">
+    <router-link to="/">physics-normal</router-link>
   </nav>
-  <router-view />
+  <router-view></router-view>
 </template>
-
-<style></style>

@@ -1,7 +1,5 @@
 <template>
-  <div class="home">
-    asdf
-  </div>
+  <div class="home">asdf</div>
 </template>
 
 <script lang="ts">
