@@ -1,9 +1,11 @@
-<script lang="ts">
-export default {
-  name: "mainPage",
-};
+<script lang="ts" setup>
+import itemCard from "@/components/cards/itemCard.vue";
 </script>
 
+<script lang="ts"></script>
+
 <template>
-  <div>asdf</div>
+  <div>test</div>
+
+  <itemCard></itemCard>
 </template>

@@ -1,19 +1,10 @@
-<script lang="ts">
-import { defineComponent } from "vue";
-
-import itemCard from "./components/cards/itemCard.vue";
-
-export default defineComponent({
-  components: { itemCard },
-});
-</script>
+<script lang="ts"></script>
 
 <template>
   <nav class="mainNav">
     <router-link to="/">physics-normal</router-link>
   </nav>
 
-  <itemCard></itemCard>
   <router-view></router-view>
 </template>
 

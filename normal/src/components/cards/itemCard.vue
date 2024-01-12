@@ -1,8 +1,4 @@
-<script lang="ts">
-export default {
-  name: "itemCard",
-};
-</script>
+<script lang="ts"></script>
 
 <template>
   <div>test card component</div>
