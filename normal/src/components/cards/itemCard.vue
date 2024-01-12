@@ -1,5 +1,11 @@
-<script lang="ts"></script>
+<script lang="ts" setup>
+import { defineProps } from "vue";
+
+const props = defineProps({
+  simulationCategory: String,
+});
+</script>
 
 <template>
-  <div>test card component</div>
+  <div>{{ props.simulationCategory }}</div>
 </template>

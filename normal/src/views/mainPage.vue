@@ -1,11 +1,17 @@
 <script lang="ts" setup>
-import itemCard from "@/components/cards/itemCard.vue";
+import ItemCard from "@/components/cards/itemCard.vue";
 </script>
 
-<script lang="ts"></script>
+<script lang="ts">
+let simulationCardCategorys: Array<string> = ["Crash", "Acceleration"];
+</script>
 
 <template>
-  <div>test</div>
+  <div>asdf</div>
 
-  <itemCard></itemCard>
+  <ItemCard
+    v-for="simulationCardCategory in simulationCardCategorys"
+    :key="simulationCardCategory"
+    :simulationCategory="simulationCardCategory"
+  ></ItemCard>
 </template>

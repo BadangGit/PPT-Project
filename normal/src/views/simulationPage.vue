@@ -1,9 +1,9 @@
 <script lang="ts">
 export default {
-  name: "experimentPage",
+  name: "simulationPage",
 };
 </script>
 
 <template>
-  <div>this is exp Page</div>
+  <div>this is simulation Page</div>
 </template>

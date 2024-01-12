@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import mainPage from "../views/mainPage.vue";
-import experimentPage from "../views/experimentPage.vue";
+import simulationPage from "../views/simulationPage.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -9,9 +9,9 @@ const routes: Array<RouteRecordRaw> = [
     component: mainPage,
   },
   {
-    path: "/experiment",
-    name: "experiment",
-    component: experimentPage,
+    path: "/simulation",
+    name: "simulation",
+    component: simulationPage,
   },
 ];
 
