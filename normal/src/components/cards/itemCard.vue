@@ -2,10 +2,12 @@
 import { defineProps } from "vue";
 
 const props = defineProps({
-  simulationCategory: String,
+  simulCategory: {
+    type: Object,
+  },
 });
 </script>
 
 <template>
-  <div>{{ props.simulationCategory }}</div>
+  <div>{{ props.simulCategory.name }}</div>
 </template>

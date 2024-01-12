@@ -3,15 +3,22 @@ import ItemCard from "@/components/cards/itemCard.vue";
 </script>
 
 <script lang="ts">
-let simulationCardCategorys: Array<string> = ["Crash", "Acceleration"];
+type categorys = {
+  name: string;
+};
+
+let simulCategorys: Array<categorys> = [
+  { name: "Crash" },
+  { name: "Acceleration" },
+];
 </script>
 
 <template>
   <div>asdf</div>
 
   <ItemCard
-    v-for="simulationCardCategory in simulationCardCategorys"
-    :key="simulationCardCategory"
-    :simulationCategory="simulationCardCategory"
+    v-for="simulCategory in simulCategorys"
+    :key="simulCategory.name"
+    :simul-category="simulCategory"
   ></ItemCard>
 </template>
