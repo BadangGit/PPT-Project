@@ -1,12 +1,9 @@
 <script lang="ts" setup>
 import ItemCard from "@/components/cards/itemCard.vue";
-import PageNum from "@/components/pageReaction/pageNum.vue";
-</script>
+import { useStore } from "vuex";
+import { ref, watch } from "vue";
 
-<script lang="ts">
-export default {
-  name: "mainPage",
-};
+const store = useStore();
 
 type Categories = {
   name: string;
@@ -34,26 +31,85 @@ const simulCategories: Array<Categories> = [
   { name: "Seeing the Moon", cardNum: 17 },
 ];
 
-let nowPageSimulCategories: Array<Categories> = [];
-let nowPageNum: number = 1;
+let nowPageSimulCategories: Array<Categories> = [
+  { name: "Throwing a Ball Up", cardNum: 0 },
+  { name: "Spinning a Yo-Yo", cardNum: 1 },
+  { name: "Swinging Pendulum", cardNum: 2 },
+  { name: "Pushing a Car", cardNum: 3 },
+  { name: "Blowing Bubbles", cardNum: 4 },
+  { name: "Feeling Hot or Cold", cardNum: 5 },
+];
 
-const markupCardCount: number = 6;
-const markupCardNum: number = (nowPageNum - 1) * markupCardCount;
+let pageNumCounts: number = 3;
+let nowPageNum = ref(1);
+let renderCount = ref(0);
 
-for (let i = markupCardNum; i < markupCardNum + markupCardCount; i++) {
-  nowPageSimulCategories.push(simulCategories[i]);
+function shiftPage(value: number) {
+  store.dispatch("shiftPage", value);
+  nowPageNum.value = store.state.nowPageNum;
+  nowPageSimulCategories = [];
+
+  const markupCardCount: number = 6;
+  const markupCardNum: number = (nowPageNum.value - 1) * markupCardCount;
+
+  for (let i = markupCardNum; i < markupCardNum + markupCardCount; i++) {
+    nowPageSimulCategories.push(simulCategories[i]);
+  }
 }
+
+watch(nowPageNum, () => {
+  renderCount.value += 1;
+});
+</script>
+
+<script lang="ts">
+export default {
+  name: "mainPage",
+};
 </script>
 
 <template>
   <div>asdf</div>
+  <div :key="renderCount">
+    <ItemCard
+      v-for="simulCategory in nowPageSimulCategories"
+      :key="simulCategory.name"
+      :simul-category="simulCategory"
+    >
+    </ItemCard>
 
-  <ItemCard
-    v-for="simulCategory in nowPageSimulCategories"
-    :key="simulCategory.name"
-    :simul-category="simulCategory"
-  >
-  </ItemCard>
-
-  <PageNum></PageNum>
+    <div class="pageNumGrid">
+      <div
+        :class="nowPageNum == pageNumCount ? 'highlight' : ''"
+        class="pageNum"
+        v-for="pageNumCount in pageNumCounts"
+        :key="pageNumCount"
+        @click="shiftPage(pageNumCount)"
+      >
+        {{ pageNumCount }}
+      </div>
+    </div>
+  </div>
 </template>
+
+<style>
+.pageNumGrid {
+  display: flex;
+}
+
+.pageNum {
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 32px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.highlight {
+  font-weight: 700;
+}
+</style>
