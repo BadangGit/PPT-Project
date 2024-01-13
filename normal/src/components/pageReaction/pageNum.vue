@@ -1,18 +1,21 @@
 <script lang="ts" setup>
 import { useStore } from "vuex";
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 let pageNumCounts: number = 3;
-let nowPageNum: number = 1;
+let nowPageNum: number = ref(1);
 let renderCount = ref(0);
 
 const store = useStore();
 
 function shiftPage(value) {
   store.dispatch("shiftPage", value);
-  nowPageNum = store.state.nowPageNum;
-  renderCount.value += 1;
+  nowPageNum.value = store.state.nowPageNum;
 }
+
+watch(store.state.nowPageNum, () => {
+  renderCount.value += 1;
+});
 </script>
 
 <script lang="ts"></script>
