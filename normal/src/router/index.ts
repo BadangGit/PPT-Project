@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+
 import mainPage from "../views/mainPage.vue";
 import simulationPage from "../views/simulationPage.vue";
 

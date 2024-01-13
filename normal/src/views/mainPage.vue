@@ -4,6 +4,10 @@ import PageNum from "@/components/pageReaction/pageNum.vue";
 </script>
 
 <script lang="ts">
+export default {
+  name: "mainPage",
+};
+
 type Categories = {
   name: string;
   cardNum: number;
@@ -48,8 +52,8 @@ for (let i = markupCardNum; i < markupCardNum + markupCardCount; i++) {
     v-for="simulCategory in nowPageSimulCategories"
     :key="simulCategory.name"
     :simul-category="simulCategory"
-    :now-page-num="nowPageNum"
-  ></ItemCard>
+  >
+  </ItemCard>
 
-  <PageNum :now-page-num="nowPageNum"></PageNum>
+  <PageNum></PageNum>
 </template>

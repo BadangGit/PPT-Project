@@ -5,9 +5,6 @@ const props = defineProps({
   simulCategory: {
     type: Object,
   },
-  nowPageNum: {
-    type: Number,
-  },
 });
 </script>
 

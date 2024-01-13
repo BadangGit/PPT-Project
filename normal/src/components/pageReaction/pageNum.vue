@@ -1,24 +1,29 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
-
-const props = defineProps({
-  nowPageNum: {
-    type: Number,
-  },
-});
+import { useStore } from "vuex";
 
 let pageNumCounts: number = 3;
+
+const store = useStore();
+
+function shiftPage(value) {
+  store.dispatch("shiftPage", value);
+}
 </script>
+
+<script lang="ts"></script>
 
 <template>
   <div class="pageNumGrid">
     <div
-      :class="props.nowPageNum == pageNumCount ? 'highlight' : ''"
+      :class="nowPageNum == pageNumCount ? 'highlight' : ''"
       v-for="pageNumCount in pageNumCounts"
       :key="pageNumCount"
+      @click="shiftPage(pageNumCount)"
     >
       {{ pageNumCount }}
     </div>
+
+    <div>현재 페이지 {{ this.$store.state.nowPageNum }}</div>
   </div>
 </template>
 
