@@ -9,5 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div>{{ props.simulCategory.cardNum + "." + props.simulCategory.name }}</div>
+  <div>
+    {{ props.simulCategory.cardNum + 1 + "." + props.simulCategory.name }}
+  </div>
 </template>
