@@ -1,17 +1,19 @@
 <script lang="ts"></script>
 
 <template>
-  <nav class="main-nav">
-    <router-link
-      class="nav-title"
-      style="text-decoration: none; color: inherit"
-      to="/"
-    >
-      Physics-normal
-    </router-link>
-  </nav>
+  <div class="template">
+    <nav class="main-nav">
+      <router-link
+        class="nav-title"
+        style="text-decoration: none; color: inherit"
+        to="/"
+      >
+        Physics-normal
+      </router-link>
+    </nav>
 
-  <router-view></router-view>
+    <router-view></router-view>
+  </div>
 </template>
 
 <style>
@@ -19,17 +21,26 @@
   font-family: "Inter";
 }
 
+.template {
+  width: 1366px;
+  height: 768px;
+}
+
 .main-nav {
+  margin: 0px;
   width: 100%;
   height: 77.5px;
 
-  background-color: antiquewhite;
+  outline: solid 0.5px #cfcfcf;
 }
 
 .nav-title {
+  width: 100%;
+  height: 100%;
+
   display: flex;
-  text-align: center;
   justify-content: center;
+  align-items: center;
 
   font-size: 32px;
   font-weight: 700;
