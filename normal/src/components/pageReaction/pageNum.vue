@@ -13,7 +13,7 @@ function shiftPage(value) {
   nowPageNum.value = store.state.nowPageNum;
 }
 
-watch(store.state.nowPageNum, () => {
+watch(nowPageNum, () => {
   renderCount.value += 1;
 });
 </script>
