@@ -21,11 +21,6 @@
   font-family: "Inter";
 }
 
-.template {
-  width: 1366px;
-  height: 768px;
-}
-
 .main-nav {
   margin: 0px;
   width: 100%;
