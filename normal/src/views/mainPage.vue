@@ -69,7 +69,6 @@ export default {
 </script>
 
 <template>
-  <div>asdf</div>
   <div :key="renderCount">
     <ItemCard
       v-for="simulCategory in nowPageSimulCategories"
