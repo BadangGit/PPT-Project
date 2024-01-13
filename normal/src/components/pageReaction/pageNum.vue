@@ -6,8 +6,24 @@ const props = defineProps({
     type: Number,
   },
 });
+
+let pageNumCounts: number = 3;
 </script>
 
 <template>
-  <div>now Page Number {{ props.nowPageNum }}</div>
+  <div class="pageNumGrid">
+    <div
+      :class="props.nowPageNum == pageNumCount ? 'highlight' : ''"
+      v-for="pageNumCount in pageNumCounts"
+      :key="pageNumCount"
+    >
+      {{ pageNumCount }}
+    </div>
+  </div>
 </template>
+
+<style>
+.highlight {
+  font-weight: 700;
+}
+</style>
