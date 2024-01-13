@@ -23,6 +23,10 @@ let pageNumCounts: number = 3;
 </template>
 
 <style>
+.pageNumGrid {
+  display: flex;
+}
+
 .highlight {
   font-weight: 700;
 }
