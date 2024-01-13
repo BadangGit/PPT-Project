@@ -2,9 +2,6 @@
 import { defineProps } from "vue";
 
 const props = defineProps({
-  simulCategory: {
-    type: Object,
-  },
   nowPageNum: {
     type: Number,
   },
@@ -12,7 +9,5 @@ const props = defineProps({
 </script>
 
 <template>
-  <div>
-    {{ props.simulCategory.cardNum + 1 + "." + props.simulCategory.name }}
-  </div>
+  <div>now Page Number {{ props.nowPageNum }}</div>
 </template>

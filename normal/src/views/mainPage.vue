@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import ItemCard from "@/components/cards/itemCard.vue";
+import PageNum from "@/components/pageReaction/pageNum.vue";
 </script>
 
 <script lang="ts">
@@ -30,9 +31,12 @@ const simulCategories: Array<Categories> = [
 ];
 
 let nowPageSimulCategories: Array<Categories> = [];
-let nowPageNum: number = 2;
+let nowPageNum: number = 1;
 
-for (let i = nowPageNum * 6 - 6; i < nowPageNum * 6; i++) {
+const markupCardCount: number = 6;
+const markupCardNum: number = (nowPageNum - 1) * markupCardCount;
+
+for (let i = markupCardNum; i < markupCardNum + markupCardCount; i++) {
   nowPageSimulCategories.push(simulCategories[i]);
 }
 </script>
@@ -44,5 +48,8 @@ for (let i = nowPageNum * 6 - 6; i < nowPageNum * 6; i++) {
     v-for="simulCategory in nowPageSimulCategories"
     :key="simulCategory.name"
     :simul-category="simulCategory"
+    :now-page-num="nowPageNum"
   ></ItemCard>
+
+  <PageNum :now-page-num="nowPageNum"></PageNum>
 </template>
