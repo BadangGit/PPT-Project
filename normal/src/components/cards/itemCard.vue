@@ -10,6 +10,6 @@ const props = defineProps({
 
 <template>
   <div>
-    {{ props.simulCategory.cardNum + 1 + "." + props.simulCategory.name }}
+    {{ props.simulCategory.cardNum + 1 + ". " + props.simulCategory.name }}
   </div>
 </template>
