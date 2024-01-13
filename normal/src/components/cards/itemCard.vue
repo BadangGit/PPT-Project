@@ -4,7 +4,6 @@ import { defineProps } from "vue";
 const props = defineProps({
   simulCategory: {
     type: Object,
-    required: true,
   },
 });
 </script>
