@@ -1,19 +1,17 @@
 <script lang="ts"></script>
 
 <template>
-  <div class="template">
-    <nav class="main-nav">
-      <router-link
-        class="nav-title"
-        style="text-decoration: none; color: inherit"
-        to="/"
-      >
-        Physics-normal
-      </router-link>
-    </nav>
+  <nav class="main-nav">
+    <router-link
+      class="nav-title"
+      style="text-decoration: none; color: inherit"
+      to="/"
+    >
+      Physics-normal
+    </router-link>
+  </nav>
 
-    <router-view></router-view>
-  </div>
+  <router-view></router-view>
 </template>
 
 <style>

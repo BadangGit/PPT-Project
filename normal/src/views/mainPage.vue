@@ -69,7 +69,11 @@ export default {
 </script>
 
 <template>
-  <div :key="renderCount">
+  <div class="main" :key="renderCount">
+    <div class="arrowGrid">
+      <a class="left"><img src="../assets/arrow-icon.png" /></a>
+      <a class="right"><img src="../assets/arrow-icon.png" /></a>
+    </div>
     <ItemCard
       v-for="simulCategory in nowPageSimulCategories"
       :key="simulCategory.name"
@@ -92,6 +96,10 @@ export default {
 </template>
 
 <style>
+.main {
+  min-height: 90vh;
+}
+
 .pageNumGrid {
   display: flex;
 }
@@ -110,5 +118,26 @@ export default {
 
 .highlight {
   font-weight: 700;
+}
+
+.arrowGrid {
+  width: 100%;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -35%);
+}
+
+.arrowGrid img {
+  width: 80px;
+}
+
+.left img {
+  float: left;
+  transform: rotate(180deg);
+}
+
+.right img {
+  float: right;
 }
 </style>
