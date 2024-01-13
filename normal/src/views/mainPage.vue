@@ -5,6 +5,7 @@ import ItemCard from "@/components/cards/itemCard.vue";
 <script lang="ts">
 type categorys = {
   name: string;
+  src?: string;
 };
 
 let simulCategorys: Array<categorys> = [
