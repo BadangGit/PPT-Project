@@ -12,130 +12,33 @@ type Categories = {
 };
 
 const simulCategories: Array<Categories> = [
-  {
-    name: "Throwing a Ball Up",
-    cardNum: 0,
-    subText: "Explore how a ball moves when thrown into the air.",
-  },
-  {
-    name: "Spinning a Yo-Yo",
-    cardNum: 1,
-    subText: "Understand how a yo-yo moves in a circular motion.",
-  },
-  {
-    name: "Swinging Pendulum",
-    cardNum: 2,
-    subText: "Observe the back-and-forth motion of a swinging pendulum.",
-  },
-  {
-    name: "Pushing a Car",
-    cardNum: 3,
-    subText: "Apply force to make a car move and stop.",
-  },
-  {
-    name: "Blowing Bubbles",
-    cardNum: 4,
-    subText: "Study the flow of liquids, like soap bubbles in the air.",
-  },
-  {
-    name: "Feeling Hot or Cold",
-    cardNum: 5,
-    subText: "Explore the transfer of heat and temperature changes.",
-  },
-  {
-    name: "Looking in a Mirror",
-    cardNum: 6,
-    subText: "Understand how light reflects off surfaces.",
-  },
-  {
-    name: "Turning on a Light Bulb",
-    cardNum: 7,
-    subText: "Explain the flow of electricity in a simple circuit.",
-  },
-  {
-    name: "Playing with Magnets",
-    cardNum: 8,
-    subText: "Investigate the attraction and repulsion of magnets.",
-  },
-  {
-    name: "Listening to Music",
-    cardNum: 9,
-    subText: "Explore how sound waves travel through the air.",
-  },
-  {
-    name: "Running on a Treadmill",
-    cardNum: 10,
-    subText: "Understand motion and energy transfer.",
-  },
-  {
-    name: "Bouncing a Ball",
-    cardNum: 11,
-    subText: "Explore elasticity and the way balls behave when they bounce.",
-  },
-  {
-    name: "Glow-in-the-Dark Stars",
-    cardNum: 12,
-    subText: "Learn about phosphorescence and light emission.",
-  },
-  {
-    name: "Seeing a Rainbow",
-    cardNum: 13,
-    subText:
-      "Understand how light is refracted and dispersed in water droplets.",
-  },
-  {
-    name: "Using a Flashlight",
-    cardNum: 14,
-    subText: "Explore how light is produced and travels.",
-  },
-  {
-    name: "Using a Microwave",
-    cardNum: 15,
-    subText: "Study electromagnetic waves and their heating effects.",
-  },
-  {
-    name: "Playing with Playdough",
-    cardNum: 16,
-    subText: "Understand the deformation and elasticity of materials.",
-  },
-  {
-    name: "Seeing the Moon",
-    cardNum: 17,
-    subText: "Explore gravitational forces and celestial bodies.",
-  },
+  { name: "Preparation 1", cardNum: 0, subText: "Preparation..." },
+  { name: "Preparation 2", cardNum: 1, subText: "Preparation..." },
+  { name: "Preparation 3", cardNum: 2, subText: "Preparation..." },
+  { name: "Preparation 4", cardNum: 3, subText: "Preparation..." },
+  { name: "Preparation 5", cardNum: 4, subText: "Preparation..." },
+  { name: "Preparation 6", cardNum: 5, subText: "Preparation..." },
+  { name: "Preparation 7", cardNum: 6, subText: "Preparation..." },
+  { name: "Preparation 8", cardNum: 7, subText: "Preparation..." },
+  { name: "Preparation 9", cardNum: 8, subText: "Preparation..." },
+  { name: "Preparation 10", cardNum: 9, subText: "Preparation..." },
+  { name: "Preparation 11", cardNum: 10, subText: "Preparation..." },
+  { name: "Preparation 12", cardNum: 11, subText: "Preparation..." },
+  { name: "Preparation 13", cardNum: 12, subText: "Preparation..." },
+  { name: "Preparation 14", cardNum: 13, subText: "Preparation..." },
+  { name: "Preparation 15", cardNum: 14, subText: "Preparation..." },
+  { name: "Preparation 16", cardNum: 15, subText: "Preparation..." },
+  { name: "Preparation 17", cardNum: 16, subText: "Preparation..." },
+  { name: "Preparation 18", cardNum: 17, subText: "Preparation..." },
 ];
 
 let nowPageSimulCategories: Array<Categories> = [
-  {
-    name: "Throwing a Ball Up",
-    cardNum: 0,
-    subText: "Explore how a ball moves when thrown into the air.",
-  },
-  {
-    name: "Spinning a Yo-Yo",
-    cardNum: 1,
-    subText: "Understand how a yo-yo moves in a circular motion.",
-  },
-  {
-    name: "Swinging Pendulum",
-    cardNum: 2,
-    subText: "Observe the back-and-forth motion of a swinging pendulum.",
-  },
-  {
-    name: "Pushing a Car",
-    cardNum: 3,
-    subText: "Apply force to make a car move and stop.",
-  },
-  {
-    name: "Blowing Bubbles",
-    cardNum: 4,
-    subText: "Study the flow of liquids, like soap bubbles in the air.",
-  },
-  {
-    name: "Feeling Hot or Cold",
-    cardNum: 5,
-    subText: "Explore the transfer of heat and temperature changes.",
-  },
+  { name: "Preparation 1", cardNum: 0, subText: "Preparation..." },
+  { name: "Preparation 2", cardNum: 1, subText: "Preparation..." },
+  { name: "Preparation 3", cardNum: 2, subText: "Preparation..." },
+  { name: "Preparation 4", cardNum: 3, subText: "Preparation..." },
+  { name: "Preparation 5", cardNum: 4, subText: "Preparation..." },
+  { name: "Preparation 6", cardNum: 5, subText: "Preparation..." },
 ];
 
 let pageNumCounts: number = 3;
