@@ -57,6 +57,12 @@ function shiftPage(value: number) {
   }
 }
 
+function arrowShiftPage(max: number, plusOrMinus: number) {
+  if (nowPageNum.value != max) {
+    shiftPage(nowPageNum.value + plusOrMinus);
+  }
+}
+
 watch(nowPageNum, () => {
   renderCount.value += 1;
 });
@@ -71,8 +77,12 @@ export default {
 <template>
   <div class="main" :key="renderCount">
     <div class="arrowGrid">
-      <a class="left"><img src="../assets/arrow-icon.png" /></a>
-      <a class="right"><img src="../assets/arrow-icon.png" /></a>
+      <a @click="arrowShiftPage(1, -1)" class="left"
+        ><img src="../assets/arrow-icon.png"
+      /></a>
+      <a @click="arrowShiftPage(3, 1)" class="right"
+        ><img src="../assets/arrow-icon.png"
+      /></a>
     </div>
     <ItemCard
       v-for="simulCategory in nowPageSimulCategories"
