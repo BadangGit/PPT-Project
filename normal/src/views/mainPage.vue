@@ -119,16 +119,20 @@ export default {
 /* pageNum 디자인 */
 .pageNumGrid {
   display: flex;
-  justify-content: space-between;
   margin: auto;
-  max-width: 122px;
+  min-width: 1200px;
   margin-top: 15px;
+  justify-content: center;
 }
 
 .pageNum {
   cursor: pointer;
   font-size: 20px;
   font-weight: 400;
+  width: 40px;
+
+  justify-content: space-between;
+  text-align: center;
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -144,7 +148,7 @@ export default {
 .cardGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  max-width: 1400px;
+  width: 1200px;
   margin: auto;
 }
 
@@ -160,6 +164,7 @@ export default {
 /* arrow 디자인 */
 .arrowGrid {
   width: 100%;
+  min-width: 1200px;
   display: inline-block;
   position: absolute;
   top: 50%;
@@ -176,7 +181,7 @@ export default {
 
 .arrowGrid img {
   width: 28px;
-  margin: 0px 60px 0px 60px;
+  margin: 0px 30px 0px 30px;
 }
 
 .left img {

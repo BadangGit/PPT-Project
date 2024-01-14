@@ -2,13 +2,7 @@
 
 <template>
   <nav class="main-nav">
-    <router-link
-      class="nav-title"
-      style="text-decoration: none; color: inherit"
-      to="/"
-    >
-      Physics-Normal
-    </router-link>
+    <router-link class="nav-title" to="/"> Physics-Normal </router-link>
   </nav>
 
   <router-view></router-view>
@@ -22,13 +16,14 @@
 .main-nav {
   margin: 0px;
   width: 100%;
+  min-width: 1200px;
   height: 60px;
+  cursor: default;
 
   outline: solid 0.5px #cfcfcf;
 }
 
 .nav-title {
-  width: 100%;
   height: 100%;
 
   display: flex;
@@ -37,5 +32,8 @@
 
   font-size: 32px;
   font-weight: 700;
+  color: inherit;
+
+  text-decoration: none;
 }
 </style>
