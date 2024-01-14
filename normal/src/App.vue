@@ -7,7 +7,7 @@
       style="text-decoration: none; color: inherit"
       to="/"
     >
-      Physics-normal
+      Physics-Normal
     </router-link>
   </nav>
 
