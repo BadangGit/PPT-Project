@@ -119,6 +119,7 @@ export default {
   justify-content: space-between;
   margin: auto;
   max-width: 122px;
+  margin-top: 15px;
 }
 
 .pageNum {
