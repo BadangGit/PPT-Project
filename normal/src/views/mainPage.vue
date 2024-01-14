@@ -149,11 +149,16 @@ export default {
 
 .itemCard {
   opacity: 0.6;
-  transition: all 0.5s;
+  transition: opacity 0.6s;
+  transition: bottom 0.3s, left 0.3s;
+  bottom: 0px;
+  left: 0px;
 }
 
 .itemCard:hover {
   opacity: 1;
+  bottom: 3px;
+  left: 3px;
 }
 
 /* arrow 디자인 */
