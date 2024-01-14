@@ -133,11 +133,6 @@ export default {
 
   justify-content: space-between;
   text-align: center;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .highlight {

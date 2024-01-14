@@ -63,11 +63,6 @@ const props = defineProps({
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .wave {
