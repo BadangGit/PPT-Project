@@ -138,8 +138,17 @@ export default {
   transform: translate(0%, -35%);
 }
 
+.arrowGrid a {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .arrowGrid img {
-  width: 80px;
+  width: 32px;
+  margin: 0px 20px 0px 20px;
 }
 
 .left img {
