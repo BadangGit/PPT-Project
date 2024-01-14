@@ -22,7 +22,7 @@
 .main-nav {
   margin: 0px;
   width: 100%;
-  height: 77.5px;
+  height: 60px;
 
   outline: solid 0.5px #cfcfcf;
 }

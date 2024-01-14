@@ -8,36 +8,134 @@ const store = useStore();
 type Categories = {
   name: string;
   cardNum: number;
+  subText: string;
 };
 
 const simulCategories: Array<Categories> = [
-  { name: "Throwing a Ball Up", cardNum: 0 },
-  { name: "Spinning a Yo-Yo", cardNum: 1 },
-  { name: "Swinging Pendulum", cardNum: 2 },
-  { name: "Pushing a Car", cardNum: 3 },
-  { name: "Blowing Bubbles", cardNum: 4 },
-  { name: "Feeling Hot or Cold", cardNum: 5 },
-  { name: "Looking in a Mirror", cardNum: 6 },
-  { name: "Turning on a Light Bulb", cardNum: 7 },
-  { name: "Playing with Magnets", cardNum: 8 },
-  { name: "Listening to Music", cardNum: 9 },
-  { name: "Running on a Treadmill", cardNum: 10 },
-  { name: "Bouncing a Ball", cardNum: 11 },
-  { name: "Glow-in-the-Dark Stars", cardNum: 12 },
-  { name: "Seeing a Rainbow", cardNum: 13 },
-  { name: "Using a Flashlight", cardNum: 14 },
-  { name: "Using a Microwave", cardNum: 15 },
-  { name: "Playing with Playdough", cardNum: 16 },
-  { name: "Seeing the Moon", cardNum: 17 },
+  {
+    name: "Throwing a Ball Up",
+    cardNum: 0,
+    subText: "Explore how a ball moves when thrown into the air.",
+  },
+  {
+    name: "Spinning a Yo-Yo",
+    cardNum: 1,
+    subText: "Understand how a yo-yo moves in a circular motion.",
+  },
+  {
+    name: "Swinging Pendulum",
+    cardNum: 2,
+    subText: "Observe the back-and-forth motion of a swinging pendulum.",
+  },
+  {
+    name: "Pushing a Car",
+    cardNum: 3,
+    subText: "Apply force to make a car move and stop.",
+  },
+  {
+    name: "Blowing Bubbles",
+    cardNum: 4,
+    subText: "Study the flow of liquids, like soap bubbles in the air.",
+  },
+  {
+    name: "Feeling Hot or Cold",
+    cardNum: 5,
+    subText: "Explore the transfer of heat and temperature changes.",
+  },
+  {
+    name: "Looking in a Mirror",
+    cardNum: 6,
+    subText: "Understand how light reflects off surfaces.",
+  },
+  {
+    name: "Turning on a Light Bulb",
+    cardNum: 7,
+    subText: "Explain the flow of electricity in a simple circuit.",
+  },
+  {
+    name: "Playing with Magnets",
+    cardNum: 8,
+    subText: "Investigate the attraction and repulsion of magnets.",
+  },
+  {
+    name: "Listening to Music",
+    cardNum: 9,
+    subText: "Explore how sound waves travel through the air.",
+  },
+  {
+    name: "Running on a Treadmill",
+    cardNum: 10,
+    subText: "Understand motion and energy transfer.",
+  },
+  {
+    name: "Bouncing a Ball",
+    cardNum: 11,
+    subText: "Explore elasticity and the way balls behave when they bounce.",
+  },
+  {
+    name: "Glow-in-the-Dark Stars",
+    cardNum: 12,
+    subText: "Learn about phosphorescence and light emission.",
+  },
+  {
+    name: "Seeing a Rainbow",
+    cardNum: 13,
+    subText:
+      "Understand how light is refracted and dispersed in water droplets.",
+  },
+  {
+    name: "Using a Flashlight",
+    cardNum: 14,
+    subText: "Explore how light is produced and travels.",
+  },
+  {
+    name: "Using a Microwave",
+    cardNum: 15,
+    subText: "Study electromagnetic waves and their heating effects.",
+  },
+  {
+    name: "Playing with Playdough",
+    cardNum: 16,
+    subText: "Understand the deformation and elasticity of materials.",
+  },
+  {
+    name: "Seeing the Moon",
+    cardNum: 17,
+    subText: "Explore gravitational forces and celestial bodies.",
+  },
 ];
 
 let nowPageSimulCategories: Array<Categories> = [
-  { name: "Throwing a Ball Up", cardNum: 0 },
-  { name: "Spinning a Yo-Yo", cardNum: 1 },
-  { name: "Swinging Pendulum", cardNum: 2 },
-  { name: "Pushing a Car", cardNum: 3 },
-  { name: "Blowing Bubbles", cardNum: 4 },
-  { name: "Feeling Hot or Cold", cardNum: 5 },
+  {
+    name: "Throwing a Ball Up",
+    cardNum: 0,
+    subText: "Explore how a ball moves when thrown into the air.",
+  },
+  {
+    name: "Spinning a Yo-Yo",
+    cardNum: 1,
+    subText: "Understand how a yo-yo moves in a circular motion.",
+  },
+  {
+    name: "Swinging Pendulum",
+    cardNum: 2,
+    subText: "Observe the back-and-forth motion of a swinging pendulum.",
+  },
+  {
+    name: "Pushing a Car",
+    cardNum: 3,
+    subText: "Apply force to make a car move and stop.",
+  },
+  {
+    name: "Blowing Bubbles",
+    cardNum: 4,
+    subText: "Study the flow of liquids, like soap bubbles in the air.",
+  },
+  {
+    name: "Feeling Hot or Cold",
+    cardNum: 5,
+    subText: "Explore the transfer of heat and temperature changes.",
+  },
 ];
 
 let pageNumCounts: number = 3;
@@ -84,12 +182,15 @@ export default {
         ><img src="../assets/arrow-icon.png"
       /></a>
     </div>
-    <ItemCard
-      v-for="simulCategory in nowPageSimulCategories"
-      :key="simulCategory.name"
-      :simul-category="simulCategory"
-    >
-    </ItemCard>
+
+    <div class="cardGrid">
+      <ItemCard
+        v-for="simulCategory in nowPageSimulCategories"
+        :key="simulCategory.name"
+        :simul-category="simulCategory"
+      >
+      </ItemCard>
+    </div>
 
     <div class="pageNumGrid">
       <div
@@ -112,13 +213,15 @@ export default {
 
 .pageNumGrid {
   display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 122px;
 }
 
 .pageNum {
   cursor: pointer;
-  margin-right: 10px;
-  margin-left: 10px;
-  font-size: 32px;
+  font-size: 20px;
+  font-weight: 400;
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -128,6 +231,13 @@ export default {
 
 .highlight {
   font-weight: 700;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1400px;
+  margin: auto;
 }
 
 .arrowGrid {
@@ -147,8 +257,8 @@ export default {
 }
 
 .arrowGrid img {
-  width: 32px;
-  margin: 0px 20px 0px 20px;
+  width: 28px;
+  margin: 0px 60px 0px 60px;
 }
 
 .left img {
