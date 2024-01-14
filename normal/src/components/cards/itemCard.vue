@@ -10,8 +10,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <router-link :to="{ path: props.simulCategory.name }" append>
-    <div class="e-card playing">
+  <div class="e-card playing">
+    <router-link :to="{ path: props.simulCategory.name }" append>
       <div class="image"></div>
 
       <div class="wave"></div>
@@ -48,8 +48,8 @@ const props = defineProps({
         <br />
         <div class="name">{{ $props.simulCategory.subText }}</div>
       </div>
-    </div>
-  </router-link>
+    </router-link>
+  </div>
 </template>
 
 <style>

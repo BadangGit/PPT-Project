@@ -88,6 +88,7 @@ export default {
 
     <div class="cardGrid">
       <ItemCard
+        class="itemCard"
         v-for="simulCategory in nowPageSimulCategories"
         :key="simulCategory.name"
         :simul-category="simulCategory"
@@ -110,10 +111,12 @@ export default {
 </template>
 
 <style>
+/* 전체 페이지 디자인 */
 .main {
   min-height: 90vh;
 }
 
+/* pageNum 디자인 */
 .pageNumGrid {
   display: flex;
   justify-content: space-between;
@@ -137,6 +140,7 @@ export default {
   font-weight: 700;
 }
 
+/* card 디자인 */
 .cardGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -144,6 +148,16 @@ export default {
   margin: auto;
 }
 
+.itemCard {
+  opacity: 0.6;
+  transition: all 0.5s;
+}
+
+.itemCard:hover {
+  opacity: 1;
+}
+
+/* arrow 디자인 */
 .arrowGrid {
   width: 100%;
   display: inline-block;
