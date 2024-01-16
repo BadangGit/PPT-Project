@@ -108,7 +108,6 @@ let icons = require(`../../assets/${props.simulCategory.name}.png`);
   font-weight: 100;
   position: relative;
   top: 1em;
-  text-transform: capitalize;
 }
 
 .wave:nth-child(2),
