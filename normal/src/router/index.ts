@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 import mainPage from "../views/mainPage.vue";
 import simulationPage from "../views/simulationPage.vue";
+import errorPage from "../views/errorPage.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -13,6 +14,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/simulation",
     name: "simulation",
     component: simulationPage,
+  },
+
+  {
+    path: "/:catchAll(.*)",
+    component: errorPage,
   },
 ];
 
