@@ -33,14 +33,13 @@ const simulCategories: Array<Categories> = [
 ];
 
 let nowPageSimulCategories: Array<Categories> = [];
+let pageNumCounts: number = 3;
+let nowPageNum = ref(1);
+let renderCount = ref(0);
 
 for (let i = 0; i < 6; i++) {
   nowPageSimulCategories.push(simulCategories[i]);
 }
-
-let pageNumCounts: number = 3;
-let nowPageNum = ref(1);
-let renderCount = ref(0);
 
 function shiftPage(value: number) {
   store.dispatch("shiftPage", value);
