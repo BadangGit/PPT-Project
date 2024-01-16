@@ -12,7 +12,7 @@ type Categories = {
 };
 
 const simulCategories: Array<Categories> = [
-  { name: "Acceleration", cardNum: 0, subText: "Preparing..." },
+  { name: "Acceleration", cardNum: 0, subText: "When stars falling down" },
   { name: "Preparing", cardNum: 1, subText: "Preparing..." },
   { name: "Preparing", cardNum: 2, subText: "Preparing..." },
   { name: "Preparing", cardNum: 3, subText: "Preparing..." },
@@ -32,14 +32,11 @@ const simulCategories: Array<Categories> = [
   { name: "Preparing", cardNum: 17, subText: "Preparing..." },
 ];
 
-let nowPageSimulCategories: Array<Categories> = [
-  { name: "Acceleration", cardNum: 0, subText: "Preparing..." },
-  { name: "Preparing", cardNum: 1, subText: "Preparing..." },
-  { name: "Preparing", cardNum: 2, subText: "Preparing..." },
-  { name: "Preparing", cardNum: 3, subText: "Preparing..." },
-  { name: "Preparing", cardNum: 4, subText: "Preparing..." },
-  { name: "Preparing", cardNum: 5, subText: "Preparing..." },
-];
+let nowPageSimulCategories: Array<Categories> = [];
+
+for (let i = 0; i < 6; i++) {
+  nowPageSimulCategories.push(simulCategories[i]);
+}
 
 let pageNumCounts: number = 3;
 let nowPageNum = ref(1);

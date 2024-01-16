@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
+import { defineProps, onMounted } from "vue";
 
 const props = defineProps({
   simulCategory: {
@@ -8,11 +8,20 @@ const props = defineProps({
   },
 });
 
+onMounted(() => {
+  if (props.simulCategory.name == "Preparing") {
+    let cardEle = document.getElementById(
+      `cardGrid${props.simulCategory.cardNum}`
+    ) as HTMLElement;
+    cardEle.className = "e-card playing itemCard disabled";
+  }
+});
+
 let icons = require(`../../assets/${props.simulCategory.name}.png`);
 </script>
 
 <template>
-  <div class="e-card playing">
+  <div class="e-card playing" :id="`cardGrid${props.simulCategory.cardNum}`">
     <router-link :to="{ path: props.simulCategory.name }" append>
       <div class="image"></div>
 
@@ -49,6 +58,10 @@ let icons = require(`../../assets/${props.simulCategory.name}.png`);
 </template>
 
 <style>
+.disabled {
+  pointer-events: none;
+}
+
 .e-card {
   margin: 30px auto;
   background: transparent;
@@ -95,7 +108,7 @@ let icons = require(`../../assets/${props.simulCategory.name}.png`);
   font-weight: 100;
   position: relative;
   top: 1em;
-  text-transform: lowercase;
+  text-transform: capitalize;
 }
 
 .wave:nth-child(2),
