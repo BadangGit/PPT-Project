@@ -12,7 +12,7 @@ type Categories = {
 };
 
 const simulCategories: Array<Categories> = [
-  { name: "Acceleration", cardNum: 0, subText: "When stars falling down" },
+  { name: "Stars", cardNum: 0, subText: "When falling down" },
   { name: "Preparing", cardNum: 1, subText: "wait for update" },
   { name: "Preparing", cardNum: 2, subText: "wait for update" },
   { name: "Preparing", cardNum: 3, subText: "wait for update" },
