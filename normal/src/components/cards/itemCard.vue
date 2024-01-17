@@ -13,7 +13,7 @@ onMounted(() => {
     let cardEle = document.getElementById(
       `cardGrid${props.simulCategory.cardNum}`
     ) as HTMLElement;
-    cardEle.className = "e-card playing itemCard disabled";
+    cardEle.className += " disabled";
   }
 });
 

@@ -84,7 +84,7 @@ export default {
 
     <div class="cardGrid">
       <ItemCard
-        class="itemCard"
+        :class="`itemCard num${simulCategory.cardNum}`"
         v-for="simulCategory in nowPageSimulCategories"
         :key="simulCategory.name"
         :simul-category="simulCategory"
