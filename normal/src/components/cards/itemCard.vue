@@ -63,7 +63,7 @@ let icons = require(`../../assets/${props.simulCategory.name}.png`);
 }
 
 .e-card {
-  margin: 30px auto;
+  margin: 40px auto;
   background: transparent;
   box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
   position: relative;

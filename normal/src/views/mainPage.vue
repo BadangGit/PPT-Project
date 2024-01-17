@@ -92,7 +92,6 @@ export default {
         >
         </ItemCard>
       </div>
-
       <div class="pageNumGrid">
         <div
           :class="nowPageNum == pageNumCount ? 'highlight' : ''"
@@ -111,6 +110,10 @@ export default {
 <style>
 /* 전체 페이지 디자인 */
 .main {
+  height: 100%;
+}
+
+.mainItemGrid {
   height: 100%;
 }
 
@@ -138,11 +141,17 @@ export default {
 }
 
 /* card 디자인 */
+.mainItemGrid {
+  text-align: center;
+  align-items: center;
+}
+
 .cardGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 1200px;
   margin: auto;
+  margin-top: 50px;
 }
 
 .itemCard {
