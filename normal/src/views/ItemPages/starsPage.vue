@@ -3,21 +3,41 @@
 <template>
   <div class="mainStarsPage">
     <div class="backgroundStar"></div>
-    <div class="ground"></div>
+    <div class="ground">
+      <div class="groundSemicircle"></div>
+      <div class="groundSquare"></div>
+    </div>
   </div>
 </template>
 
 <style lang="scss">
 .mainStarsPage {
-  background-color: #0c090a;
-  min-height: 911px;
+  display: flex;
+
+  background: rgb(31, 33, 41);
+  background: radial-gradient(
+    circle,
+    rgba(31, 33, 41, 1) 0%,
+    rgba(22, 22, 24, 1) 100%
+  );
+  height: 911px;
+
+  display: flex;
 }
 
-.backgroundStar {
+.ground {
   position: absolute;
-  background-color: white;
+  bottom: 0px;
 
-  height: 10px;
-  width: 10px;
+  width: 100%;
+  height: 200px;
+}
+
+.groundSemicircle {
+  width: 100%;
+  height: 200px;
+  border-radius: 50% 50% 0 0;
+
+  background-color: black;
 }
 </style>
