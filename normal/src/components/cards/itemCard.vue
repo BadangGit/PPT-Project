@@ -67,8 +67,8 @@ let icons = require(`../../assets/${props.simulCategory.name}.png`);
   background: transparent;
   box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
   position: relative;
-  width: 240px;
-  height: 330px;
+  width: 220px;
+  height: 300px;
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -87,9 +87,9 @@ let icons = require(`../../assets/${props.simulCategory.name}.png`);
 }
 
 .icon {
-  width: 3em;
-  margin-top: -1em;
-  padding-bottom: 1em;
+  width: 2.5em;
+  margin-top: -1.5em;
+  padding-bottom: 1.5em;
 }
 
 .infotop {
