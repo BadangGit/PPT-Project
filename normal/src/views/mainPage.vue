@@ -143,7 +143,6 @@ export default {
 /* card 디자인 */
 .mainItemGrid {
   text-align: center;
-  align-items: center;
 }
 
 .cardGrid {
