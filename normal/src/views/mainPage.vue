@@ -82,25 +82,27 @@ export default {
       /></a>
     </div>
 
-    <div class="cardGrid">
-      <ItemCard
-        :class="`itemCard num${simulCategory.cardNum}`"
-        v-for="simulCategory in nowPageSimulCategories"
-        :key="simulCategory.name"
-        :simul-category="simulCategory"
-      >
-      </ItemCard>
-    </div>
+    <div class="mainItemGrid">
+      <div class="cardGrid">
+        <ItemCard
+          :class="`itemCard num${simulCategory.cardNum}`"
+          v-for="simulCategory in nowPageSimulCategories"
+          :key="simulCategory.name"
+          :simul-category="simulCategory"
+        >
+        </ItemCard>
+      </div>
 
-    <div class="pageNumGrid">
-      <div
-        :class="nowPageNum == pageNumCount ? 'highlight' : ''"
-        class="pageNum"
-        v-for="pageNumCount in pageNumCounts"
-        :key="pageNumCount"
-        @click="shiftPage(pageNumCount)"
-      >
-        {{ pageNumCount }}
+      <div class="pageNumGrid">
+        <div
+          :class="nowPageNum == pageNumCount ? 'highlight' : ''"
+          class="pageNum"
+          v-for="pageNumCount in pageNumCounts"
+          :key="pageNumCount"
+          @click="shiftPage(pageNumCount)"
+        >
+          {{ pageNumCount }}
+        </div>
       </div>
     </div>
   </div>
@@ -109,7 +111,7 @@ export default {
 <style>
 /* 전체 페이지 디자인 */
 .main {
-  min-height: 90vh;
+  height: 100%;
 }
 
 /* pageNum 디자인 */
@@ -163,7 +165,7 @@ export default {
   min-width: 1200px;
   display: inline-block;
   position: absolute;
-  top: 50%;
+  top: calc(50% - 26.76px);
   transform: translate(0%, -35%);
 }
 
