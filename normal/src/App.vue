@@ -1,7 +1,9 @@
 <script lang="ts" setup></script>
 
 <template>
-  <router-view></router-view>
+  <div class="app">
+    <router-view></router-view>
+  </div>
 </template>
 
 <style>
@@ -12,5 +14,14 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+* ::-webkit-scrollbar {
+  display: none;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
 }
 </style>
