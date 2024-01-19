@@ -1,9 +1,29 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted } from "vue";
+
+onMounted(() => {
+  for (let i = 1; i < 100; i++) {
+    let starSize: number = Math.floor(Math.random() * 10);
+    let starPos: number = Math.floor(Math.random() * 1000);
+
+    let starEle = document.getElementById(`star${i}`) as HTMLElement;
+    starEle.style.width = `${starSize}`;
+    starEle.style.height = `${starSize}`;
+    starEle.style.marginTop = `${starPos}`;
+    starEle.style.marginLeft = `${starPos}`;
+  }
+});
+</script>
 
 <template>
   <div class="starPageGrid">
     <div class="mainStarsPage">
-      <div class="backgroundStar"></div>
+      <div
+        class="backgroundStar"
+        v-for="starNum in 100"
+        :key="starNum"
+        :id="`star${starNum}`"
+      ></div>
     </div>
   </div>
 </template>
