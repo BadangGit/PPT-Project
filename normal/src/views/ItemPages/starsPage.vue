@@ -42,14 +42,14 @@ onMounted(() => {
   display: flex;
   position: fixed;
 
-  width: 2400px;
-  height: 2400px;
+  width: 10000px;
+  height: 10000px;
 
   margin-top: 50%;
 
   border-radius: 50%;
 
-  background: radial-gradient(circle, rgb(25, 15, 54) 0%, rgb(5, 3, 10) 100%);
+  background: black;
 
   animation-name: rotating;
   animation-duration: 30s;
