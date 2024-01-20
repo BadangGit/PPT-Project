@@ -27,7 +27,7 @@
   height: 100%;
 }
 
-/* slide-animation */
+/* fade-animation */
 .slide-fade-enter-active {
   transition: all 0.3s ease-out;
 }

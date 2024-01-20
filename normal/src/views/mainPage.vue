@@ -84,15 +84,13 @@ export default {
 
     <div class="mainItemGrid">
       <div class="cardGrid">
-        <transition-group name="slide-fade" mode="out-in">
-          <ItemCard
-            :class="`itemCard num${simulCategory.cardNum}`"
-            v-for="simulCategory in nowPageSimulCategories"
-            :key="simulCategory.name"
-            :simul-category="simulCategory"
-          >
-          </ItemCard>
-        </transition-group>
+        <ItemCard
+          :class="`itemCard num${simulCategory.cardNum}`"
+          v-for="simulCategory in nowPageSimulCategories"
+          :key="simulCategory.name"
+          :simul-category="simulCategory"
+        >
+        </ItemCard>
       </div>
       <div class="pageNumGrid">
         <div
@@ -199,20 +197,5 @@ export default {
 
 .right img {
   float: right;
-}
-
-/* fade animation */
-.slide-fade-enter-active {
-  transition: all 0.3s ease-out;
-}
-
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(20px);
-  opacity: 0;
 }
 </style>
