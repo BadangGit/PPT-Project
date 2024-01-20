@@ -29,7 +29,7 @@
 
 /* fade-animation */
 .slide-fade-enter-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.6s ease-out;
 }
 
 .slide-fade-leave-active {
