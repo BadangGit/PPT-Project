@@ -2,7 +2,9 @@
 
 <template>
   <div class="app">
-    <router-view></router-view>
+    <Transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </Transition>
   </div>
 </template>
 
@@ -23,5 +25,16 @@
 .app {
   width: 100vw;
   height: 100vh;
+}
+
+/* fade-animation */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s linear;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
