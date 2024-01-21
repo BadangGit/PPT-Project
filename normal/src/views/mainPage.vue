@@ -205,7 +205,7 @@ export default {
 
 /* arrow design */
 .arrowGrid {
-  width: 100%;
+  width: 100vw;
   min-width: 1200px;
   display: inline-block;
   position: absolute;
@@ -237,7 +237,6 @@ export default {
 
 /* darkMode design */
 .darkModetrue {
-  background-color: #121212;
   color: white;
 }
 </style>
