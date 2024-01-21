@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+// import { onMounted } from "vue";
 
-onMounted(() => {
-  for (let i = 1; i < 100; i++) {
-    let starSize: number = Math.floor(Math.random() * 10);
-    let starPos: number = Math.floor(Math.random() * 1000);
+// onMounted(() => {
+//   for (let i = 1; i < 100; i++) {
+//     let starSize: number = Math.floor(Math.random() * 10);
+//     let starPos: number = Math.floor(Math.random() * 1000);
 
-    let starEle = document.getElementById(`star${i}`) as HTMLElement;
-    starEle.style.width = `${starSize}`;
-    starEle.style.height = `${starSize}`;
-    starEle.style.marginTop = `${starPos}`;
-    starEle.style.marginLeft = `${starPos}`;
-  }
-});
+//     let starEle = document.getElementById(`star${i}`) as HTMLElement;
+//     starEle.style.width = `${starSize}`;
+//     starEle.style.height = `${starSize}`;
+//     starEle.style.marginTop = `${starPos}`;
+//     starEle.style.marginLeft = `${starPos}`;
+//   }
+// });
 </script>
 
 <template>
