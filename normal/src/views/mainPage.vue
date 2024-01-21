@@ -36,6 +36,7 @@ const simulCategories: Array<Categories> = [
 
 let nowPageSimulCategories: Array<Categories> = [];
 let pageNumCounts: number = 3;
+let nowPageDarkMode = false;
 let nowPageNum = ref(1);
 let renderCount = ref(0);
 
@@ -43,7 +44,21 @@ for (let i = 0; i < 6; i++) {
   nowPageSimulCategories.push(simulCategories[i]);
 }
 
+function cardAnimation() {
+  const cardItem = document.querySelector("#cardItemGrid") as HTMLElement;
+  const keyframes = [
+    { transform: "translateX(20px)", opacity: 0 },
+    { transform: "translateX(0)", opacity: 1 },
+  ];
+  const options = {
+    duration: 400,
+  };
+
+  cardItem.animate(keyframes, options);
+}
+
 function shiftPage(value: number) {
+  cardAnimation();
   store.dispatch("shiftPage", value);
   nowPageNum.value = store.state.nowPageNum;
   nowPageSimulCategories = [];
@@ -56,6 +71,17 @@ function shiftPage(value: number) {
   }
 }
 
+function shiftDarkMode() {
+  if (store.state.IsDarkMode == true) {
+    store.dispatch("shiftDarkMode", false);
+  } else {
+    store.dispatch("shiftDarkMode", true);
+  }
+
+  nowPageDarkMode = store.state.IsDarkMode;
+  renderCount.value += 1;
+}
+
 function arrowShiftPage(max: number, plusOrMinus: number) {
   if (nowPageNum.value != max) {
     shiftPage(nowPageNum.value + plusOrMinus);
@@ -63,7 +89,10 @@ function arrowShiftPage(max: number, plusOrMinus: number) {
 }
 
 watch(nowPageNum, () => {
-  renderCount.value += 1;
+  async function pageAnimation() {
+    const a = await new Promise(() => cardAnimation());
+    renderCount.value += 1;
+  }
 });
 </script>
 
@@ -74,30 +103,31 @@ export default {
 </script>
 
 <template>
-  <div class="main" :key="renderCount">
+  <div class="main" :class="`darkMode${nowPageDarkMode}`" :key="renderCount">
     <div class="subButtonsGrid">
-      <darkModeButton></darkModeButton>
+      <darkModeButton @click="shiftDarkMode"></darkModeButton>
     </div>
 
     <div class="arrowGrid">
-      <a @click="arrowShiftPage(1, -1)" class="left"
-        ><img src="../assets/arrow-icon.png"
-      /></a>
-      <a @click="arrowShiftPage(3, 1)" class="right"
-        ><img src="../assets/arrow-icon.png"
-      /></a>
+      <a @click="arrowShiftPage(1, -1)" class="left">
+        <img src="../assets/arrow-icon.png" />
+      </a>
+      <a @click="arrowShiftPage(3, 1)" class="right">
+        <img src="../assets/arrow-icon.png" />
+      </a>
     </div>
 
     <div class="mainItemGrid">
-      <div class="cardGrid">
+      <div class="cardGrid" id="cardItemGrid">
         <ItemCard
-          :class="`itemCard num${simulCategory.cardNum}`"
+          class="itemCard"
           v-for="simulCategory in nowPageSimulCategories"
-          :key="simulCategory.name"
+          :key="simulCategory.cardNum"
           :simul-category="simulCategory"
         >
         </ItemCard>
       </div>
+
       <div class="pageNumGrid">
         <div
           :class="nowPageNum == pageNumCount ? 'highlight' : ''"
@@ -114,7 +144,7 @@ export default {
 </template>
 
 <style>
-/* 전체 페이지 디자인 */
+/* Page design */
 .main {
   height: 100%;
 }
@@ -123,7 +153,7 @@ export default {
   height: 100%;
 }
 
-/* pageNum 디자인 */
+/* pageNum design */
 .pageNumGrid {
   display: flex;
   margin: auto;
@@ -146,7 +176,7 @@ export default {
   font-weight: 700;
 }
 
-/* card 디자인 */
+/* card design */
 .mainItemGrid {
   text-align: center;
 }
@@ -173,7 +203,7 @@ export default {
   left: 3px;
 }
 
-/* arrow 디자인 */
+/* arrow design */
 .arrowGrid {
   width: 100%;
   min-width: 1200px;
@@ -203,5 +233,11 @@ export default {
 
 .right img {
   float: right;
+}
+
+/* darkMode design */
+.darkModetrue {
+  background-color: #121212;
+  color: white;
 }
 </style>
