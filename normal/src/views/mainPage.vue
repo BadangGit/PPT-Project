@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import ItemCard from "@/components/cards/itemCard.vue";
-import darkModeButton from "@/components/buttons/darkModeButton.vue";
+import DarkModeButton from "@/components/buttons/darkModeButton.vue";
 
 import { useStore } from "vuex";
 import { ref, watch } from "vue";
@@ -105,7 +105,7 @@ export default {
 <template>
   <div class="main" :class="`darkMode${nowPageDarkMode}`" :key="renderCount">
     <div class="subButtonsGrid">
-      <darkModeButton @click="shiftDarkMode"></darkModeButton>
+      <DarkModeButton @click="shiftDarkMode"></DarkModeButton>
     </div>
 
     <div class="arrowGrid">
