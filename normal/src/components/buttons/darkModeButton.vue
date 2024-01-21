@@ -1,5 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>darkMode</div>
+  <div class="darkModeButton">darkMode</div>
 </template>
+
+<style>
+.darkModeutton {
+}
+</style>

@@ -147,6 +147,9 @@ export default {
 /* Page design */
 .main {
   height: 100%;
+  background-color: #f3f3f3;
+
+  transition: opacity 0.8s;
 }
 
 .mainItemGrid {
@@ -237,6 +240,23 @@ export default {
 
 /* darkMode design */
 .darkModetrue {
+  background-color: #121212;
   color: white;
+
+  .arrowGrid img {
+    filter: invert(100%);
+  }
+
+  .itemCard {
+    opacity: 1;
+  }
+
+  .e-card {
+    box-shadow: 0px 8px 28px -9px rgb(255, 255, 255);
+  }
+
+  .wave {
+    background: linear-gradient(744deg, #c575ff, #8371f5 60%, #47e6f1);
+  }
 }
 </style>
