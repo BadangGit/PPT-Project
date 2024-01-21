@@ -44,14 +44,14 @@ for (let i = 0; i < 6; i++) {
   nowPageSimulCategories.push(simulCategories[i]);
 }
 
-function cardAnimation() {
+async function cardAnimation() {
   const cardItem = document.querySelector("#cardItemGrid") as HTMLElement;
-  const keyframes = [
-    { transform: "translateX(20px)", opacity: 0 },
-    { transform: "translateX(0)", opacity: 1 },
+  let keyframes = [
+    { transform: "translateX(30px)", opacity: 0.6 },
+    { transform: "translateX(0px)", opacity: 1 },
   ];
   const options = {
-    duration: 400,
+    duration: 600,
   };
 
   cardItem.animate(keyframes, options);
@@ -90,7 +90,6 @@ function arrowShiftPage(max: number, plusOrMinus: number) {
 
 watch(nowPageNum, () => {
   async function pageAnimation() {
-    const a = await new Promise(() => cardAnimation());
     renderCount.value += 1;
   }
 });
