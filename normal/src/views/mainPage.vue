@@ -246,6 +246,10 @@ export default {
   }
 
   .itemCard {
+    opacity: 0.8;
+  }
+
+  .itemCard:hover {
     opacity: 1;
   }
 
