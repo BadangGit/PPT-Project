@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import ItemCard from "@/components/cards/itemCard.vue";
+import darkModeButton from "@/components/buttons/darkModeButton.vue";
+
 import { useStore } from "vuex";
 import { ref, watch } from "vue";
 
@@ -12,7 +14,7 @@ type Categories = {
 };
 
 const simulCategories: Array<Categories> = [
-  { name: "Stars", cardNum: 0, subText: "When falling down" },
+  { name: "Stars", cardNum: 0, subText: "When falling down?" },
   { name: "Preparing", cardNum: 1, subText: "wait for update" },
   { name: "Preparing", cardNum: 2, subText: "wait for update" },
   { name: "Preparing", cardNum: 3, subText: "wait for update" },
@@ -73,6 +75,10 @@ export default {
 
 <template>
   <div class="main" :key="renderCount">
+    <div class="subButtonsGrid">
+      <darkModeButton></darkModeButton>
+    </div>
+
     <div class="arrowGrid">
       <a @click="arrowShiftPage(1, -1)" class="left"
         ><img src="../assets/arrow-icon.png"
