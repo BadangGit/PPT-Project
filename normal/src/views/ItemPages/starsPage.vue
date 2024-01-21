@@ -17,14 +17,7 @@ onMounted(() => {
 
 <template>
   <div class="starPageGrid">
-    <div class="mainStarsPage">
-      <div
-        class="backgroundStar"
-        v-for="starNum in 100"
-        :key="starNum"
-        :id="`star${starNum}`"
-      ></div>
-    </div>
+    <div class="mainStarsPage"></div>
   </div>
 </template>
 
@@ -56,17 +49,6 @@ onMounted(() => {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
-}
-
-.backgroundStar {
-  position: absolute;
-
-  width: 10px;
-  height: 10px;
-
-  border-radius: 50%;
-
-  background-color: white;
 }
 
 @keyframes rotating {
