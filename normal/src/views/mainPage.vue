@@ -36,7 +36,7 @@ const simulCategories: Array<Categories> = [
 
 let nowPageSimulCategories: Array<Categories> = [];
 let pageNumCounts: number = 3;
-let nowPageDarkMode = false;
+let nowPageDarkMode = store.state.IsDarkMode;
 let nowPageNum = ref(1);
 let renderCount = ref(0);
 
