@@ -148,8 +148,6 @@ export default {
 .main {
   height: 100%;
   background-color: #f3f3f3;
-
-  transition: opacity 0.8s;
 }
 
 .mainItemGrid {
