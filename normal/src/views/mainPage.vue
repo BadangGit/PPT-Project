@@ -104,7 +104,10 @@ export default {
 <template>
   <div class="main" :class="`darkMode${nowPageDarkMode}`" :key="renderCount">
     <div class="subButtonsGrid">
-      <DarkModeButton @click="shiftDarkMode"></DarkModeButton>
+      <DarkModeButton
+        class="darkModeButton"
+        @click="shiftDarkMode"
+      ></DarkModeButton>
     </div>
 
     <div class="arrowGrid">
@@ -145,12 +148,12 @@ export default {
 <style>
 /* Page design */
 .main {
-  height: 100%;
+  height: 100vh;
   background-color: #f3f3f3;
 }
 
 .mainItemGrid {
-  height: 100%;
+  height: 90vh;
 }
 
 /* pageNum design */
@@ -186,7 +189,6 @@ export default {
   grid-template-columns: 1fr 1fr 1fr;
   width: 1200px;
   margin: auto;
-  margin-top: 50px;
 }
 
 .itemCard {
@@ -233,7 +235,7 @@ export default {
 
 /* darkMode design */
 .darkModetrue {
-  background-color: #121212;
+  background-color: #1d1d1d;
   color: white;
 
   .arrowGrid img {
@@ -255,5 +257,19 @@ export default {
   .wave {
     background: linear-gradient(744deg, #c575ff, #8371f5 60%, #47e6f1);
   }
+}
+
+/* subButtons design */
+.subButtonsGrid {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+
+  align-items: center;
+  justify-content: end;
+}
+
+.darkModeButton {
+  margin-right: 25px;
 }
 </style>
