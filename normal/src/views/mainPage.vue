@@ -47,7 +47,7 @@ for (let i = 0; i < 6; i++) {
 async function cardAnimation() {
   const cardItem = document.querySelector("#cardItemGrid") as HTMLElement;
   let keyframes = [
-    { transform: "translateX(30px)", opacity: 0.6 },
+    { transform: "translateX(20px)", opacity: 0.2 },
     { transform: "translateX(0px)", opacity: 1 },
   ];
   const options = {
