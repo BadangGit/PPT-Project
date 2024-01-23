@@ -242,10 +242,6 @@ export default {
   }
 
   .itemCard {
-    opacity: 0.8;
-  }
-
-  .itemCard:hover {
     opacity: 1;
   }
 
@@ -254,7 +250,7 @@ export default {
   }
 
   .wave {
-    background: linear-gradient(744deg, #c575ff, #8371f5 60%, #47e6f1);
+    background: linear-gradient(744deg, #c476fc, #9585ff 60%, #45ebf7);
   }
 }
 
