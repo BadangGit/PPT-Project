@@ -2,18 +2,30 @@
 import { useStore } from "vuex";
 
 const store = useStore();
-const nowPageDarkMode: Boolean = store.state.IsDarkMode;
+
+type darkModeType = {
+  mode: string;
+  item: string;
+};
+
+let darkMode = store.state.IsDarkMode;
+let darkModeClassName: darkModeType = { mode: "", item: "" };
+
+if (darkMode) {
+  darkModeClassName.mode = "darkMode";
+  darkModeClassName.item = "moon";
+} else {
+  darkModeClassName.mode = "lightMode";
+  darkModeClassName.item = "sun";
+}
 </script>
 
 <template>
   <div class="buttonGrid">
-    <div class="darkMode" v-if="nowPageDarkMode">
-      <div class="moon">
+    <div :class="darkModeClassName.mode">
+      <div :class="darkModeClassName.item">
         <div class="moonShadow"></div>
       </div>
-    </div>
-    <div class="lightMode" v-else>
-      <div class="sun"></div>
     </div>
   </div>
 </template>
@@ -24,7 +36,6 @@ const nowPageDarkMode: Boolean = store.state.IsDarkMode;
   height: 40px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -46,7 +57,7 @@ const nowPageDarkMode: Boolean = store.state.IsDarkMode;
   background: linear-gradient(40deg, #38cefc, #4af4fa 70%);
 }
 
-.moonShadow {
+.moon .moonShadow {
   width: 16px;
   height: 16px;
   border-radius: 8px;

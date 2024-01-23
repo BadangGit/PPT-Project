@@ -77,7 +77,6 @@ function shiftDarkMode() {
   } else {
     store.dispatch("shiftDarkMode", true);
   }
-
   nowPageDarkMode = store.state.IsDarkMode;
   renderCount.value += 1;
 }
