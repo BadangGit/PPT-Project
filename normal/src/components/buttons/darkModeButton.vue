@@ -55,6 +55,10 @@ if (darkMode) {
   border-radius: 13px;
   margin-right: 6px;
   background: linear-gradient(40deg, #38cefc, #4af4fa 70%);
+
+  animation-name: to-dark-mode;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
 }
 
 .moon .moonShadow {
@@ -80,9 +84,30 @@ if (darkMode) {
   width: 26px;
   height: 26px;
   border-radius: 13px;
-
   margin-left: 6px;
-
   background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+
+  animation-name: to-light-mode;
+  animation-duration: 0.4s;
+}
+
+@keyframes to-dark-mode {
+  from {
+    margin-right: 40px;
+  }
+
+  to {
+    margin-right: 6px;
+  }
+}
+
+@keyframes to-light-mode {
+  from {
+    margin-left: 40px;
+  }
+
+  to {
+    margin-left: 6px;
+  }
 }
 </style>
