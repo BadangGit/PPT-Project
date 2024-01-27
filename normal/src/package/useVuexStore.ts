@@ -2,9 +2,13 @@ import { useStore } from "vuex";
 
 const store = useStore();
 
-function getStoreContent(item: string) {
-  let storeItems = store.state.find(item);
+function getStoreContent(getItem: string) {
+  let storeItems = store.state.find(getItem);
   return storeItems;
 }
 
-export { getStoreContent };
+function changeStoreContent(where: string, what: any) {
+  store.dispatch(where, what);
+}
+
+export { getStoreContent, changeStoreContent };
