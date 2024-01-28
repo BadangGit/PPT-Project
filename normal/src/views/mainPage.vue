@@ -2,16 +2,12 @@
 import ItemCard from "@/components/cards/itemCard.vue";
 import DarkModeButton from "@/components/buttons/darkModeButton.vue";
 
+import { Categories } from "@/assets/data/types";
+
 import { useStore } from "vuex";
 import { ref, watch } from "vue";
 
 const store = useStore();
-
-type Categories = {
-  name: string;
-  cardNum: number;
-  subText: string;
-};
 
 const simulCategories: Array<Categories> = [
   { name: "Stars", cardNum: 0, subText: "When falling down?" },
