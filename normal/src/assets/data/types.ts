@@ -4,9 +4,9 @@ type cardItemCategories = {
   subText: string;
 };
 
-type darkModeType = {
+type darkModeButtonClassType = {
   mode: string;
   item: string;
 };
 
-export { cardItemCategories, darkModeType };
+export { cardItemCategories, darkModeButtonClassType };
