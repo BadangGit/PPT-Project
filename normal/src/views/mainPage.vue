@@ -2,7 +2,7 @@
 import ItemCard from "@/components/cards/itemCard.vue";
 import DarkModeButton from "@/components/buttons/darkModeButton.vue";
 
-import { Categories } from "@/assets/data/types";
+import { cardItemCategories } from "@/assets/data/types";
 import { simulCategories } from "@/assets/data/cardItemData";
 
 import { useStore } from "vuex";
@@ -10,7 +10,7 @@ import { ref, watch } from "vue";
 
 const store = useStore();
 
-let nowPageSimulCategories: Array<Categories> = [];
+let nowPageSimulCategories: Array<cardItemCategories> = [];
 let pageNumCounts: number = 3;
 let nowPageDarkMode = store.state.IsDarkMode;
 let nowPageNum = ref(1);

@@ -1,6 +1,6 @@
-import { Categories } from "./types";
+import { cardItemCategories } from "./types";
 
-const simulCategories: Array<Categories> = [
+const simulCategories: Array<cardItemCategories> = [
   { name: "Stars", cardNum: 0, subText: "When falling down?" },
   { name: "Preparing", cardNum: 1, subText: "wait for update" },
   { name: "Preparing", cardNum: 2, subText: "wait for update" },

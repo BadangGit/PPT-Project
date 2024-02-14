@@ -1,7 +1,7 @@
-type Categories = {
+type cardItemCategories = {
   name: string;
   cardNum: number;
   subText: string;
 };
 
-export { Categories };
+export { cardItemCategories };
