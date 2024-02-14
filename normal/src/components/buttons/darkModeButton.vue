@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useStore } from "vuex";
-import { darkModeButtonClassType } from "@/assets/data/types";
+import { darkModeButtonClassType } from "@/assets/data/types/darkMode";
+import { getIsNowDarkMode } from "@/assets/animation/darkModeAnimation";
 
 const store = useStore();
 

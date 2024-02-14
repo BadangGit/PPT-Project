@@ -2,7 +2,7 @@
 import ItemCard from "@/components/cards/itemCard.vue";
 import DarkModeButton from "@/components/buttons/darkModeButton.vue";
 
-import { cardItemCategories } from "@/assets/data/types";
+import { cardItemCategories } from "@/assets/data/types/cardItem";
 import { simulCategories } from "@/assets/data/cardItemData";
 
 import { useStore } from "vuex";

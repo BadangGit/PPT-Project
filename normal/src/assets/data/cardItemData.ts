@@ -1,4 +1,4 @@
-import { cardItemCategories } from "./types";
+import { cardItemCategories } from "@/assets/data/types/cardItem";
 
 const simulCategories: Array<cardItemCategories> = [
   { name: "Stars", cardNum: 0, subText: "When falling down?" },
