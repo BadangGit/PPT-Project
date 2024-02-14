@@ -9,4 +9,6 @@ type darkModeButtonClassType = {
   item: string;
 };
 
-export { cardItemCategories, darkModeButtonClassType };
+type storeDarkModeType = boolean;
+
+export { cardItemCategories, darkModeButtonClassType, storeDarkModeType };
