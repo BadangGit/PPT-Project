@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { darkModeButtonClassType } from "@/assets/data/types/darkMode";
-import { getIsNowDarkMode } from "@/assets/animation/darkModeAnimation";
+import { useStore } from "vuex";
 
 const store = useStore();
 
-let darkMode = store.state.IsDarkMode;
 let darkModeClassName: darkModeButtonClassType = { mode: "", item: "" };
 
-if (darkMode) {
+if (store.state.IsDarkMode) {
   darkModeClassName.mode = "darkMode";
   darkModeClassName.item = "moon";
 } else {
