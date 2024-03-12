@@ -33,9 +33,9 @@ async function cardAnimation() {
   cardItem.animate(keyframes, options);
 }
 
-function shiftPage(value: number) {
+function shiftPage(where: number) {
   cardAnimation();
-  store.dispatch("shiftPage", value);
+  store.dispatch("shiftPage", where);
   nowPageNum.value = store.state.nowPageNum;
   nowPageSimulCategories = [];
 
