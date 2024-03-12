@@ -69,7 +69,7 @@ let icons = require(`../../assets/${props.simulCategory.name}.png`);
   position: relative;
   width: 220px;
   height: 300px;
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
 }
