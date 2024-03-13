@@ -65,7 +65,7 @@ if (store.state.IsDarkMode) {
 
 .lightMode {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 
   width: 100%;
