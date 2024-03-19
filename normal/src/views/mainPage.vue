@@ -3,7 +3,7 @@ import ItemCard from "@/components/cards/itemCard.vue";
 import DarkModeButton from "@/components/buttons/darkModeButton.vue";
 
 import { cardItemCategoryType } from "@/assets/data/types/cardItem";
-import { mainPageCardContents } from "@/assets/data/cardItemData";
+import { mainPageCardContents } from "@/assets/data/mainPageData";
 
 import { useStore } from "vuex";
 import { ref, watch } from "vue";
@@ -244,3 +244,4 @@ export default {
   margin-right: 25px;
 }
 </style>
+@/assets/data/mainPageData
