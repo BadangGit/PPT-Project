@@ -3,7 +3,7 @@ import ItemCard from "@/components/cards/itemCard.vue";
 import DarkModeButton from "@/components/buttons/darkModeButton.vue";
 
 import { cardItemCategories } from "@/assets/data/types/cardItem";
-import { simulCategories } from "@/assets/data/cardItemData";
+import { mainPageCardContents } from "@/assets/data/cardItemData";
 
 import { useStore } from "vuex";
 import { ref, watch } from "vue";
@@ -17,7 +17,7 @@ let nowPageNum = ref(1);
 let renderCount = ref(0);
 
 for (let i = 0; i < 6; i++) {
-  nowPageSimulCategories.push(simulCategories[i]);
+  nowPageSimulCategories.push(mainPageCardContents[i]);
 }
 
 async function cardAnimation() {
@@ -43,7 +43,7 @@ function shiftPage(where: number) {
   const markupCardNum: number = (nowPageNum.value - 1) * markupCardCount;
 
   for (let i = markupCardNum; i < markupCardNum + markupCardCount; i++) {
-    nowPageSimulCategories.push(simulCategories[i]);
+    nowPageSimulCategories.push(mainPageCardContents[i]);
   }
 }
 

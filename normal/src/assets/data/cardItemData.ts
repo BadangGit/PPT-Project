@@ -1,6 +1,6 @@
 import { cardItemCategories } from "@/assets/data/types/cardItem";
 
-const simulCategories: Array<cardItemCategories> = [
+const mainPageCardContents: Array<cardItemCategories> = [
   { name: "Stars", cardNum: 0, subText: "When falling down?" },
   { name: "Preparing", cardNum: 1, subText: "wait for update" },
   { name: "Preparing", cardNum: 2, subText: "wait for update" },
@@ -21,4 +21,4 @@ const simulCategories: Array<cardItemCategories> = [
   { name: "Preparing", cardNum: 17, subText: "wait for update" },
 ];
 
-export { simulCategories };
+export { mainPageCardContents };
