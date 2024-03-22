@@ -1,6 +1,6 @@
-import { cardItemCategoryType } from "@/assets/data/types/cardItem";
+import { cardItemContentType } from "@/assets/data/types/cardItem";
 
-const mainPageCardContents: Array<cardItemCategoryType> = [
+const mainPageCardContents: Array<cardItemContentType> = [
   { name: "Stars", cardNum: 0, subText: "When falling down?" },
   { name: "Preparing", cardNum: 1, subText: "wait for update" },
   { name: "Preparing", cardNum: 2, subText: "wait for update" },

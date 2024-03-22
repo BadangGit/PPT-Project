@@ -2,7 +2,7 @@
 import ItemCard from "@/components/cards/itemCard.vue";
 import DarkModeButton from "@/components/buttons/darkModeButton.vue";
 
-import { cardItemCategoryType } from "@/assets/data/types/cardItem";
+import { cardItemContentType } from "@/assets/data/types/cardItem";
 import { mainPageCardContents } from "@/assets/data/mainPageData";
 
 import { useStore } from "vuex";
@@ -10,14 +10,14 @@ import { ref, watch } from "vue";
 
 const store = useStore();
 
-let nowPageSimulCategories: Array<cardItemCategoryType> = [];
+let nowPageCardContent: Array<cardItemContentType> = [];
 let pageNumCounts: number = 3;
 let nowPageDarkMode = store.state.IsDarkMode;
 let nowPageNum = ref(1);
 let renderCount = ref(0);
 
 for (let i = 0; i < 6; i++) {
-  nowPageSimulCategories.push(mainPageCardContents[i]);
+  nowPageCardContent.push(mainPageCardContents[i]);
 }
 
 async function cardAnimation() {
@@ -37,13 +37,13 @@ function shiftPage(where: number) {
   cardAnimation();
   store.dispatch("shiftPage", where);
   nowPageNum.value = store.state.nowPageNum;
-  nowPageSimulCategories = [];
+  nowPageCardContent = [];
 
   const markupCardCount: number = 6;
   const markupCardNum: number = (nowPageNum.value - 1) * markupCardCount;
 
   for (let i = markupCardNum; i < markupCardNum + markupCardCount; i++) {
-    nowPageSimulCategories.push(mainPageCardContents[i]);
+    nowPageCardContent.push(mainPageCardContents[i]);
   }
 }
 
@@ -98,7 +98,7 @@ export default {
       <div class="cardGrid" id="cardItemGrid">
         <ItemCard
           class="itemCard"
-          v-for="simulCategory in nowPageSimulCategories"
+          v-for="simulCategory in nowPageCardContent"
           :key="simulCategory.cardNum"
           :simul-category="simulCategory"
         >
