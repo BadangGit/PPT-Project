@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { defineProps, onMounted } from "vue";
+import { defineProps, onMounted, PropType } from "vue";
+import { projectCardContentsType } from "@/assets/data/types/cardItem";
 
 const props = defineProps({
   simulCategory: {
-    type: Object,
+    type: Object as PropType<projectCardContentsType>,
     required: true,
   },
 });
