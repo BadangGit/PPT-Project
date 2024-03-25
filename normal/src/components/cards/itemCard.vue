@@ -9,20 +9,20 @@ const props = defineProps({
 });
 
 onMounted(() => {
-  if (props.simulCategory.name == "Preparing") {
+  if (props.simulCategory.title == "Preparing") {
     let cardEle = document.getElementById(
-      `cardGrid${props.simulCategory.cardNum}`
+      `cardGrid${props.simulCategory.num}`
     ) as HTMLElement;
     cardEle.className += " disabled";
   }
 });
 
-let icons = require(`../../assets/${props.simulCategory.name}.png`);
+let icons = require(`../../assets/${props.simulCategory.title}.png`);
 </script>
 
 <template>
-  <div class="e-card playing" :id="`cardGrid${props.simulCategory.cardNum}`">
-    <router-link :to="{ path: props.simulCategory.name }" append>
+  <div class="e-card playing" :id="`cardGrid${props.simulCategory.num}`">
+    <router-link :to="{ path: props.simulCategory.title }" append>
       <div class="image"></div>
 
       <div class="wave"></div>
@@ -49,9 +49,9 @@ let icons = require(`../../assets/${props.simulCategory.name}.png`);
    20.3676C11.9347 20.5316 11.1396 20.4203 10.4684 20.0413H10.4676Z"
         ></path>
         <br />
-        {{ props.simulCategory.name }}
+        {{ props.simulCategory.title }}
         <br />
-        <div class="name">{{ $props.simulCategory.subText }}</div>
+        <div class="title">{{ $props.simulCategory.subtitle }}</div>
       </div>
     </router-link>
   </div>
@@ -103,7 +103,7 @@ let icons = require(`../../assets/${props.simulCategory.name}.png`);
   font-weight: 600;
 }
 
-.name {
+.title {
   font-size: 14px;
   font-weight: 100;
   position: relative;

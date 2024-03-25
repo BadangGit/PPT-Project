@@ -1,5 +1,5 @@
-export type cardItemContentType = {
-  name: string;
-  cardNum: number;
-  subText: string;
+export type projectCardContentsType = {
+  title: string;
+  subtitle: string;
+  num: number;
 };

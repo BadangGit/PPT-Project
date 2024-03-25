@@ -1,24 +1,24 @@
-import { cardItemContentType } from "@/assets/data/types/cardItem";
+import { projectCardContentsType } from "@/assets/data/types/cardItem";
 
-const mainPageCardContents: Array<cardItemContentType> = [
-  { name: "Stars", cardNum: 0, subText: "When falling down?" },
-  { name: "Preparing", cardNum: 1, subText: "wait for update" },
-  { name: "Preparing", cardNum: 2, subText: "wait for update" },
-  { name: "Preparing", cardNum: 3, subText: "wait for update" },
-  { name: "Preparing", cardNum: 4, subText: "wait for update" },
-  { name: "Preparing", cardNum: 5, subText: "wait for update" },
-  { name: "Preparing", cardNum: 6, subText: "wait for update" },
-  { name: "Preparing", cardNum: 7, subText: "wait for update" },
-  { name: "Preparing", cardNum: 8, subText: "wait for update" },
-  { name: "Preparing", cardNum: 9, subText: "wait for update" },
-  { name: "Preparing", cardNum: 10, subText: "wait for update" },
-  { name: "Preparing", cardNum: 11, subText: "wait for update" },
-  { name: "Preparing", cardNum: 12, subText: "wait for update" },
-  { name: "Preparing", cardNum: 13, subText: "wait for update" },
-  { name: "Preparing", cardNum: 14, subText: "wait for update" },
-  { name: "Preparing", cardNum: 15, subText: "wait for update" },
-  { name: "Preparing", cardNum: 16, subText: "wait for update" },
-  { name: "Preparing", cardNum: 17, subText: "wait for update" },
+const projectCardContents: Array<projectCardContentsType> = [
+  { title: "Stars", subtitle: "When falling down?", num: 0 },
+  { title: "Preparing", subtitle: "wait for update", num: 1 },
+  { title: "Preparing", subtitle: "wait for update", num: 2 },
+  { title: "Preparing", subtitle: "wait for update", num: 3 },
+  { title: "Preparing", subtitle: "wait for update", num: 4 },
+  { title: "Preparing", subtitle: "wait for update", num: 5 },
+  { title: "Preparing", subtitle: "wait for update", num: 6 },
+  { title: "Preparing", subtitle: "wait for update", num: 7 },
+  { title: "Preparing", subtitle: "wait for update", num: 8 },
+  { title: "Preparing", subtitle: "wait for update", num: 9 },
+  { title: "Preparing", subtitle: "wait for update", num: 10 },
+  { title: "Preparing", subtitle: "wait for update", num: 11 },
+  { title: "Preparing", subtitle: "wait for update", num: 12 },
+  { title: "Preparing", subtitle: "wait for update", num: 13 },
+  { title: "Preparing", subtitle: "wait for update", num: 14 },
+  { title: "Preparing", subtitle: "wait for update", num: 15 },
+  { title: "Preparing", subtitle: "wait for update", num: 16 },
+  { title: "Preparing", subtitle: "wait for update", num: 17 },
 ];
 
-export { mainPageCardContents };
+export { projectCardContents };
