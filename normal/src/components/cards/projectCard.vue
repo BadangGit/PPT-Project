@@ -1,29 +1,32 @@
 <script lang="ts" setup>
 import { defineProps, onMounted, PropType } from "vue";
-import { projectCardContentsType } from "@/assets/data/types/cardItem";
+import { projectCardContentsType } from "@/assets/data/types/projectCard";
 
 const props = defineProps({
-  simulCategory: {
+  activeProjectCardList: {
     type: Object as PropType<projectCardContentsType>,
     required: true,
   },
 });
 
 onMounted(() => {
-  if (props.simulCategory.title == "Preparing") {
+  if (props.activeProjectCardList.title == "Preparing") {
     let cardEle = document.getElementById(
-      `cardGrid${props.simulCategory.num}`
+      `cardGrid${props.activeProjectCardList.num}`
     ) as HTMLElement;
     cardEle.className += " disabled";
   }
 });
 
-let icons = require(`../../assets/${props.simulCategory.title}.png`);
+let icons = require(`../../assets/${props.activeProjectCardList.title}.png`);
 </script>
 
 <template>
-  <div class="e-card playing" :id="`cardGrid${props.simulCategory.num}`">
-    <router-link :to="{ path: props.simulCategory.title }" append>
+  <div
+    class="e-card playing"
+    :id="`cardGrid${props.activeProjectCardList.num}`"
+  >
+    <router-link :to="{ path: props.activeProjectCardList.title }" append>
       <div class="image"></div>
 
       <div class="wave"></div>
@@ -50,9 +53,9 @@ let icons = require(`../../assets/${props.simulCategory.title}.png`);
    20.3676C11.9347 20.5316 11.1396 20.4203 10.4684 20.0413H10.4676Z"
         ></path>
         <br />
-        {{ props.simulCategory.title }}
+        {{ props.activeProjectCardList.title }}
         <br />
-        <div class="title">{{ $props.simulCategory.subtitle }}</div>
+        <div class="title">{{ $props.activeProjectCardList.subtitle }}</div>
       </div>
     </router-link>
   </div>
@@ -152,3 +155,4 @@ let icons = require(`../../assets/${props.simulCategory.title}.png`);
   }
 }
 </style>
+@/assets/data/types/projectCardContents@/assets/data/types/projectCard

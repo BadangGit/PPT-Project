@@ -1,23 +1,23 @@
 <script lang="ts" setup>
-import ItemCard from "@/components/cards/itemCard.vue";
+import projectCard from "@/components/cards/projectCard.vue";
 import DarkModeButton from "@/components/buttons/darkModeButton.vue";
 
-import { projectCardContentsType } from "@/assets/data/types/cardItem";
-import { projectCardContents } from "@/assets/data/mainPageData";
+import { projectCardContentsType } from "@/assets/data/types/projectCard";
+import { projectCardList } from "@/assets/data/projectCardData";
 
 import { useStore } from "vuex";
 import { ref, watch } from "vue";
 
 const store = useStore();
 
-let nowPageCardContent: Array<projectCardContentsType> = [];
+let activeProjectCardLists: Array<projectCardContentsType> = [];
 let pageNumCounts: number = 3;
-let nowPageDarkMode = store.state.IsDarkMode;
-let nowPageNum = ref(1);
+let activePageDarkMode = store.state.IsDarkMode;
+let activePageNum = ref(1);
 let renderCount = ref(0);
 
 for (let i = 0; i < 6; i++) {
-  nowPageCardContent.push(projectCardContents[i]);
+  activeProjectCardLists.push(projectCardList[i]);
 }
 
 async function cardAnimation() {
@@ -36,14 +36,14 @@ async function cardAnimation() {
 function shiftPage(where: number) {
   cardAnimation();
   store.dispatch("shiftPage", where);
-  nowPageNum.value = store.state.nowPageNum;
-  nowPageCardContent = [];
+  activePageNum.value = store.state.activePageNum;
+  activeProjectCardLists = [];
 
   const markupCardCount: number = 6;
-  const markupCardNum: number = (nowPageNum.value - 1) * markupCardCount;
+  const markupCardNum: number = (activePageNum.value - 1) * markupCardCount;
 
   for (let i = markupCardNum; i < markupCardNum + markupCardCount; i++) {
-    nowPageCardContent.push(projectCardContents[i]);
+    activeProjectCardLists.push(projectCardList[i]);
   }
 }
 
@@ -53,17 +53,17 @@ function shiftDarkMode() {
   } else {
     store.dispatch("shiftDarkMode", true);
   }
-  nowPageDarkMode = store.state.IsDarkMode;
+  activePageDarkMode = store.state.IsDarkMode;
   renderCount.value += 1;
 }
 
 function arrowShiftPage(max: number, plusOrMinus: number) {
-  if (nowPageNum.value != max) {
-    shiftPage(nowPageNum.value + plusOrMinus);
+  if (activePageNum.value != max) {
+    shiftPage(activePageNum.value + plusOrMinus);
   }
 }
 
-watch(nowPageNum, () => {
+watch(activePageNum, () => {
   async function pageAnimation() {
     renderCount.value += 1;
   }
@@ -77,7 +77,7 @@ export default {
 </script>
 
 <template>
-  <div class="main" :class="`darkMode${nowPageDarkMode}`" :key="renderCount">
+  <div class="main" :class="`darkMode${activePageDarkMode}`" :key="renderCount">
     <div class="subButtonsGrid">
       <DarkModeButton
         class="darkModeButton"
@@ -85,7 +85,7 @@ export default {
       ></DarkModeButton>
     </div>
 
-    <div class="arrowGrid">
+    <div class="arrowButtonGrid">
       <a @click="arrowShiftPage(1, -1)" class="left">
         <img src="../assets/arrow-icon.png" />
       </a>
@@ -94,20 +94,20 @@ export default {
       </a>
     </div>
 
-    <div class="mainItemGrid">
-      <div class="cardGrid" id="cardItemGrid">
-        <ItemCard
-          class="itemCard"
-          v-for="simulCategory in nowPageCardContent"
-          :key="simulCategory.num"
-          :simul-category="simulCategory"
+    <div class="mainPageGrid">
+      <div class="projectCardGrid" id="cardItemGrid">
+        <projectCard
+          class="projectCard"
+          v-for="activeProjectCardList in activeProjectCardLists"
+          :key="activeProjectCardList.num"
+          :active-project-card-list="activeProjectCardList"
         >
-        </ItemCard>
+        </projectCard>
       </div>
 
       <div class="pageNumGrid">
         <div
-          :class="nowPageNum == pageNumCount ? 'highlight' : ''"
+          :class="activePageNum == pageNumCount ? 'highlight' : ''"
           class="pageNum"
           v-for="pageNumCount in pageNumCounts"
           :key="pageNumCount"
@@ -127,7 +127,7 @@ export default {
   background-color: #f3f3f3;
 }
 
-.mainItemGrid {
+.mainPageGrid {
   height: 90vh;
 }
 
@@ -155,18 +155,18 @@ export default {
 }
 
 /* card design */
-.mainItemGrid {
+.mainPageGrid {
   text-align: center;
 }
 
-.cardGrid {
+.projectCardGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 1200px;
   margin: auto;
 }
 
-.itemCard {
+.projectCard {
   opacity: 0.6;
   transition: opacity 0.6s;
   transition: bottom 0.3s, left 0.3s;
@@ -174,14 +174,14 @@ export default {
   left: 0px;
 }
 
-.itemCard:hover {
+.projectCard:hover {
   opacity: 1;
   bottom: 3px;
   left: 3px;
 }
 
 /* arrow design */
-.arrowGrid {
+.arrowButtonGrid {
   width: 100vw;
   min-width: 1200px;
   display: inline-block;
@@ -190,11 +190,11 @@ export default {
   transform: translate(0%, -35%);
 }
 
-.arrowGrid a {
+.arrowButtonGrid a {
   cursor: pointer;
 }
 
-.arrowGrid img {
+.arrowButtonGrid img {
   width: 28px;
   margin: 0px 30px 0px 30px;
 }
@@ -213,11 +213,11 @@ export default {
   background-color: #1d1d1d;
   color: white;
 
-  .arrowGrid img {
+  .arrowButtonGrid img {
     filter: invert(100%);
   }
 
-  .itemCard {
+  .projectCard {
     opacity: 1;
   }
 
@@ -244,4 +244,4 @@ export default {
   margin-right: 25px;
 }
 </style>
-@/assets/data/mainPageData
+@/assets/data/mainPageData@/assets/data/types/projectCardList@/assets/data/types/projectCard@/assets/data/projectCardData

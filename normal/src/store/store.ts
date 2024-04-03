@@ -2,12 +2,12 @@ import { createStore } from "vuex";
 
 const store = createStore({
   state: {
-    nowPageNum: 1,
+    activePageNum: 1,
     IsDarkMode: false,
   },
   mutations: {
     SHIFT_PAGE(state, value) {
-      state.nowPageNum = value;
+      state.activePageNum = value;
     },
 
     SHIFT_DARK_MODE(state, isTrue) {
