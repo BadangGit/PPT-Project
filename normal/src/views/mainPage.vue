@@ -10,8 +10,10 @@ import { ref, watch } from "vue";
 
 const store = useStore();
 
+const markupCardCount: number = 6;
+const pageNumCounts: number = 3;
+
 let activeProjectCardLists: Array<projectCardContentsType> = [];
-let pageNumCounts: number = 3;
 let activePageDarkMode = store.state.IsDarkMode;
 let activePageNum = ref(1);
 let renderCount = ref(0);
@@ -39,7 +41,6 @@ function shiftPage(where: number) {
   activePageNum.value = store.state.activePageNum;
   activeProjectCardLists = [];
 
-  const markupCardCount: number = 6;
   const markupCardNum: number = (activePageNum.value - 1) * markupCardCount;
 
   for (let i = markupCardNum; i < markupCardNum + markupCardCount; i++) {
