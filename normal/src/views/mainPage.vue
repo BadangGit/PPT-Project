@@ -6,7 +6,6 @@ import { projectCardContentsType } from "@/assets/data/types/projectCard";
 import { projectCardList } from "@/assets/data/projectCardData";
 
 import { useStore } from "vuex";
-import { ref, watch } from "vue";
 import { ref } from "vue";
 
 const store = useStore();
@@ -67,12 +66,6 @@ function arrowShiftPage(maxmin: number, plusOrMinus: number) {
     // 현재 페이지 바꾸기
   }
 }
-
-watch(activePageNum, () => {
-  async function pageAnimation() {
-    renderCount.value += 1;
-  }
-});
 </script>
 
 <script lang="ts">
