@@ -49,7 +49,7 @@ function shiftPage(where: number) {
 }
 
 function shiftDarkMode() {
-  if (store.state.IsDarkMode == true) {
+  if (store.state.IsDarkMode) {
     store.dispatch("shiftDarkMode", false);
   } else {
     store.dispatch("shiftDarkMode", true);
