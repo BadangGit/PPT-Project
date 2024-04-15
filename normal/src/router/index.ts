@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
-import mainPage from "../views/mainPage.vue";
 import errorPage from "../views/errorPage.vue";
+import mainPage from "../views/mainPage.vue";
 import starPage from "../views/ItemPages/starsPage.vue";
+import AIPage from "../views/ItemPages/AIPage.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -14,6 +15,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/stars",
     name: "star",
     component: starPage,
+  },
+  {
+    path: "/AI",
+    name: "AI",
+    component: AIPage,
   },
   {
     path: "/:catchAll(.*)",
