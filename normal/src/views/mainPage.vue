@@ -242,4 +242,3 @@ export default {
   margin-right: 25px;
 }
 </style>
-@/assets/data/mainPageData@/assets/data/types/projectCardList@/assets/data/types/projectCard@/assets/data/projectCardData
