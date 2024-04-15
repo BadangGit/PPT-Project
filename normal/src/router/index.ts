@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 import errorPage from "../views/errorPage.vue";
 import mainPage from "../views/mainPage.vue";
+
 import starPage from "../views/ItemPages/starsPage.vue";
 import AIPage from "../views/ItemPages/AIPage.vue";
 
