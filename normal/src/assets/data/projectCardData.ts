@@ -1,8 +1,8 @@
 import { projectCardContentsType } from "@/assets/data/types/projectCard";
 
 const projectCardList: Array<projectCardContentsType> = [
-  { title: "Stars", subtitle: "When falling down?", num: 0 },
-  { title: "Preparing", subtitle: "wait for update", num: 1 },
+  { title: "Stars", subtitle: "When falling down", num: 0 },
+  { title: "AI", subtitle: "Isn't it incredible?", num: 1 },
   { title: "Preparing", subtitle: "wait for update", num: 2 },
   { title: "Preparing", subtitle: "wait for update", num: 3 },
   { title: "Preparing", subtitle: "wait for update", num: 4 },
