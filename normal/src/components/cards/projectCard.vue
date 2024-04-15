@@ -75,7 +75,6 @@ let icons = require(`../../assets/${props.activeProjectCardList.title}.png`);
   height: 300px;
   border-radius: 8px;
   overflow: hidden;
-  cursor: pointer;
 }
 
 .wave {
