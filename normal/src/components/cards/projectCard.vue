@@ -154,4 +154,3 @@ let icons = require(`../../assets/${props.activeProjectCardList.title}.png`);
   }
 }
 </style>
-@/assets/data/types/projectCardContents@/assets/data/types/projectCard
