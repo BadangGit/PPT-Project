@@ -166,7 +166,6 @@ export default {
 
 .projectCard {
   opacity: 0.6;
-  /* transition: opacity 0.6s; */
   transition: bottom 0.3s, left 0.3s;
   bottom: 0px;
   left: 0px;
@@ -176,7 +175,6 @@ export default {
   opacity: 1;
   bottom: 3px;
   left: 3px;
-  cursor: url(../assets/testCursor.png) 12 12, wait;
 }
 
 /* arrow design */
