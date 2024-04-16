@@ -176,6 +176,7 @@ export default {
   opacity: 1;
   bottom: 3px;
   left: 3px;
+  cursor: url(../assets/testCursor.png) 12 12, wait;
 }
 
 /* arrow design */
