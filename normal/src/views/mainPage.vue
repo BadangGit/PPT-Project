@@ -166,7 +166,7 @@ export default {
 
 .projectCard {
   opacity: 0.6;
-  transition: opacity 0.6s;
+  /* transition: opacity 0.6s; */
   transition: bottom 0.3s, left 0.3s;
   bottom: 0px;
   left: 0px;
