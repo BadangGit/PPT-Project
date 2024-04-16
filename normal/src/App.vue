@@ -30,8 +30,7 @@
 }
 
 /* fade-animation */
-.fade-enter-active,
-.fade-leave-active {
+.fade-enter-active {
   transition: opacity 0.4s linear;
 }
 
