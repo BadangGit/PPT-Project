@@ -85,10 +85,10 @@ export default {
 
     <div class="arrowButtonGrid">
       <a @click="arrowShiftPage(1, -1)" class="left">
-        <img src="../assets/arrow-icon.png" />
+        <img src="http://localhost:8080/icons/buttons/arrow-button.png" />
       </a>
       <a @click="arrowShiftPage(3, 1)" class="right">
-        <img src="../assets/arrow-icon.png" />
+        <img src="http://localhost:8080/icons/buttons/arrow-button.png" />
       </a>
     </div>
 

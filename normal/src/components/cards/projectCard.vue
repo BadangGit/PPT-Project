@@ -32,7 +32,7 @@ onMounted(() => {
 
     <div class="infotop">
       <img
-        :src="props.activeProjectCardList.icon"
+        :src="props.activeProjectCardList.titleIcon"
         fill="none"
         viewBox="0 0 24 24"
         class="icon"
@@ -64,7 +64,7 @@ onMounted(() => {
       <div
         class="cursorGrid"
         :style="{
-          cursor: 'url(' + props.activeProjectCardList.icon + '), auto',
+          cursor: 'url(' + props.activeProjectCardList.cursorIcon + '), auto',
         }"
       ></div>
     </router-link>
