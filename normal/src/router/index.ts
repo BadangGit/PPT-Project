@@ -5,6 +5,7 @@ import mainPage from "../views/mainPage.vue";
 
 import starPage from "../views/ItemPages/starsPage.vue";
 import AIPage from "../views/ItemPages/AIPage.vue";
+import themeParkPage from "../views/ItemPages/themeParkPage.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -21,6 +22,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/AI",
     name: "AI",
     component: AIPage,
+  },
+  {
+    path: "/themePark",
+    name: "themePark",
+    component: themeParkPage,
   },
   {
     path: "/:catchAll(.*)",
