@@ -105,7 +105,7 @@ onMounted(() => {
   top: 0;
   margin-left: -50%;
   margin-top: -70%;
-  background: linear-gradient(744deg, #af40ff, #5b42f3 60%, #00ddeb);
+  background: linear-gradient(744deg, #af40ff, #7460f3 60%, #00ddeb);
 }
 
 .icon {
