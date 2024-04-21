@@ -1,7 +1,10 @@
 export type projectCardContentsType = {
   title: string;
   subtitle: string;
-  num: number;
-  titleIcon?: string;
+  src?: string;
+
+  titleIcon: string;
   cursorIcon?: string;
+
+  num: number;
 };

@@ -60,7 +60,13 @@ onMounted(() => {
       <div class="title">{{ $props.activeProjectCardList.subtitle }}</div>
     </div>
 
-    <router-link :to="{ path: props.activeProjectCardList.title }">
+    <router-link
+      :to="{
+        path: props.activeProjectCardList.src
+          ? props.activeProjectCardList.src
+          : '/',
+      }"
+    >
       <div
         class="cursorGrid"
         :style="{
