@@ -214,10 +214,6 @@ export default {
     filter: invert(100%);
   }
 
-  .projectCard {
-    opacity: 1;
-  }
-
   .e-card {
     box-shadow: 0px 8px 28px -9px rgb(255, 255, 255);
   }
