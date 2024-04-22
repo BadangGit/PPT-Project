@@ -35,6 +35,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Preparing",
     subtitle: "wait for update",
 
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
     num: 3,
@@ -43,6 +44,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Preparing",
     subtitle: "wait for update",
 
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
     num: 4,
@@ -51,6 +53,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Preparing",
     subtitle: "wait for update",
 
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
     num: 5,
@@ -59,6 +62,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Preparing",
     subtitle: "wait for update",
 
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
     num: 6,
@@ -67,6 +71,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Preparing",
     subtitle: "wait for update",
 
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
     num: 7,
@@ -74,13 +79,17 @@ const projectCardList: Array<projectCardContentsType> = [
   {
     title: "Preparing",
     subtitle: "wait for update",
+
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
+
     num: 8,
   },
   {
     title: "Preparing",
     subtitle: "wait for update",
 
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
     num: 9,
@@ -89,6 +98,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Preparing",
     subtitle: "wait for update",
 
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
     num: 10,
@@ -97,6 +107,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Preparing",
     subtitle: "wait for update",
 
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
     num: 11,
@@ -105,6 +116,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Preparing",
     subtitle: "wait for update",
 
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
     num: 12,
@@ -113,6 +125,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Preparing",
     subtitle: "wait for update",
 
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
     num: 13,
@@ -121,6 +134,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Preparing",
     subtitle: "wait for update",
 
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
     num: 14,
@@ -129,6 +143,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Preparing",
     subtitle: "wait for update",
 
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
     num: 15,
@@ -137,6 +152,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Preparing",
     subtitle: "wait for update",
 
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
     num: 16,
@@ -145,6 +161,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Preparing",
     subtitle: "wait for update",
 
+    src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
     num: 17,
