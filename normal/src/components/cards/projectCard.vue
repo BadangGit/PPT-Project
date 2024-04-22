@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defineProps, onMounted, PropType } from "vue";
+import { onMounted, PropType } from "vue";
 import { projectCardContentsType } from "@/assets/data/types/projectCard";
 
 const props = defineProps({
