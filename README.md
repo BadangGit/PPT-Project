@@ -1,16 +1,27 @@
-# PPT-Project
+# :blue_book: PPT-Project
 
-## 프로젝트 소개
+### :wrench: 사용기술
 
-### 사용기술
----
-
-![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
+![vuejs](https://img.shields.io/badge/vue3-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-### 목차
 ---
 
-[1.Stars Page](#Star-page)
+### 목차
 
-### star-page
+1. [star page](#1.star-page)
+
+2. [AI Page](#envelope-ai-page)
+
+3. [Theme Park Page](#ferris_wheel-theme-park-page)
+---
+
+## :telescope: 1. Stars
+
+---
+
+## :envelope: 2. AI
+
+---
+
+## :ferris_wheel: 3. Theme-park
