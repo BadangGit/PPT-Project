@@ -7,15 +7,6 @@
 
 ---
 
-### 목차
-
-1. [star page](#1.star-page)
-
-2. [AI Page](#envelope-ai-page)
-
-3. [Theme Park Page](#ferris_wheel-theme-park-page)
----
-
 ## :telescope: 1. Stars
 
 ---
