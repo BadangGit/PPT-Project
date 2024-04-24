@@ -16,7 +16,7 @@ const items = 12;
 
 <style>
 .background {
-  background-color: #f3f3f3;
+  background-color: var(--main-background-color);
 }
 
 .starPageGrid {

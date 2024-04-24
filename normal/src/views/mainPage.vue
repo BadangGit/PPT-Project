@@ -122,7 +122,7 @@ export default {
 /* Page design */
 .main {
   height: 100vh;
-  background-color: #f3f3f3;
+  background-color: var(--main-background-color);
 }
 
 .mainPageGrid {
@@ -207,7 +207,7 @@ export default {
 
 /* darkMode design */
 .darkModetrue {
-  background-color: #1d1d1d;
+  background-color: var(--darkMode-background-color);
   color: white;
 
   .arrowButtonGrid img {
