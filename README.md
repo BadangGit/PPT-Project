@@ -7,6 +7,16 @@
 
 ---
 
+### :link: 사용 이미지 및 아이콘들
+
+[Flaticon](https://www.flaticon.com/)
+
+[Freepik](https://www.freepik.com/)
+
+[Readme Icons](https://gist.github.com/rxaviers/7360908)
+
+---
+
 ## :telescope: 1. Stars
 
 ---
