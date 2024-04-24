@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import projectCard from "@/components/cards/projectCard.vue";
+import ProjectCard from "@/components/cards/projectCard.vue";
 import DarkModeButton from "@/components/buttons/darkModeButton.vue";
 
 import { projectCardContentsType } from "@/assets/data/types/projectCard";
@@ -94,13 +94,13 @@ export default {
 
     <div class="mainPageGrid">
       <div class="projectCardGrid" id="cardItemGrid">
-        <projectCard
+        <ProjectCard
           class="projectCard"
           v-for="activeProjectCardList in activeProjectCardLists"
           :key="activeProjectCardList.num"
           :active-project-card-list="activeProjectCardList"
         >
-        </projectCard>
+        </ProjectCard>
       </div>
 
       <div class="pageNumGrid">
