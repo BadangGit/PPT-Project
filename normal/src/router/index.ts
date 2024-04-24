@@ -24,8 +24,8 @@ const routes: Array<RouteRecordRaw> = [
     component: AIPage,
   },
   {
-    path: "/themePark",
-    name: "themePark",
+    path: "/theme-park",
+    name: "theme-park",
     component: themeParkPage,
   },
   {
