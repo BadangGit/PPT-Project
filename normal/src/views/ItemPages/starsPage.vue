@@ -1,47 +1,20 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import StarCard from "@/components/cards/starCard.vue";
+</script>
 
 <template>
   <div class="starPageGrid">
-    <div class="mainStarsPage"></div>
+    <div class="cards">
+      <StarCard></StarCard>
+    </div>
   </div>
 </template>
 
-<style lang="scss">
+<style>
 .starPageGrid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 
-  width: 100%;
-  height: 100%;
-}
-
-.mainStarsPage {
-  display: flex;
-  position: fixed;
-
-  width: 10000px;
-  height: 10000px;
-
-  margin-top: 50%;
-
-  border-radius: 50%;
-
-  background: black;
-
-  animation-name: rotating;
-  animation-duration: 30s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
-}
-
-@keyframes rotating {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  background-image: linear-gradient(to top, #ce9dc1 0%, #7696c9 100%);
 }
 </style>
