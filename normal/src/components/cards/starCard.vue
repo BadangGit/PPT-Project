@@ -1,16 +1,17 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="starCard">this is star card</div>
+  <div class="starCard"></div>
 </template>
 
 <style>
 .starCard {
-  height: 360px;
-  width: 320px;
+  height: 400px;
+  width: 380px;
 
   margin: auto;
-  margin-top: 80px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 
   background-color: white;
   border-radius: 20px;

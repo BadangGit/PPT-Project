@@ -5,34 +5,28 @@ const items = 12;
 </script>
 
 <template>
-  <div class="background">
-    <div class="starPageGrid">
-      <div class="starCardGrid">
-        <StarCard v-for="item in items" :key="item"> </StarCard>
-      </div>
+  <div class="starPageGrid">
+    <div class="starCardGrid">
+      <StarCard v-for="item in items" :key="item"> </StarCard>
     </div>
   </div>
 </template>
 
 <style>
-.background {
-  background-color: var(--main-background-color);
-}
-
 .starPageGrid {
-  width: 1400px;
+  width: 100%;
   height: auto;
   margin: auto;
 
   background-image: repeating-linear-gradient(
     #f1c5e6 0%,
-    #83a4da 50%,
+    #becde7 50%,
     #f1c5e6 100%
   );
 }
 
 .starCardGrid {
-  width: 1200px;
+  width: 1400px;
   height: 100%;
 
   margin: auto;
