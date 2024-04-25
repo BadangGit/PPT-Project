@@ -1,8 +1,22 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+function getRandomColor() {
+  let randomColor = "";
+  for (let i = 0; i < 6; i++) {
+    randomColor += Math.round(Math.random() * 0xf).toString(16);
+  }
+
+  return "#" + randomColor;
+}
+
+let randomColor = getRandomColor();
+</script>
 
 <template>
   <div class="starCard">
-    <div class="starCardContent"></div>
+    <div
+      class="starCardContent"
+      :style="{ backgroundColor: randomColor }"
+    ></div>
   </div>
 </template>
 
@@ -23,8 +37,7 @@
   background-color: white;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-  transition: box-shadow;
-  transition-duration: 0.2s;
+  transition: box-shadow 0.2s;
 }
 
 .starCard:hover {
@@ -36,7 +49,7 @@
   width: 240px;
   border-radius: 120px;
 
-  background-color: aqua;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 15px 0px;
 
   transition: all 0.2s;
 }
