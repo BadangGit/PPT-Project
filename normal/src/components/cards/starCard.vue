@@ -8,14 +8,16 @@ function getRandomColor() {
   return "#" + randomColor;
 }
 
-let randomColor = getRandomColor();
+let randomColor = `${getRandomColor()}, ${getRandomColor()}`;
 </script>
 
 <template>
   <div class="starCard">
     <div
       class="starCardContent"
-      :style="{ backgroundColor: randomColor }"
+      :style="{
+        backgroundImage: `linear-gradient(${randomColor})`,
+      }"
     ></div>
   </div>
 </template>
