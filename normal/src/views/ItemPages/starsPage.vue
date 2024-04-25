@@ -1,13 +1,8 @@
 <script setup lang="ts">
 import StarCard from "@/components/cards/starCard.vue";
-import { useStore } from "vuex";
 
-const store = useStore();
-
-let nowBackgroundColor = store.state.background_color;
-
-let items = 48;
-let backgroundColorStyle = `${nowBackgroundColor[0]}, ${nowBackgroundColor[1]} 10%, ${nowBackgroundColor[0]} 20%`;
+let items = 12;
+let backgroundColorStyle = `#f1c5e6, #becde7 10%, #f1c5e6 20%`;
 </script>
 
 <template>
