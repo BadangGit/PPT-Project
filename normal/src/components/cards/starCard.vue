@@ -32,10 +32,18 @@
 }
 
 .starCardContent {
-  height: 360px;
-  width: 340px;
-  border-radius: 20px;
+  height: 240px;
+  width: 240px;
+  border-radius: 120px;
 
-  background-color: white;
+  background-color: aqua;
+
+  transition: all 0.2s;
+}
+
+.starCardContent:hover {
+  height: 320px;
+  width: 300px;
+  border-radius: 20px;
 }
 </style>
