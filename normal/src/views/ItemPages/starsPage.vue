@@ -2,10 +2,17 @@
 import StarCard from "@/components/cards/starCard.vue";
 
 const items = 12;
+
+let backgroundColorStyle = "#f1c5e6 0%, #becde7 50%, #f1c5e6 100%";
 </script>
 
 <template>
-  <div class="starPageGrid">
+  <div
+    class="starPageGrid"
+    :style="{
+      backgroundImage: `repeating-linear-gradient(${backgroundColorStyle})`,
+    }"
+  >
     <div class="starCardGrid">
       <StarCard v-for="item in items" :key="item"> </StarCard>
     </div>
@@ -17,12 +24,6 @@ const items = 12;
   width: 100%;
   height: auto;
   margin: auto;
-
-  background-image: repeating-linear-gradient(
-    #f1c5e6 0%,
-    #becde7 50%,
-    #f1c5e6 100%
-  );
 }
 
 .starCardGrid {
