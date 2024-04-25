@@ -14,7 +14,7 @@ let backgroundColorStyle = "#f1c5e6 0%, #becde7 50%, #f1c5e6 100%";
     }"
   >
     <div class="starCardGrid">
-      <StarCard v-for="item in items" :key="item"> </StarCard>
+      <StarCard v-for="item in items" :key="item"></StarCard>
     </div>
   </div>
 </template>
