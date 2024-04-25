@@ -2,7 +2,7 @@
 import StarCard from "@/components/cards/starCard.vue";
 
 let items = 12;
-let backgroundColorStyle = `#f1c5e6, #becde7 10%, #f1c5e6 20%`;
+let backgroundColorStyle = `#f1c5e6, #becde7 600px, #f1c5e6 1200px`;
 </script>
 
 <template>
