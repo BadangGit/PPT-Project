@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import StarCard from "@/components/cards/starCard.vue";
 
-const items = 12;
-
+let items = 12;
 let backgroundColorStyle = "#f1c5e6 0%, #becde7 50%, #f1c5e6 100%";
 </script>
 
