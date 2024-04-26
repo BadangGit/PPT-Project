@@ -1,14 +1,10 @@
 <script setup lang="ts">
-function getRandomColor() {
-  let randomColor = "";
-  for (let i = 0; i < 6; i++) {
-    randomColor += Math.round(Math.random() * 0xf).toString(16);
-  }
-
-  return "#" + randomColor;
-}
-
-let randomColor = `${getRandomColor()}, ${getRandomColor()}`;
+const props = defineProps({
+  randomColor: {
+    type: String,
+    required: true,
+  },
+});
 </script>
 
 <template>
@@ -16,7 +12,7 @@ let randomColor = `${getRandomColor()}, ${getRandomColor()}`;
     <div
       class="starCardContent"
       :style="{
-        backgroundImage: `linear-gradient(${randomColor})`,
+        backgroundImage: `linear-gradient(${props.randomColor})`,
       }"
     ></div>
   </div>
