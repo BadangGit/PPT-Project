@@ -51,8 +51,6 @@ let randomColor = `${getRandomColor()}, ${getRandomColor()}`;
   width: 240px;
   border-radius: 120px;
 
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 15px 0px;
-
   transition: all 0.2s;
 }
 
