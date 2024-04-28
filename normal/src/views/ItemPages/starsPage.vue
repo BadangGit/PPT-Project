@@ -12,10 +12,10 @@ function getRandomColor() {
 
 let items = 12;
 let backgroundColorStyle = ["#f1c5e6", "#becde7"];
-let randomColor: Array<string> = [];
+let randomColor: Array<Array<string>> = [];
 
 for (let i = 0; i <= items; i++) {
-  randomColor.push(`${getRandomColor()}, ${getRandomColor()}`);
+  randomColor.push([getRandomColor(), getRandomColor()]);
 }
 </script>
 

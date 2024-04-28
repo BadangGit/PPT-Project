@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps({
   randomColor: {
-    type: String,
+    type: Array,
     required: true,
   },
 });
