@@ -32,14 +32,21 @@ const props = defineProps({
   margin-top: 60px;
   margin-bottom: 60px;
 
-  background-color: white;
+  background: white;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   transition: box-shadow 0.2s;
 }
 
 .starCard:hover {
+  background: linear-gradient(#000000, #272e56);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.starCard:hover .starCardContent {
+  height: 280px;
+  width: 260px;
+  border-radius: 20px;
 }
 
 .starCardContent {
@@ -48,11 +55,5 @@ const props = defineProps({
   border-radius: 120px;
 
   transition: all 0.2s;
-}
-
-.starCardContent:hover {
-  height: 320px;
-  width: 300px;
-  border-radius: 20px;
 }
 </style>
