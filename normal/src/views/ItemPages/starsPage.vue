@@ -10,7 +10,7 @@ function getRandomColor() {
   return "#" + randomColor;
 }
 
-let items = 12;
+let items: number = 12;
 let backgroundColorStyle = ["#f1c5e6", "#becde7"];
 let randomColor: Array<Array<string>> = [];
 
@@ -28,9 +28,10 @@ for (let i = 0; i <= items; i++) {
   >
     <div class="starCardGrid">
       <StarCard
-        :randomColor="randomColor[item]"
         v-for="item in items"
         :key="item"
+        :randomColor="randomColor[item]"
+        :starCardID="item"
       ></StarCard>
     </div>
   </div>

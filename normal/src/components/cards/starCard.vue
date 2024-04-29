@@ -4,21 +4,50 @@ const props = defineProps({
     type: Array,
     required: true,
   },
+  starCardID: {
+    type: Number,
+    required: true,
+  },
 });
+
+function starFallingAnimation() {
+  removeFallingStarEle();
+  const fallingStar = document.querySelector(`.fallingStar${props.starCardID}`);
+
+  let drops = "<div>testDiv</div>";
+
+  fallingStar?.insertAdjacentHTML("afterbegin", drops);
+}
+
+function removeFallingStarEle() {
+  const fallingStar = document.querySelector(`.fallingStar${props.starCardID}`);
+  while (fallingStar?.firstChild) {
+    fallingStar.removeChild(fallingStar.firstChild);
+  }
+}
 </script>
 
 <template>
-  <div class="starCard">
+  <div class="starCard" @mouseover="starFallingAnimation">
     <div
       class="starCardContent"
       :style="{
         backgroundImage: `linear-gradient(${props.randomColor})`,
       }"
-    ></div>
+    >
+      <div></div>
+    </div>
+    <div class="fallingStarEffectGrid">
+      <div :class="'fallingStar' + props.starCardID"></div>
+    </div>
   </div>
 </template>
 
-<style>
+<style lang="scss">
+.test {
+  color: white;
+}
+
 .starCard {
   height: 400px;
   width: 380px;
@@ -55,5 +84,13 @@ const props = defineProps({
   border-radius: 120px;
 
   transition: all 0.2s;
+}
+
+.fallingStarEffectGrid {
+  height: 400px;
+  width: 380px;
+  border-radius: 20px;
+
+  position: absolute;
 }
 </style>
