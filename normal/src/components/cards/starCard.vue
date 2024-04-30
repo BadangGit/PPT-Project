@@ -23,9 +23,13 @@ const props = defineProps({
 
 <style lang="scss">
 .starCard {
+  --card-border-radius: 20px;
+}
+
+.starCard {
   height: 400px;
   width: 380px;
-  border-radius: 20px;
+  border-radius: var(--card-border-radius);
 
   display: flex;
   justify-content: center;
@@ -49,7 +53,7 @@ const props = defineProps({
 .starCard:hover .starCardContent {
   height: 280px;
   width: 260px;
-  border-radius: 20px;
+  border-radius: var(--card-border-radius);
 }
 
 .starCardContent {
