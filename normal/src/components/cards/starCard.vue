@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import starDropAnimation from "@/components/effects/starDropAnimation.vue";
+
 const props = defineProps({
   randomColor: {
     type: Array,
@@ -9,14 +11,13 @@ const props = defineProps({
 
 <template>
   <div class="starCard">
+    <starDropAnimation></starDropAnimation>
     <div
       class="starCardContent"
       :style="{
         backgroundImage: `linear-gradient(${props.randomColor})`,
       }"
-    >
-      <div></div>
-    </div>
+    ></div>
   </div>
 </template>
 
