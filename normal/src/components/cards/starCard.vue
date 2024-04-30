@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import starDropAnimation from "@/components/effects/starDropAnimation.vue";
+import { ref } from "vue";
 
 const props = defineProps({
   randomColor: {
@@ -7,15 +8,25 @@ const props = defineProps({
     required: true,
   },
 });
+
+const IsCardMouseOver = ref(false);
 </script>
 
 <template>
-  <div class="starCard">
-    <starDropAnimation></starDropAnimation>
+  <div
+    class="starCard"
+    @mouseover="IsCardMouseOver = true"
+    @mouseleave="IsCardMouseOver = false"
+  >
+    <starDropAnimation
+      v-if="IsCardMouseOver"
+      :style="{ zIndex: '2' }"
+    ></starDropAnimation>
     <div
       class="starCardContent"
       :style="{
         backgroundImage: `linear-gradient(${props.randomColor})`,
+        zIndex: '3',
       }"
     ></div>
   </div>
