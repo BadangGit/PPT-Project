@@ -11,5 +11,7 @@
   border-radius: var(--card-border-radius);
 
   position: absolute;
+
+  pointer-events: none;
 }
 </style>
