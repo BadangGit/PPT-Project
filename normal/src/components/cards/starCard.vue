@@ -16,7 +16,7 @@ const IsCardMouseOver = ref(false);
   <div
     class="starCard"
     @mouseover="IsCardMouseOver = true"
-    @mouseleave="IsCardMouseOver = false"
+    @mouseout="IsCardMouseOver = false"
   >
     <starDropAnimation
       v-if="IsCardMouseOver"
@@ -34,12 +34,14 @@ const IsCardMouseOver = ref(false);
 
 <style lang="scss">
 .starCard {
+  --card-height: 400px;
+  --card-width: 380px;
   --card-border-radius: 20px;
 }
 
 .starCard {
-  height: 400px;
-  width: 380px;
+  height: var(--card-height);
+  width: var(--card-width);
   border-radius: var(--card-border-radius);
 
   display: flex;

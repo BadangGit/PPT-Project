@@ -6,9 +6,10 @@
 
 <style>
 .starDropGrid {
-  position: absolute;
+  height: var(--card-height);
+  width: var(--card-width);
+  border-radius: var(--card-border-radius);
 
-  width: 100%;
-  height: 100%;
+  position: absolute;
 }
 </style>
