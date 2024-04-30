@@ -31,7 +31,6 @@ for (let i = 0; i <= items; i++) {
         v-for="item in items"
         :key="item"
         :randomColor="randomColor[item]"
-        :starCardID="item"
       ></StarCard>
     </div>
   </div>
