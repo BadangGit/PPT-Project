@@ -9,17 +9,17 @@ const props = defineProps({
   },
 });
 
-const IsCardMouseOver = ref(false);
+const isCardMouseOver = ref(false);
 </script>
 
 <template>
   <div
     class="starCard"
-    @mouseover="IsCardMouseOver = true"
-    @mouseout="IsCardMouseOver = false"
+    @mouseover="isCardMouseOver = true"
+    @mouseout="isCardMouseOver = false"
   >
     <starDropAnimation
-      v-if="IsCardMouseOver"
+      v-if="isCardMouseOver"
       :style="{ zIndex: '2' }"
     ></starDropAnimation>
     <div
