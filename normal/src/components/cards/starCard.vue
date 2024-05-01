@@ -75,5 +75,7 @@ const IsCardMouseOver = ref(false);
   border-radius: 120px;
 
   transition: all 0.2s;
+
+  pointer-events: none;
 }
 </style>
