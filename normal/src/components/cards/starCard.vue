@@ -34,7 +34,7 @@ const isCardMouseOver = ref(false);
 
 <style lang="scss">
 .starCard {
-  --card-height: 400px;
+  --card-height: 380px;
   --card-width: 380px;
   --card-border-radius: 20px;
 }
@@ -64,7 +64,7 @@ const isCardMouseOver = ref(false);
 }
 
 .starCard:hover .starCardContent {
-  height: 280px;
+  height: 260px;
   width: 260px;
   border-radius: var(--card-border-radius);
 }
