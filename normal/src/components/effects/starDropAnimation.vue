@@ -1,14 +1,45 @@
 <script setup lang="ts">
-const cardHeight: number = 400;
+const cardHeight: number = 380;
+const cardWidth: number = 380;
 
-function generateStarElementInitPos() {
-  let initPos = Math.floor(Math.random() * cardHeight);
+function generateStarElementAnimationPos() {
+  let position = {
+    init_top: 0,
+    init_left: 0,
 
-  return initPos;
+    last_top: 0,
+    last_left: 0,
+  };
+
+  let randomPosValue = Math.floor(Math.random() * (cardHeight + cardWidth));
+
+  if (randomPosValue < cardWidth) {
+    position.init_left = randomPosValue;
+    position.init_top = 0;
+
+    position.last_left = 0;
+    position.last_top = randomPosValue;
+  } else {
+    position.init_left = cardWidth;
+    position.init_top = randomPosValue - cardWidth;
+
+    position.last_left = randomPosValue - cardWidth;
+    position.last_top = cardHeight;
+  }
+
+  return position;
 }
 
+let starPosition = generateStarElementAnimationPos();
+
 const generateStarStyle = {
-  initPos: `${generateStarElementInitPos()}px`,
+  initLeft: `${starPosition.init_left}px`,
+  initTop: `${starPosition.init_top}px`,
+
+  lastLeft: `${starPosition.last_left}px`,
+  lastTop: `${starPosition.last_top}px`,
+
+  starDiameter: "4px",
 };
 </script>
 
@@ -20,7 +51,7 @@ const generateStarStyle = {
 
 <style lang="scss">
 .starDropGrid {
-  --star-diameter: 4px;
+  --star-diameter: v-bind("generateStarStyle.starDiameter");
   --star-border: 2px;
 }
 
@@ -40,9 +71,9 @@ const generateStarStyle = {
   width: var(--star-diameter);
   border-radius: var(--star-border);
 
-  position: relative;
-
   background-color: white;
+
+  position: absolute;
 
   animation-name: dropStars;
   animation-duration: random(5) + s;
@@ -52,13 +83,15 @@ const generateStarStyle = {
 
 @keyframes dropStars {
   0% {
-    top: 0px;
-    left: v-bind("generateStarStyle.initPos");
+    top: v-bind("generateStarStyle.initTop");
+    left: v-bind("generateStarStyle.initLeft");
+
+    opacity: 1;
   }
 
   100% {
-    top: v-bind("generateStarStyle.initPos");
-    left: 0px;
+    top: v-bind("generateStarStyle.lastTop");
+    left: v-bind("generateStarStyle.lastLeft");
 
     opacity: 0;
   }
