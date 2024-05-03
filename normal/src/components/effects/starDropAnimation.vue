@@ -38,8 +38,6 @@ const generateStarStyle = {
 
   lastLeft: `${starPosition.last_left}px`,
   lastTop: `${starPosition.last_top}px`,
-
-  starDiameter: "4px",
 };
 </script>
 
@@ -51,8 +49,8 @@ const generateStarStyle = {
 
 <style lang="scss">
 .starDropGrid {
-  --star-diameter: v-bind("generateStarStyle.starDiameter");
   --star-border: 2px;
+  --star-diameter: 4px;
 }
 
 .starDropGrid {
