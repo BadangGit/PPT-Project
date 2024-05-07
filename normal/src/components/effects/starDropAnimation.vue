@@ -55,7 +55,7 @@ const generateStarAnimation = ref({
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .starDropGrid {
   --star-border: 2px;
   --star-diameter: 4px;
