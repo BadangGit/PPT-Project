@@ -3,11 +3,12 @@ import { ref } from "vue";
 
 const cardHeight: number = 380;
 const cardWidth: number = 380;
-const maxAnimationDuration: number = 5;
+const maxAnimationDuration: number = 3;
 
 function generateStarElementAnimationPos() {
   let randomPosValue = Math.floor(Math.random() * (cardHeight + cardWidth));
-  let randomDurationValue = Math.floor(Math.random() * maxAnimationDuration);
+  let randomDurationValue =
+    Math.floor(Math.random() * maxAnimationDuration) + 2;
 
   let position = {
     init_top: 0,
