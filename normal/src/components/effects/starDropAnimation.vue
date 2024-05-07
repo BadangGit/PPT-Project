@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
 const cardHeight: number = 380;
 const cardWidth: number = 380;
 
@@ -32,13 +34,13 @@ function generateStarElementAnimationPos() {
 
 let starPosition = generateStarElementAnimationPos();
 
-const generateStarStyle = {
+const generateStarStyle = ref({
   initLeft: `${starPosition.init_left}px`,
   initTop: `${starPosition.init_top}px`,
 
   lastLeft: `${starPosition.last_left}px`,
   lastTop: `${starPosition.last_top}px`,
-};
+});
 </script>
 
 <template>
