@@ -34,7 +34,7 @@ function generateStarElementAnimationPos() {
 
 let starPosition = generateStarElementAnimationPos();
 
-const generateStarStyle = ref({
+const generateStarAnimation = ref({
   initLeft: `${starPosition.init_left}px`,
   initTop: `${starPosition.init_top}px`,
 
@@ -83,15 +83,15 @@ const generateStarStyle = ref({
 
 @keyframes dropStars {
   0% {
-    top: v-bind("generateStarStyle.initTop");
-    left: v-bind("generateStarStyle.initLeft");
+    top: v-bind("generateStarAnimation.initTop");
+    left: v-bind("generateStarAnimation.initLeft");
 
     opacity: 1;
   }
 
   100% {
-    top: v-bind("generateStarStyle.lastTop");
-    left: v-bind("generateStarStyle.lastLeft");
+    top: v-bind("generateStarAnimation.lastTop");
+    left: v-bind("generateStarAnimation.lastLeft");
 
     opacity: 0;
   }
