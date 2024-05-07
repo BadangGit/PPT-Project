@@ -3,8 +3,9 @@ import { ref } from "vue";
 
 const cardHeight: number = 380;
 const cardWidth: number = 380;
+
 const maxAnimationDuration: number = 3;
-const exceptCornerPosValue = 60;
+const exceptCornerPosValue: number = 60;
 
 function generateStarElementAnimationPos() {
   let randomPosValue = Math.floor(
