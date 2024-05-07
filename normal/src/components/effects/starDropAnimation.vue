@@ -4,9 +4,13 @@ import { ref } from "vue";
 const cardHeight: number = 380;
 const cardWidth: number = 380;
 const maxAnimationDuration: number = 3;
+const exceptCornerPosValue = 60;
 
 function generateStarElementAnimationPos() {
-  let randomPosValue = Math.floor(Math.random() * (cardHeight + cardWidth));
+  let randomPosValue = Math.floor(
+    Math.random() * (cardHeight + cardWidth - exceptCornerPosValue * 2) +
+      exceptCornerPosValue
+  );
   let randomDurationValue =
     Math.floor(Math.random() * maxAnimationDuration) + 2;
 
@@ -60,7 +64,7 @@ const generateStarAnimation = ref({
 .starDropGrid {
   --star-border: 2px;
   --star-diameter: 4px;
-  --star-animation-duration: v-bind("generateStarAnimation.duration");
+  // --star-animation-duration: v-bind("generateStarAnimation.duration");
 }
 
 .starDropGrid {
@@ -84,7 +88,7 @@ const generateStarAnimation = ref({
   position: absolute;
 
   animation-name: dropStars;
-  animation-duration: var(--star-animation-duration);
+  animation-duration: v-bind("generateStarAnimation.duration");
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
@@ -94,6 +98,10 @@ const generateStarAnimation = ref({
     top: v-bind("generateStarAnimation.initTop");
     left: v-bind("generateStarAnimation.initLeft");
 
+    opacity: 1;
+  }
+
+  80% {
     opacity: 1;
   }
 
