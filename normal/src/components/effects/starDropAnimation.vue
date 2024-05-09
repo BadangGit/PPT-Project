@@ -4,16 +4,28 @@ import { ref } from "vue";
 const cardHeight: number = 380;
 const cardWidth: number = 380;
 
-const maxAnimationDuration: number = 3;
 const exceptCornerPosValue: number = 60;
+
+const posToDurationRatio: number = 100;
+
+function changePosToAnimationDuration(pos: number) {
+  let duration = 0;
+  if (pos <= cardWidth) {
+    duration = pos / posToDurationRatio;
+  } else {
+    pos = 2 * cardWidth - pos;
+
+    duration = pos / posToDurationRatio;
+  }
+
+  return duration;
+}
 
 function generateStarElementAnimationPos() {
   let randomPosValue = Math.floor(
     Math.random() * (cardHeight + cardWidth - exceptCornerPosValue * 2) +
       exceptCornerPosValue
   );
-  let randomDurationValue =
-    Math.floor(Math.random() * maxAnimationDuration) + 2;
 
   let position = {
     init_top: 0,
@@ -21,8 +33,6 @@ function generateStarElementAnimationPos() {
 
     last_top: 0,
     last_left: 0,
-
-    duration: randomDurationValue,
   };
 
   if (randomPosValue < cardWidth) {
@@ -50,8 +60,6 @@ const generateStarAnimation = ref({
 
   lastLeft: `${starAnimation.last_left}px`,
   lastTop: `${starAnimation.last_top}px`,
-
-  duration: `${starAnimation.duration}s`,
 });
 </script>
 
@@ -89,7 +97,7 @@ const generateStarAnimation = ref({
   position: absolute;
 
   animation-name: dropStars;
-  animation-duration: v-bind("generateStarAnimation.duration");
+  animation-duration: var(--star-animation-duration);
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
