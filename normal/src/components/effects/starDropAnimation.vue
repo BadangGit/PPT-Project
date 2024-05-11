@@ -22,10 +22,12 @@ function changePosToAnimationDuration(pos: number) {
 }
 
 function generateStarElementAnimationPos() {
-  let randomPosValue = Math.floor(
+  let randomPos = Math.floor(
     Math.random() * (cardHeight + cardWidth - exceptCornerPosValue * 2) +
       exceptCornerPosValue
   );
+
+  let duration = changePosToAnimationDuration(randomPos);
 
   let position = {
     init_top: 0,
@@ -33,19 +35,21 @@ function generateStarElementAnimationPos() {
 
     last_top: 0,
     last_left: 0,
+
+    duration: duration,
   };
 
-  if (randomPosValue < cardWidth) {
-    position.init_left = randomPosValue;
+  if (randomPos < cardWidth) {
+    position.init_left = randomPos;
     position.init_top = 0;
 
     position.last_left = 0;
-    position.last_top = randomPosValue;
+    position.last_top = randomPos;
   } else {
     position.init_left = cardWidth;
-    position.init_top = randomPosValue - cardWidth;
+    position.init_top = randomPos - cardWidth;
 
-    position.last_left = randomPosValue - cardWidth;
+    position.last_left = randomPos - cardWidth;
     position.last_top = cardHeight;
   }
 
@@ -60,6 +64,8 @@ const generateStarAnimation = ref({
 
   lastLeft: `${starAnimation.last_left}px`,
   lastTop: `${starAnimation.last_top}px`,
+
+  duration: `${starAnimation.duration}s`,
 });
 </script>
 
@@ -73,7 +79,7 @@ const generateStarAnimation = ref({
 .starDropGrid {
   --star-border: 2px;
   --star-diameter: 4px;
-  // --star-animation-duration: v-bind("generateStarAnimation.duration");
+  --star-animation-duration: v-bind("generateStarAnimation.duration");
 }
 
 .starDropGrid {
