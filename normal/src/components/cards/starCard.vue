@@ -10,23 +10,28 @@ const props = defineProps({
 });
 
 const isCardMouseOver = ref(false);
+
+function cardMouseOver() {
+  isCardMouseOver.value = true;
+}
+
+function cardMouseOut() {
+  isCardMouseOver.value = false;
+}
 </script>
 
 <template>
-  <div
-    class="starCard"
-    @mouseover="isCardMouseOver = true"
-    @mouseout="isCardMouseOver = false"
-  >
+  <div class="starCard" @mouseover="cardMouseOver()" @mouseout="cardMouseOut()">
     <starDropAnimation
+      :style="{ zIndex: '3' }"
       v-if="isCardMouseOver"
-      :style="{ zIndex: '2' }"
     ></starDropAnimation>
+
     <div
       class="starCardContent"
       :style="{
         backgroundImage: `linear-gradient(${props.randomColor})`,
-        zIndex: '3',
+        zIndex: '4',
       }"
     ></div>
   </div>
