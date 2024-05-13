@@ -26,8 +26,8 @@ function cardMouseOut() {
   <div class="starCard" @mouseover="cardMouseOver()" @mouseout="cardMouseOut()">
     <template v-for="item in items" :key="item">
       <starDropAnimation
-        :style="{ zIndex: '3' }"
         v-if="isCardMouseOver"
+        :style="{ zIndex: '3' }"
       ></starDropAnimation>
     </template>
 
