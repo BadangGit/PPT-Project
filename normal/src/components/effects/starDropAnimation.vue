@@ -21,7 +21,7 @@ function changePosToAnimationDuration(pos: number) {
   return duration;
 }
 
-function generateStarElementAnimationPos() {
+function generateStarElementAnimationStyle() {
   let randomPos = Math.floor(
     Math.random() * (cardHeight + cardWidth - exceptCornerPosValue * 2) +
       exceptCornerPosValue
@@ -56,7 +56,7 @@ function generateStarElementAnimationPos() {
   return position;
 }
 
-let starAnimation = generateStarElementAnimationPos();
+let starAnimation = generateStarElementAnimationStyle();
 
 const generateStarAnimation = ref({
   initLeft: `${starAnimation.init_left}px`,
