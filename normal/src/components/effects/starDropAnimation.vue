@@ -13,6 +13,8 @@ let randomPos: number = Math.floor(
     exceptCornerPosValue
 );
 
+let randomDelay: number = Math.floor(Math.random() * 10);
+
 function changePosToAnimationDuration(pos: number) {
   let duration = 0;
   if (pos <= cardWidth) {
@@ -66,6 +68,7 @@ const generateStarAnimation = ref({
   lastTop: `${starAnimation.pos.last_top}px`,
 
   duration: `${starAnimation.duration}s`,
+  delay: `${randomDelay}s`,
 });
 </script>
 
@@ -102,8 +105,11 @@ const generateStarAnimation = ref({
 
   position: absolute;
 
+  opacity: 0;
+
   animation-name: dropStars;
   animation-duration: var(--star-animation-duration);
+  animation-delay: v-bind("generateStarAnimation.delay");
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
