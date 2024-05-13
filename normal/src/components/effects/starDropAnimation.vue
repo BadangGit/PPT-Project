@@ -13,7 +13,7 @@ let randomPos: number = Math.floor(
     exceptCornerPosValue
 );
 
-let randomDelay: number = Math.floor(Math.random() * 5);
+let randomDelay: number = Math.floor(Math.random() * 1);
 
 function changePosToAnimationDuration(pos: number) {
   let duration = 0;
