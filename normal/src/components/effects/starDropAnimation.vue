@@ -8,6 +8,11 @@ const exceptCornerPosValue: number = 60;
 
 const posToDurationRatio: number = 60;
 
+let randomPos: number = Math.floor(
+  Math.random() * (cardHeight + cardWidth - exceptCornerPosValue * 2) +
+    exceptCornerPosValue
+);
+
 function changePosToAnimationDuration(pos: number) {
   let duration = 0;
   if (pos <= cardWidth) {
@@ -21,25 +26,17 @@ function changePosToAnimationDuration(pos: number) {
   return duration;
 }
 
-function generateStarElementAnimationStyle() {
-  let randomPos = Math.floor(
-    Math.random() * (cardHeight + cardWidth - exceptCornerPosValue * 2) +
-      exceptCornerPosValue
-  );
-
-  let duration = changePosToAnimationDuration(randomPos);
+function generateStarAnimationPos(randomPos: number) {
+  let upperSideLength = cardWidth;
 
   let position = {
     init_top: 0,
     init_left: 0,
-
     last_top: 0,
     last_left: 0,
-
-    duration: duration,
   };
 
-  if (randomPos < cardWidth) {
+  if (randomPos < upperSideLength) {
     position.init_left = randomPos;
     position.init_top = 0;
 
@@ -56,14 +53,17 @@ function generateStarElementAnimationStyle() {
   return position;
 }
 
-let starAnimation = generateStarElementAnimationStyle();
+let starAnimation = {
+  pos: generateStarAnimationPos(randomPos),
+  duration: changePosToAnimationDuration(randomPos),
+};
 
 const generateStarAnimation = ref({
-  initLeft: `${starAnimation.init_left}px`,
-  initTop: `${starAnimation.init_top}px`,
+  initLeft: `${starAnimation.pos.init_left}px`,
+  initTop: `${starAnimation.pos.init_top}px`,
 
-  lastLeft: `${starAnimation.last_left}px`,
-  lastTop: `${starAnimation.last_top}px`,
+  lastLeft: `${starAnimation.pos.last_left}px`,
+  lastTop: `${starAnimation.pos.last_top}px`,
 
   duration: `${starAnimation.duration}s`,
 });
