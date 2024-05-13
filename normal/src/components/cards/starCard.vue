@@ -22,10 +22,12 @@ function cardMouseOut() {
 
 <template>
   <div class="starCard" @mouseover="cardMouseOver()" @mouseout="cardMouseOut()">
-    <starDropAnimation
-      :style="{ zIndex: '3' }"
-      v-if="isCardMouseOver"
-    ></starDropAnimation>
+    <template>
+      <starDropAnimation
+        :style="{ zIndex: '3' }"
+        v-if="isCardMouseOver"
+      ></starDropAnimation>
+    </template>
 
     <div
       class="starCardContent"
