@@ -6,7 +6,7 @@ const cardWidth: number = 380;
 
 const exceptCornerPosValue: number = 60;
 
-const posToDurationRatio: number = 100;
+const posToDurationRatio: number = 60;
 
 function changePosToAnimationDuration(pos: number) {
   let duration = 0;
@@ -106,6 +106,7 @@ const generateStarAnimation = ref({
   animation-duration: var(--star-animation-duration);
   animation-timing-function: linear;
   animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
 }
 
 @keyframes dropStars {
