@@ -11,12 +11,16 @@ const props = defineProps({
 
 const isCardMouseOver = ref(false);
 
-const cardInfo = {
+const cardStyleInfo = {
   width: 380,
   height: 380,
 };
 
 let items = 5;
+let cardStyle = {
+  width: cardStyleInfo.width + "px",
+  height: cardStyleInfo.height + "px",
+};
 
 function cardMouseOver() {
   isCardMouseOver.value = true;
@@ -33,7 +37,7 @@ function cardMouseOut() {
       <starDropAnimation
         v-if="isCardMouseOver"
         :style="{ zIndex: '3' }"
-        :cardInfo="cardInfo"
+        :cardStyleInfo="cardStyleInfo"
       ></starDropAnimation>
     </template>
 
@@ -49,8 +53,8 @@ function cardMouseOut() {
 
 <style lang="scss">
 .starCard {
-  --card-height: v-bind("cardInfo.height");
-  --card-width: v-bind("cardInfo.width");
+  --card-height: v-bind("cardStyle.height");
+  --card-width: v-bind("cardStyle.width");
   --card-border-radius: 20px;
 }
 

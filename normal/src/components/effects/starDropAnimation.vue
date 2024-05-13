@@ -6,7 +6,7 @@ import {
 } from "@/assets/function/generateStarPos";
 
 const props = defineProps<{
-  cardInfo: {
+  cardStyleInfo: {
     width: number;
     height: number;
   };
@@ -16,7 +16,9 @@ const exceptCornerPosValue: number = 60;
 
 let randomPos: number = Math.floor(
   Math.random() *
-    (props.cardInfo.height + props.cardInfo.width - exceptCornerPosValue * 2) +
+    (props.cardStyleInfo.height +
+      props.cardStyleInfo.width -
+      exceptCornerPosValue * 2) +
     exceptCornerPosValue
 );
 
