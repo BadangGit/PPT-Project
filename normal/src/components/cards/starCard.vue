@@ -11,6 +11,8 @@ const props = defineProps({
 
 const isCardMouseOver = ref(false);
 
+let items = 5;
+
 function cardMouseOver() {
   isCardMouseOver.value = true;
 }
@@ -22,7 +24,7 @@ function cardMouseOut() {
 
 <template>
   <div class="starCard" @mouseover="cardMouseOver()" @mouseout="cardMouseOut()">
-    <template>
+    <template v-for="item in items" :key="item">
       <starDropAnimation
         :style="{ zIndex: '3' }"
         v-if="isCardMouseOver"
