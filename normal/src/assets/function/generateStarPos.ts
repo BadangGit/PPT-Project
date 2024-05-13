@@ -1,6 +1,5 @@
 const cardHeight: number = 380;
 const cardWidth: number = 380;
-
 const posToDurationRatio: number = 60;
 
 function changePosToAnimationDuration(pos: number) {
