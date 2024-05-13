@@ -5,12 +5,18 @@ import {
   changePosToAnimationDuration,
 } from "@/assets/function/generateStarPos";
 
-const cardHeight: number = 380;
-const cardWidth: number = 380;
+const props = defineProps<{
+  cardInfo: {
+    width: number;
+    height: number;
+  };
+}>();
+
 const exceptCornerPosValue: number = 60;
 
 let randomPos: number = Math.floor(
-  Math.random() * (cardHeight + cardWidth - exceptCornerPosValue * 2) +
+  Math.random() *
+    (props.cardInfo.height + props.cardInfo.width - exceptCornerPosValue * 2) +
     exceptCornerPosValue
 );
 
