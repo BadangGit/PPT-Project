@@ -36,7 +36,7 @@ function cardMouseOut() {
     <template v-for="item in items" :key="item">
       <starDropAnimation
         v-if="isCardMouseOver"
-        :style="{ zIndex: '3' }"
+        :style="{ zIndex: '2' }"
         :cardStyleInfo="cardStyleInfo"
       ></starDropAnimation>
     </template>
@@ -45,7 +45,7 @@ function cardMouseOut() {
       class="starCardContent"
       :style="{
         backgroundImage: `linear-gradient(${props.randomColor})`,
-        zIndex: '4',
+        zIndex: '3',
       }"
     ></div>
   </div>
