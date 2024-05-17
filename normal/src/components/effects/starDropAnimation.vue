@@ -14,39 +14,54 @@ const props = defineProps<{
 
 const exceptCornerPosValue: number = 60;
 
-let randomPos: number = Math.floor(
-  Math.random() *
-    (props.cardStyleInfo.height +
-      props.cardStyleInfo.width -
-      exceptCornerPosValue * 2) +
-    exceptCornerPosValue
-);
+const rerender = ref(1);
 
-let randomDelay: number = Math.floor(Math.random() * 3);
+function getStarRandomAnimation() {
+  let randomPos = 0;
 
-let starAnimation = {
-  pos: generateStarAnimationPos(randomPos),
-  duration: changePosToAnimationDuration(randomPos),
-};
+  for (let i = 0; i < rerender.value; i++) {
+    randomPos = Math.floor(
+      Math.random() *
+        (props.cardStyleInfo.height +
+          props.cardStyleInfo.width -
+          exceptCornerPosValue * 2) +
+        exceptCornerPosValue
+    );
+  }
 
-const generateStarAnimation = ref({
-  initLeft: `${starAnimation.pos.init_left}px`,
-  initTop: `${starAnimation.pos.init_top}px`,
+  let randomDelay: number = Math.floor(Math.random() * 3);
 
-  lastLeft: `${starAnimation.pos.last_left}px`,
-  lastTop: `${starAnimation.pos.last_top}px`,
+  let starAnimation = {
+    pos: generateStarAnimationPos(randomPos),
+    duration: changePosToAnimationDuration(randomPos),
+  };
 
-  duration: `${starAnimation.duration}s`,
-  delay: `${randomDelay}s`,
-});
+  let generateStarAnimation = ref({
+    initLeft: `${starAnimation.pos.init_left}px`,
+    initTop: `${starAnimation.pos.init_top}px`,
 
-let resetStarAnimation = setInterval(() => {}, 1000);
+    lastLeft: `${starAnimation.pos.last_left}px`,
+    lastTop: `${starAnimation.pos.last_top}px`,
+
+    duration: `${starAnimation.duration}s`,
+    delay: `${randomDelay}s`,
+  });
+
+  return generateStarAnimation;
+}
+
+let generateStarAnimation = getStarRandomAnimation();
+
+let resetStarAnimation = setInterval(() => {
+  generateStarAnimation = getStarRandomAnimation();
+  rerender.value += 1;
+}, 5000);
 
 resetStarAnimation;
 </script>
 
 <template>
-  <div class="starDropGrid">
+  <div class="starDropGrid" :key="rerender">
     <div class="stars"></div>
   </div>
 </template>
@@ -85,7 +100,6 @@ resetStarAnimation;
   animation-delay: v-bind("generateStarAnimation.delay");
   animation-timing-function: linear;
   animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
 }
 
 @keyframes dropStars {
