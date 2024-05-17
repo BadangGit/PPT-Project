@@ -62,7 +62,9 @@ resetStarAnimation;
 
 <template>
   <div class="starDropGrid" :key="rerender">
-    <div class="stars"></div>
+    <div class="stars">
+      <div class="starsAfterImage"></div>
+    </div>
   </div>
 </template>
 
@@ -100,6 +102,23 @@ resetStarAnimation;
   animation-delay: v-bind("generateStarAnimation.delay");
   animation-timing-function: linear;
   animation-fill-mode: forwards;
+}
+
+.starsAfterImage {
+  width: 0px;
+  height: 0px;
+  border-bottom: 16px solid white;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+
+  transform: rotate(45deg);
+
+  position: absolute;
+
+  opacity: 0.6;
+
+  left: 7px;
+  bottom: 1px;
 }
 
 @keyframes dropStars {
