@@ -29,7 +29,7 @@ function getStarRandomAnimation() {
     );
   }
 
-  let randomDelay: number = Math.floor(Math.random() * 3);
+  let randomDelay: number = Math.random() * 3;
 
   let starAnimation = {
     pos: generateStarAnimationPos(randomPos),
