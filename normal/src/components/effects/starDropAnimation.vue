@@ -136,6 +136,10 @@ resetStarAnimation;
     top: v-bind("animationPos.initTop");
     left: v-bind("animationPos.initLeft");
 
+    opacity: 0;
+  }
+
+  5% {
     opacity: 1;
   }
 
