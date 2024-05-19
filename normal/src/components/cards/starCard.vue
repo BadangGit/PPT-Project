@@ -16,7 +16,7 @@ const cardStyleInfo = {
   height: 380,
 };
 
-let items = 5;
+let items = 8;
 
 let cardStyle = {
   width: cardStyleInfo.width + "px",
