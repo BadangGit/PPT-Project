@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import {
-  generateStarAnimationPos,
-  changePosToAnimationDuration,
-} from "@/assets/function/generateStarPos";
+  modPosToDuration,
+  modStarAnimationPos,
+} from "@/assets/function/generateStarAnimation";
+import { numberToPx, numberToTime } from "@/assets/function/modType";
 
 const props = defineProps<{
   cardStyleInfo: {
@@ -13,49 +14,46 @@ const props = defineProps<{
 }>();
 
 const exceptCornerPosValue: number = 60;
-
 const rerender = ref(1);
+const randomPos = Math.floor(
+  Math.random() *
+    (props.cardStyleInfo.height +
+      props.cardStyleInfo.width -
+      exceptCornerPosValue * 2) +
+    exceptCornerPosValue
+);
 
-function getStarRandomAnimation() {
-  let randomPos = 0;
+function generateStarAnimationTime(pos: number) {
+  let randomDelay: number = Math.random();
+  let animationDuration: number = modPosToDuration(pos);
+  let repeatTime: number = (animationDuration + randomDelay) * 1000;
 
-  for (let i = 0; i < rerender.value; i++) {
-    randomPos = Math.floor(
-      Math.random() *
-        (props.cardStyleInfo.height +
-          props.cardStyleInfo.width -
-          exceptCornerPosValue * 2) +
-        exceptCornerPosValue
-    );
-  }
+  let delay: string = numberToTime(randomDelay);
+  let duration: string = numberToTime(animationDuration);
 
-  let randomDelay: number = Math.random() * 3;
-
-  let starAnimation = {
-    pos: generateStarAnimationPos(randomPos),
-    duration: changePosToAnimationDuration(randomPos),
-  };
-
-  let generateStarAnimation = ref({
-    initLeft: `${starAnimation.pos.init_left}px`,
-    initTop: `${starAnimation.pos.init_top}px`,
-
-    lastLeft: `${starAnimation.pos.last_left}px`,
-    lastTop: `${starAnimation.pos.last_top}px`,
-
-    duration: `${starAnimation.duration}s`,
-    delay: `${randomDelay}s`,
-  });
-
-  return generateStarAnimation;
+  return { delay, duration, repeatTime };
 }
 
-let generateStarAnimation = getStarRandomAnimation();
+function generateStarAnimationPos() {
+  let pos = modStarAnimationPos(randomPos);
+
+  let starAnimationPos = {
+    initLeft: numberToPx(pos.value.initLeft),
+    initTop: numberToPx(pos.value.initTop),
+
+    lastLeft: numberToPx(pos.value.lastLeft),
+    lastTop: numberToPx(pos.value.lastTop),
+  };
+
+  return starAnimationPos;
+}
+
+let animationPos = generateStarAnimationPos();
+let animationTime = generateStarAnimationTime(randomPos);
 
 let resetStarAnimation = setInterval(() => {
-  generateStarAnimation = getStarRandomAnimation();
   rerender.value += 1;
-}, 5000);
+}, animationTime.repeatTime);
 
 resetStarAnimation;
 </script>
@@ -70,9 +68,9 @@ resetStarAnimation;
 
 <style lang="scss" scoped>
 .starDropGrid {
-  --star-border: 2px;
-  --star-diameter: 4px;
-  --star-animation-duration: v-bind("generateStarAnimation.duration");
+  --star-border: 1px;
+  --star-diameter: 2px;
+  --star-animation-duration: v-bind("animationTime.duration");
 }
 
 .starDropGrid {
@@ -99,7 +97,7 @@ resetStarAnimation;
 
   animation-name: dropStars;
   animation-duration: var(--star-animation-duration);
-  animation-delay: v-bind("generateStarAnimation.delay");
+  animation-delay: v-bind("animationTime.delay");
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
@@ -108,8 +106,8 @@ resetStarAnimation;
   width: 0px;
   height: 0px;
   border-bottom: 16px solid white;
-  border-left: 2px solid transparent;
-  border-right: 2px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
 
   transform: rotate(45deg);
 
@@ -118,13 +116,13 @@ resetStarAnimation;
   opacity: 0.6;
 
   left: 7px;
-  bottom: 1px;
+  bottom: 0.2px;
 }
 
 @keyframes dropStars {
   0% {
-    top: v-bind("generateStarAnimation.initTop");
-    left: v-bind("generateStarAnimation.initLeft");
+    top: v-bind("animationPos.initTop");
+    left: v-bind("animationPos.initLeft");
 
     opacity: 1;
   }
@@ -134,8 +132,8 @@ resetStarAnimation;
   }
 
   100% {
-    top: v-bind("generateStarAnimation.lastTop");
-    left: v-bind("generateStarAnimation.lastLeft");
+    top: v-bind("animationPos.lastTop");
+    left: v-bind("animationPos.lastLeft");
 
     opacity: 0;
   }
