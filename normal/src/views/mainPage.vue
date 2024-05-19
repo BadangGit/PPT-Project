@@ -42,7 +42,6 @@ function shiftPage(where: number) {
   activeProjectCardLists = [];
 
   const markupCardNum: number = (activePageNum.value - 1) * markupCardCount;
-  // 현재 페이지에 띄울 카드의 번호
 
   for (let i = markupCardNum; i < markupCardNum + markupCardCount; i++) {
     activeProjectCardLists.push(projectCardList[i]);
@@ -56,14 +55,12 @@ function shiftDarkMode() {
     store.dispatch("shiftDarkMode", true);
   }
   activePageDarkMode = store.state.IsDarkMode;
-  renderCount.value += 1; // 페이지 재렌더링
+  renderCount.value += 1;
 }
 
 function arrowShiftPage(maxmin: number, plusOrMinus: number) {
   if (activePageNum.value != maxmin) {
-    // 첫 or 마지막 페이지가 아닌경우
     shiftPage(activePageNum.value + plusOrMinus);
-    // 현재 페이지 바꾸기
   }
 }
 </script>
