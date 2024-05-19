@@ -15,7 +15,8 @@ const props = defineProps<{
 
 const exceptCornerPosValue: number = 60;
 const rerender = ref(1);
-const randomPos = Math.floor(
+
+let randomPos = Math.floor(
   Math.random() *
     (props.cardStyleInfo.height +
       props.cardStyleInfo.width -
@@ -26,7 +27,7 @@ const randomPos = Math.floor(
 function generateStarAnimationTime(pos: number) {
   let randomDelay: number = Math.random();
   let animationDuration: number = modPosToDuration(pos);
-  let repeatTime: number = (animationDuration + randomDelay) * 1000;
+  let repeatTime: number = (animationDuration + randomDelay) * 1000 + 1000;
 
   let delay: string = numberToTime(randomDelay);
   let duration: string = numberToTime(animationDuration);
@@ -52,6 +53,17 @@ let animationPos = generateStarAnimationPos();
 let animationTime = generateStarAnimationTime(randomPos);
 
 let resetStarAnimation = setInterval(() => {
+  randomPos = Math.floor(
+    Math.random() *
+      (props.cardStyleInfo.height +
+        props.cardStyleInfo.width -
+        exceptCornerPosValue * 2) +
+      exceptCornerPosValue
+  );
+
+  animationPos = generateStarAnimationPos();
+  animationTime = generateStarAnimationTime(randomPos);
+
   rerender.value += 1;
 }, animationTime.repeatTime);
 
