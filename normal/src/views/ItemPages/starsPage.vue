@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import StarCard from "@/components/cards/starCard.vue";
+import { gradientColor } from "@/assets/data/types/starCard";
 
 function getRandomColor() {
   let randomColor = "";
@@ -12,7 +13,7 @@ function getRandomColor() {
 
 let items: number = 12;
 let backgroundColorStyle = ["#f1c5e6", "#becde7"];
-let randomColor: Array<Array<string>> = [];
+let randomColor: Array<gradientColor> = [];
 
 for (let i = 0; i <= items; i++) {
   randomColor.push([getRandomColor(), getRandomColor()]);

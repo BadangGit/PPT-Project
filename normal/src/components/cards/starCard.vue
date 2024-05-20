@@ -1,13 +1,19 @@
 <script setup lang="ts">
 import starDropAnimation from "@/components/effects/starDropAnimation.vue";
-import { ref } from "vue";
+import { ref, PropType } from "vue";
+import { getLinearGradient } from "@/assets/function/getCssCode";
+import { gradientColor } from "@/assets/data/types/starCard";
+import { useClipboard } from "@vueuse/core";
 
 const props = defineProps({
   randomColor: {
-    type: Array,
+    type: Array as PropType<gradientColor>,
     required: true,
   },
 });
+
+const source = ref(getLinearGradient(props.randomColor));
+const { copy } = useClipboard({ source });
 
 const isCardMouseOver = ref(false);
 
@@ -33,7 +39,15 @@ function cardMouseOut() {
 </script>
 
 <template>
-  <div class="starCard" @mouseover="cardMouseOver()" @mouseout="cardMouseOut()">
+  <div
+    class="starCard"
+    @mouseover="cardMouseOver()"
+    @mouseout="cardMouseOut()"
+    @click="copy(source)"
+    :style="{
+      cursor: 'pointer',
+    }"
+  >
     <template v-for="item in items" :key="item">
       <starDropAnimation
         v-if="isCardMouseOver"
