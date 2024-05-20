@@ -13,7 +13,7 @@ const props = defineProps({
 });
 
 const source = ref(getLinearGradient(props.randomColor));
-const { copy } = useClipboard({ source });
+const { copy, copied } = useClipboard({ source });
 
 const isCardMouseOver = ref(false);
 
@@ -63,6 +63,18 @@ function cardMouseOut() {
         zIndex: '3',
       }"
     ></div>
+
+    <img
+      class="clip-board"
+      src="http://localhost:8080/icons/buttons/copy.png"
+      v-if="isCardMouseOver && !copied"
+    />
+
+    <img
+      class="clip-board"
+      src="http://localhost:8080/icons/buttons/check.png"
+      v-if="isCardMouseOver && copied"
+    />
   </div>
 </template>
 
@@ -109,6 +121,21 @@ function cardMouseOut() {
   border-radius: 120px;
 
   transition: all 0.2s;
+
+  pointer-events: none;
+}
+
+.clip-board {
+  position: absolute;
+
+  z-index: 5;
+
+  margin: auto;
+
+  width: 40px;
+  height: 40px;
+
+  opacity: 0.6;
 
   pointer-events: none;
 }
