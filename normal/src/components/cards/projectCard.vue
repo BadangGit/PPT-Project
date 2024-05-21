@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import ProgressBar from "@/components/effects/progressBar.vue";
+
 import { onMounted, PropType } from "vue";
 import { projectCardContentsType } from "@/assets/data/types/projectCard";
 
@@ -70,6 +72,9 @@ onMounted(() => {
           cursor: 'url(' + props.activeProjectCardList.cursorIcon + '), auto',
         }"
       ></div>
+      <ProgressBar
+        :progress="props.activeProjectCardList.progress"
+      ></ProgressBar>
     </router-link>
   </div>
 </template>

@@ -5,6 +5,8 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Stars",
     subtitle: "When falling down.",
 
+    progress: 100,
+
     src: "/stars",
     titleIcon: "http://localhost:8080/icons/cards/stars.png",
     cursorIcon: "http://localhost:8080/icons/cursors/star-cursor.png",
@@ -15,6 +17,8 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "AI",
     subtitle: "Isn't it incredible?",
 
+    progress: 1,
+
     src: "/AI",
     titleIcon: "http://localhost:8080/icons/cards/AI.png",
     cursorIcon: "http://localhost:8080/icons/cursors/AI-cursor.png",
@@ -24,6 +28,8 @@ const projectCardList: Array<projectCardContentsType> = [
   {
     title: "Theme Park",
     subtitle: "It so funny!",
+
+    progress: 1,
 
     src: "/theme-park",
     titleIcon: "http://localhost:8080/icons/cards/theme-park.png",

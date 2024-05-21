@@ -3,6 +3,8 @@ export type projectCardContentsType = {
   subtitle: string;
   src: string;
 
+  progress?: number;
+
   titleIcon: string;
   cursorIcon?: string;
 
