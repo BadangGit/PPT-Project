@@ -8,15 +8,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="progressGrid">
-    {{ props.progress == 100 ? "Complete!" : props.progress + "%" }}
+  <div class="progressGrid" v-if="props.progress">
+    <div class="progressBar">{{ props.progress }}</div>
   </div>
 </template>
 
-<style>
-.progressGrid {
-  position: absolute;
-
-  margin: auto;
-}
-</style>
+<style scoped></style>

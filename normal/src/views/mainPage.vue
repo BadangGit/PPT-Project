@@ -92,10 +92,10 @@ export default {
     <div class="mainPageGrid">
       <div class="projectCardGrid" id="cardItemGrid">
         <ProjectCard
-          class="projectCard"
           v-for="activeProjectCardList in activeProjectCardLists"
           :key="activeProjectCardList.num"
           :active-project-card-list="activeProjectCardList"
+          :style="{ position: 'relative' }"
         >
         </ProjectCard>
       </div>
@@ -159,19 +159,6 @@ export default {
   grid-template-columns: 1fr 1fr 1fr;
   width: 1200px;
   margin: auto;
-}
-
-.projectCard {
-  opacity: 0.6;
-  transition: bottom 0.3s, left 0.3s;
-  bottom: 0px;
-  left: 0px;
-}
-
-.projectCard:hover {
-  opacity: 1;
-  bottom: 3px;
-  left: 3px;
 }
 
 /* arrow design */
