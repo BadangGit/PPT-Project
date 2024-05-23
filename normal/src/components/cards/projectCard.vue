@@ -100,7 +100,7 @@ onMounted(() => {
 
   left: 330px;
 
-  margin-left: -20px;
+  margin-left: -15px;
 
   animation-name: progress;
   animation-duration: 0.4s;
@@ -209,11 +209,11 @@ onMounted(() => {
 
 @keyframes progress {
   0% {
-    margin-left: -30px;
+    margin-left: -20px;
   }
 
   100% {
-    margin-left: -20px;
+    margin-left: -15px;
   }
 }
 </style>

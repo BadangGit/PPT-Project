@@ -17,7 +17,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "AI",
     subtitle: "Isn't it incredible?",
 
-    progress: 1,
+    progress: 10,
 
     src: "/AI",
     titleIcon: "http://localhost:8080/icons/cards/AI.png",
@@ -29,7 +29,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Theme Park",
     subtitle: "It so funny!",
 
-    progress: 1,
+    progress: 10,
 
     src: "/theme-park",
     titleIcon: "http://localhost:8080/icons/cards/theme-park.png",
