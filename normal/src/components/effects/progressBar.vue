@@ -48,10 +48,14 @@ const progressInfo = ref({
 @keyframes progressGauge {
   0% {
     margin-top: 300px;
+
+    opacity: 0;
   }
 
   100% {
     margin-top: v-bind("progressInfo.progress");
+
+    opacity: 1;
   }
 }
 </style>
