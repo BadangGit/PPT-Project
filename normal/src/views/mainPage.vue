@@ -205,6 +205,10 @@ export default {
   .wave {
     background: linear-gradient(744deg, #c476fc, #9585ff 60%, #45ebf7);
   }
+
+  .progressGrid {
+    background-color: var(--darkMode-background-color);
+  }
 }
 
 /* subButtons design */
