@@ -1,3 +1,4 @@
+import { numberToPx } from "./modType";
 
 export function getRandomPos(width: number, height: number) {
   let overflowSpace = Math.random() * 200;
@@ -32,3 +33,11 @@ export function getRandomSize(max: number, min: number) {
   return size;
 }
 
+export function getRandomColor() {
+  let randomColor = "";
+  for (let i = 0; i < 6; i++) {
+    randomColor += Math.round(Math.random() * 0xf).toString(16);
+  }
+
+  return "#" + randomColor;
+}
