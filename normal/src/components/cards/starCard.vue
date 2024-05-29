@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import starDropAnimation from "@/components/effects/starDropAnimation.vue";
 import { ref, PropType } from "vue";
-import { getLinearGradient } from "@/assets/function/getCssCode";
+import { getLinearGradient } from "@/assets/function/modType";
 import { gradientColor } from "@/assets/data/types/starCard";
 import { useClipboard } from "@vueuse/core";
 
