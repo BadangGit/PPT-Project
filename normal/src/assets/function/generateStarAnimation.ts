@@ -4,7 +4,7 @@ const cardHeight: number = 380;
 const cardWidth: number = 380;
 const posToDurationRatio: number = 100;
 
-function modPosToDuration(pos: number) {
+export function modPosToDuration(pos: number) {
   let duration = 0;
   if (pos <= cardWidth) {
     duration = pos / posToDurationRatio;
@@ -16,7 +16,7 @@ function modPosToDuration(pos: number) {
   return duration;
 }
 
-function modStarAnimationPos(randomPos: number) {
+export function modStarAnimationPos(randomPos: number) {
   let upperSideLength = cardWidth;
 
   let position = ref({
@@ -43,5 +43,3 @@ function modStarAnimationPos(randomPos: number) {
 
   return position;
 }
-
-export { modPosToDuration, modStarAnimationPos };
