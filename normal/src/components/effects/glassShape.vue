@@ -9,6 +9,8 @@ import {
 const pos = ref(getRandomPos(screen.width, screen.height));
 const size = ref(getRandomSize(150, 250));
 const color = ref(getRandomColor());
+
+console.log(screen.height);
 </script>
 
 <template>
@@ -30,7 +32,6 @@ const color = ref(getRandomColor());
   top: v-bind("pos.top");
 
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.9px);
   border: 1px solid rgba(255, 255, 255, 1);
 }
 </style>

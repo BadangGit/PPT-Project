@@ -4,7 +4,7 @@ import {
   modPosToDuration,
   modStarAnimationPos,
 } from "@/assets/function/generateStarAnimation";
-import { numberToPx, numberToTime } from "@/assets/function/modType";
+import { getNumberToPx, getNumberToTime } from "@/assets/function/modType";
 
 const props = defineProps<{
   cardStyleInfo: {
@@ -29,8 +29,8 @@ function generateStarAnimationTime(pos: number) {
   let animationDuration: number = modPosToDuration(pos);
   let repeatTime: number = (animationDuration + randomDelay) * 1000 + 1000;
 
-  let delay: string = numberToTime(randomDelay);
-  let duration: string = numberToTime(animationDuration);
+  let delay: string = getNumberToTime(randomDelay);
+  let duration: string = getNumberToTime(animationDuration);
 
   return { delay, duration, repeatTime };
 }
@@ -39,11 +39,11 @@ function generateStarAnimationPos() {
   let pos = modStarAnimationPos(randomPos);
 
   let starAnimationPos = {
-    initLeft: numberToPx(pos.value.initLeft),
-    initTop: numberToPx(pos.value.initTop),
+    initLeft: getNumberToPx(pos.value.initLeft),
+    initTop: getNumberToPx(pos.value.initTop),
 
-    lastLeft: numberToPx(pos.value.lastLeft),
-    lastTop: numberToPx(pos.value.lastTop),
+    lastLeft: getNumberToPx(pos.value.lastLeft),
+    lastTop: getNumberToPx(pos.value.lastTop),
   };
 
   return starAnimationPos;

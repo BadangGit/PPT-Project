@@ -1,6 +1,6 @@
 <script lnag="ts" setup>
 import { ref } from "vue";
-import { numberToPx } from "@/assets/function/modType";
+import { getNumberToPx } from "@/assets/function/modType";
 
 const props = defineProps({
   progress: {
@@ -10,7 +10,7 @@ const props = defineProps({
 });
 
 let progressRatio = 300 - 3 * props.progress;
-progressRatio = numberToPx(progressRatio);
+progressRatio = getNumberToPx(progressRatio);
 
 const progressInfo = ref({
   progress: progressRatio,
