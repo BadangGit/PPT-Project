@@ -9,11 +9,9 @@ import { getHexToHsl } from "@/assets/function/modType";
 
 const pos = ref(getRandomPos(20, 20));
 const size = ref(getRandomSize(150, 250));
-const color = ref(getRandomColor());
-
 const deg = ref(`${Math.floor(Math.random() * 360)}deg`);
 
-console.log(getHexToHsl(color.value));
+const color = ref(getHexToHsl(getRandomColor()));
 </script>
 
 <template>
@@ -27,7 +25,7 @@ console.log(getHexToHsl(color.value));
 
   opacity: 1;
 
-  background-color: v-bind("color");
+  background: v-bind("color");
 
   position: relative;
 

@@ -20,17 +20,17 @@ export function getHexToHsl(color: string) {
   let hex = color.split("#");
   hex = [...hex[1]];
 
-  let r = parseInt(hex[0] + hex[1], 16);
-  let g = parseInt(hex[2] + hex[3], 16);
-  let b = parseInt(hex[4] + hex[5], 16);
+  let r = parseInt(hex[0] + hex[1], 16) / 255;
+  let g = parseInt(hex[2] + hex[3], 16) / 255;
+  let b = parseInt(hex[4] + hex[5], 16) / 255;
 
   let max = Math.max(r, g, b);
   let min = Math.min(r, g, b);
   let deg = max - min;
 
   let h = 0;
-  let l = 0;
   let s = 0;
+  let l = 0;
 
   if (deg == 0) h = 0;
   else if (max == r) h = ((g - b) / deg) % 6;
@@ -40,7 +40,11 @@ export function getHexToHsl(color: string) {
   h = Math.round(h * 60);
 
   l = (max + min) / 2;
+
   s = deg == 0 ? 0 : deg / (1 - Math.abs(2 * l - 1));
 
-  return { h, s, l };
+  s = +(s * 100).toFixed(1);
+  l = +(l * 100).toFixed(1);
+
+  return "hsl(" + h + "," + s + "%," + l + "%)";
 }
