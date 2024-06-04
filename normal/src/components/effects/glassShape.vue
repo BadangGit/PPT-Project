@@ -15,11 +15,13 @@ const color = ref(getHexToHsl(getRandomColor()));
 </script>
 
 <template>
-  <div class="glass"></div>
+  <div class="glassGrid">
+    <div class="glass"></div>
+  </div>
 </template>
 
 <style scoped lang="scss">
-.glass {
+.glassGrid :nth-child(1) {
   width: v-bind("size.width");
   height: v-bind("size.height");
 
