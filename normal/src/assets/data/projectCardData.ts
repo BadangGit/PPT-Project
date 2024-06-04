@@ -50,11 +50,14 @@ const projectCardList: Array<projectCardContentsType> = [
     num: 3,
   },
   {
-    title: "Preparing",
-    subtitle: "wait for update",
+    title: "Typescript",
+    subtitle: "practice class",
 
-    src: "/",
-    titleIcon: "http://localhost:8080/icons/cards/preparing.png",
+    progress: 1,
+
+    src: "/typescript",
+    titleIcon: "http://localhost:8080/icons/cards/typescript.png",
+    cursorIcon: "http://localhost:8080/icons/cursors/object-cursor.png",
 
     num: 4,
   },
