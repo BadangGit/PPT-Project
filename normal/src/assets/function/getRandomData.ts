@@ -1,7 +1,7 @@
 import { getNumberToPx } from "./modType";
 
 export function getRandomPos(width: number, height: number) {
-  let overflowSpace = Math.random() * 200;
+  let overflowSpace = Math.random() * 100;
   let left: number = 0;
   let top: number = 0;
 
@@ -14,8 +14,8 @@ export function getRandomPos(width: number, height: number) {
   }
 
   let pos = {
-    left: getNumberToPx(left),
-    top: getNumberToPx(top),
+    left: left,
+    top: top,
   };
 
   return pos;

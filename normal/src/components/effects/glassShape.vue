@@ -1,42 +1,38 @@
 <script setup>
-import { ref } from "vue";
-import {
-  getRandomPos,
-  getRandomSize,
-  getRandomColor,
-} from "@/assets/function/getRandomData";
-import { getHexToHsl } from "@/assets/function/modType";
+import { getFigure } from "@/assets/function/generateGlass";
 
-const pos = ref(getRandomPos(20, 20));
-const size = ref(getRandomSize(150, 250));
-const deg = ref(`${Math.floor(Math.random() * 360)}deg`);
+let test = getFigure();
 
-const color = ref(getHexToHsl(getRandomColor()));
+let items = test.isFigureSquare ? 4 : 3;
+
+console.log(test.dotPos);
 </script>
 
 <template>
   <div class="glassGrid">
-    <div class="glass"></div>
+    <div
+      class="glassDot"
+      v-for="(item, i) in items"
+      :key="item"
+      :style="{
+        left: `${test.dotPos[i].left}px`,
+        top: `${test.dotPos[i].top}px`,
+      }"
+    ></div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.glassGrid :nth-child(1) {
-  width: v-bind("size.width");
-  height: v-bind("size.height");
+.glassGrid {
+  width: 100vw;
+  height: 100vh;
+}
 
-  opacity: 1;
+.glassDot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
 
-  background: v-bind("color");
-
-  position: relative;
-
-  left: v-bind("pos.left");
-  top: v-bind("pos.top");
-
-  transform: rotate(v-bind("deg"));
-
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 2px solid rgb(0, 0, 0);
+  background-color: red;
 }
 </style>
