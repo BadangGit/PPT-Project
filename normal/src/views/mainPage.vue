@@ -10,8 +10,8 @@ import { ref } from "vue";
 
 const store = useStore();
 
-const markupCardCount: number = 6;
-const pageNumCounts: number = 3;
+const MARKUP_CARD_COUNT: number = 6;
+const PAGENUM_COUNT: number = 3;
 
 let activeProjectCardLists: Array<projectCardContentsType> = [];
 let activePageDarkMode = store.state.IsDarkMode;
@@ -23,16 +23,16 @@ for (let i = 0; i < 6; i++) {
 }
 
 async function cardAnimation() {
-  const cardItem = document.querySelector("#cardItemGrid") as HTMLElement;
+  let cardItem = document.querySelector("#cardItemGrid") as HTMLElement;
   let keyframes = [
     { transform: "translateX(20px)", opacity: 0.2 },
     { transform: "translateX(0px)", opacity: 1 },
   ];
-  const options = {
+  const OPTIONS = {
     duration: 600,
   };
 
-  cardItem.animate(keyframes, options);
+  cardItem.animate(keyframes, OPTIONS);
 }
 
 function shiftPage(where: number) {
@@ -41,9 +41,9 @@ function shiftPage(where: number) {
   activePageNum.value = store.state.activePageNum;
   activeProjectCardLists = [];
 
-  const markupCardNum: number = (activePageNum.value - 1) * markupCardCount;
+  const MARKUP_CARD_NUM: number = (activePageNum.value - 1) * MARKUP_CARD_COUNT;
 
-  for (let i = markupCardNum; i < markupCardNum + markupCardCount; i++) {
+  for (let i = MARKUP_CARD_NUM; i < MARKUP_CARD_NUM + MARKUP_CARD_COUNT; i++) {
     activeProjectCardLists.push(projectCardList[i]);
   }
 }
@@ -104,7 +104,7 @@ export default {
         <div
           :class="activePageNum == pageNumCount ? 'highlight' : ''"
           class="pageNum"
-          v-for="pageNumCount in pageNumCounts"
+          v-for="pageNumCount in PAGENUM_COUNT"
           :key="pageNumCount"
           @click="shiftPage(pageNumCount)"
         >

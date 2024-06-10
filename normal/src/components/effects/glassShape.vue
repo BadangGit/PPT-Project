@@ -10,15 +10,7 @@ console.log(test.dotPos);
 
 <template>
   <div class="glassGrid">
-    <div
-      class="glassDot"
-      v-for="(item, i) in items"
-      :key="item"
-      :style="{
-        left: `${test.dotPos[i].left}px`,
-        top: `${test.dotPos[i].top}px`,
-      }"
-    ></div>
+    <div class="glassDot" v-for="item in items" :key="item" :style="{}"></div>
   </div>
 </template>
 

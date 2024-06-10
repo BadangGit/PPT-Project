@@ -1,15 +1,15 @@
 import { ref } from "vue";
 
-const cardHeight: number = 380;
-const cardWidth: number = 380;
+const CARD_HEIGHT: number = 380;
+const CARD_Width: number = 380;
 const posToDurationRatio: number = 100;
 
 export function modPosToDuration(pos: number) {
   let duration = 0;
-  if (pos <= cardWidth) {
+  if (pos <= CARD_Width) {
     duration = pos / posToDurationRatio;
   } else {
-    pos = 2 * cardWidth - pos;
+    pos = 2 * CARD_Width - pos;
     duration = pos / posToDurationRatio;
   }
 
@@ -17,7 +17,7 @@ export function modPosToDuration(pos: number) {
 }
 
 export function modStarAnimationPos(randomPos: number) {
-  let upperSideLength = cardWidth;
+  let upperSideLength = CARD_Width;
 
   let position = ref({
     initTop: 0,
@@ -34,11 +34,11 @@ export function modStarAnimationPos(randomPos: number) {
     position.value.lastLeft = 0;
     position.value.lastTop = randomPos;
   } else {
-    position.value.initLeft = cardWidth;
-    position.value.initTop = randomPos - cardWidth;
+    position.value.initLeft = CARD_Width;
+    position.value.initTop = randomPos - CARD_Width;
 
-    position.value.lastLeft = randomPos - cardWidth;
-    position.value.lastTop = cardHeight;
+    position.value.lastLeft = randomPos - CARD_Width;
+    position.value.lastTop = CARD_HEIGHT;
   }
 
   return position;

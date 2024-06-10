@@ -12,12 +12,12 @@ const props = defineProps({
   },
 });
 
-const source = ref(getLinearGradient(props.randomColor));
+let source = ref(getLinearGradient(props.randomColor));
 const { copy, copied } = useClipboard({ source });
 
-const isCardMouseOver = ref(false);
+let isCardMouseOver = ref(false);
 
-const cardStyleInfo = {
+const CARD_STYLE_INFO = {
   width: 380,
   height: 380,
 };
@@ -25,8 +25,8 @@ const cardStyleInfo = {
 let items = 8;
 
 let cardStyle = {
-  width: cardStyleInfo.width + "px",
-  height: cardStyleInfo.height + "px",
+  width: CARD_STYLE_INFO.width + "px",
+  height: CARD_STYLE_INFO.height + "px",
 };
 
 function cardMouseOver() {
@@ -52,7 +52,7 @@ function cardMouseOut() {
       <starDropAnimation
         v-if="isCardMouseOver"
         :style="{ zIndex: '2' }"
-        :cardStyleInfo="cardStyleInfo"
+        :cardStyleInfo="CARD_STYLE_INFO"
       ></starDropAnimation>
     </template>
 

@@ -12,7 +12,7 @@ const props = defineProps({
 let progressRatio = 300 - 3 * props.progress;
 progressRatio = getNumberToPx(progressRatio);
 
-const progressInfo = ref({
+const PROGRESS_INFO = ref({
   progress: progressRatio,
 });
 </script>
@@ -53,7 +53,7 @@ const progressInfo = ref({
   }
 
   100% {
-    margin-top: v-bind("progressInfo.progress");
+    margin-top: v-bind("PROGRESS_INFO.progress");
 
     opacity: 1;
   }
