@@ -7,7 +7,6 @@ import starPage from "../views/ItemPages/starsPage.vue";
 import AIPage from "../views/ItemPages/AIPage.vue";
 import themeParkPage from "../views/ItemPages/themeParkPage.vue";
 import stainedGlassPage from "../views/ItemPages/stainedGlassPage.vue";
-import tsPage from "../views/ItemPages/tsPage.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -34,11 +33,6 @@ const routes: Array<RouteRecordRaw> = [
     path: "/stained-glass",
     name: "stained-glass",
     component: stainedGlassPage,
-  },
-  {
-    path: "/typescript",
-    name: "typescript",
-    component: tsPage,
   },
   {
     path: "/:catchAll(.*)",
