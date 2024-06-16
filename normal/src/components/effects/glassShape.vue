@@ -1,12 +1,4 @@
-<script setup>
-import { getFigure } from "@/assets/function/generateGlass";
-
-let test = getFigure();
-
-let items = test.isFigureSquare ? 4 : 3;
-
-console.log(test.dotPos);
-</script>
+<script setup></script>
 
 <template>
   <div class="glassGrid">
