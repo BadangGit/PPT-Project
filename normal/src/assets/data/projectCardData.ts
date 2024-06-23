@@ -29,7 +29,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Theme Park",
     subtitle: "It so funny!",
 
-    progress: 1,
+    progress: 5,
 
     src: "/theme-park",
     titleIcon: "http://localhost:8080/icons/cards/theme-park.png",
