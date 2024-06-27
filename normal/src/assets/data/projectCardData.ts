@@ -1,12 +1,4 @@
-export interface projectCardContentsType {
-  title: string;
-  subtitle: string;
-  progress?: number;
-  src: string;
-  titleIcon: string;
-  cursorIcon?: string;
-  num: number;
-}
+import { projectCardContentsType } from "@/assets/data/types/projectCard";
 
 const projectCardList: Array<projectCardContentsType> = [
   {
@@ -58,11 +50,14 @@ const projectCardList: Array<projectCardContentsType> = [
     num: 3,
   },
   {
-    title: "Preparing",
-    subtitle: "wait for update",
+    title: "Old Page",
+    subtitle: "What I made first",
 
-    src: "/",
-    titleIcon: "http://localhost:8080/icons/cards/preparing.png",
+    progress: 1,
+
+    src: "/old-page",
+    titleIcon: "http://localhost:8080/icons/cards/old-page.png",
+    cursorIcon: "http://localhost:8080/icons/cursors/newbie-cursor.png",
 
     num: 4,
   },
