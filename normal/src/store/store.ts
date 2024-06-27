@@ -1,9 +1,21 @@
 import { createStore } from "vuex";
+import {
+  projectCardContentsType,
+  projectCardList,
+} from "@/assets/data/projectCardData";
 
-const store = createStore({
+interface State {
+  activePageNum: number;
+  IsDarkMode: boolean;
+  coins: projectCardContentsType[];
+}
+
+const store = createStore<State>({
   state: {
     activePageNum: 1,
     IsDarkMode: false,
+
+    coins: projectCardList,
   },
   mutations: {
     SHIFT_PAGE(state, value) {
@@ -22,6 +34,9 @@ const store = createStore({
     shiftDarkMode({ commit }, isTrue) {
       commit("SHIFT_DARK_MODE", isTrue);
     },
+  },
+  getters: {
+    getCoins: (state) => state.coins,
   },
 });
 
