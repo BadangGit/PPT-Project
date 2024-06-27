@@ -4,7 +4,7 @@
   <div class="main">newMain</div>
 </template>
 
-<style>
+<style scoped>
 .main {
   --main-background-color: #33ccff;
 }

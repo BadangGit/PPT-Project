@@ -2,6 +2,18 @@ import { projectCardContentsType } from "@/assets/data/types/projectCard";
 
 const projectCardList: Array<projectCardContentsType> = [
   {
+    title: "Old Page",
+    subtitle: "what I first made",
+
+    progress: 40,
+
+    src: "/old-page",
+    titleIcon: "http://localhost:8080/icons/cards/old-page.png",
+    cursorIcon: "http://localhost:8080/icons/cursors/newbie-cursor.png",
+
+    num: 0,
+  },
+  {
     title: "Stars",
     subtitle: "When falling down.",
 
@@ -11,7 +23,7 @@ const projectCardList: Array<projectCardContentsType> = [
     titleIcon: "http://localhost:8080/icons/cards/stars.png",
     cursorIcon: "http://localhost:8080/icons/cursors/star-cursor.png",
 
-    num: 0,
+    num: 1,
   },
   {
     title: "AI",
@@ -23,7 +35,7 @@ const projectCardList: Array<projectCardContentsType> = [
     titleIcon: "http://localhost:8080/icons/cards/AI.png",
     cursorIcon: "http://localhost:8080/icons/cursors/AI-cursor.png",
 
-    num: 1,
+    num: 2,
   },
   {
     title: "Theme Park",
@@ -35,7 +47,7 @@ const projectCardList: Array<projectCardContentsType> = [
     titleIcon: "http://localhost:8080/icons/cards/theme-park.png",
     cursorIcon: "http://localhost:8080/icons/cursors/ferris-wheel.png",
 
-    num: 2,
+    num: 3,
   },
   {
     title: "Stained glass",
@@ -47,20 +59,9 @@ const projectCardList: Array<projectCardContentsType> = [
     titleIcon: "http://localhost:8080/icons/cards/stained-glass.png",
     cursorIcon: "http://localhost:8080/icons/cursors/glass-cursor.png",
 
-    num: 3,
-  },
-  {
-    title: "Old Page",
-    subtitle: "What I made first",
-
-    progress: 1,
-
-    src: "/old-page",
-    titleIcon: "http://localhost:8080/icons/cards/old-page.png",
-    cursorIcon: "http://localhost:8080/icons/cursors/newbie-cursor.png",
-
     num: 4,
   },
+
   {
     title: "Preparing",
     subtitle: "wait for update",
