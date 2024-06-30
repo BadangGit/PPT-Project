@@ -5,7 +5,7 @@ const projectCardList: Array<projectCardContentsType> = [
     title: "Old Page",
     subtitle: "what I first made",
 
-    progress: 40,
+    progress: 100,
 
     src: "/old-page",
     titleIcon: "http://localhost:8080/icons/cards/old-page.png",
