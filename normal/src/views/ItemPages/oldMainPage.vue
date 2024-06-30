@@ -72,47 +72,53 @@ export default {
 </script>
 
 <template>
-  <div class="main" :class="`darkMode${activePageDarkMode}`" :key="renderCount">
-    <div class="subButtonsGrid">
-      <DarkModeButton
-        class="darkModeButton"
-        @click="shiftDarkMode"
-      ></DarkModeButton>
-    </div>
-
-    <div class="arrowButtonGrid">
-      <a @click="arrowShiftPage(1, -1)" class="left">
-        <img src="http://localhost:8080/icons/buttons/arrow-button.png" />
-      </a>
-      <a @click="arrowShiftPage(3, 1)" class="right">
-        <img src="http://localhost:8080/icons/buttons/arrow-button.png" />
-      </a>
-    </div>
-
-    <div class="mainPageGrid">
-      <div class="projectCardGrid" id="cardItemGrid">
-        <ProjectCard
-          v-for="activeProjectCardList in activeProjectCardLists"
-          :key="activeProjectCardList.num"
-          :active-project-card-list="activeProjectCardList"
-          :style="{ position: 'relative' }"
-        >
-        </ProjectCard>
+  <Transition name="fade" mode="out-in">
+    <div
+      class="main"
+      :class="`darkMode${activePageDarkMode}`"
+      :key="renderCount"
+    >
+      <div class="subButtonsGrid">
+        <DarkModeButton
+          class="darkModeButton"
+          @click="shiftDarkMode"
+        ></DarkModeButton>
       </div>
 
-      <div class="pageNumGrid">
-        <div
-          :class="activePageNum == pageNumCount ? 'highlight' : ''"
-          class="pageNum"
-          v-for="pageNumCount in PAGENUM_COUNT"
-          :key="pageNumCount"
-          @click="shiftPage(pageNumCount)"
-        >
-          {{ pageNumCount }}
+      <div class="arrowButtonGrid">
+        <a @click="arrowShiftPage(1, -1)" class="left">
+          <img src="http://localhost:8080/icons/buttons/arrow-button.png" />
+        </a>
+        <a @click="arrowShiftPage(3, 1)" class="right">
+          <img src="http://localhost:8080/icons/buttons/arrow-button.png" />
+        </a>
+      </div>
+
+      <div class="mainPageGrid">
+        <div class="projectCardGrid" id="cardItemGrid">
+          <ProjectCard
+            v-for="activeProjectCardList in activeProjectCardLists"
+            :key="activeProjectCardList.num"
+            :active-project-card-list="activeProjectCardList"
+            :style="{ position: 'relative' }"
+          >
+          </ProjectCard>
+        </div>
+
+        <div class="pageNumGrid">
+          <div
+            :class="activePageNum == pageNumCount ? 'highlight' : ''"
+            class="pageNum"
+            v-for="pageNumCount in PAGENUM_COUNT"
+            :key="pageNumCount"
+            @click="shiftPage(pageNumCount)"
+          >
+            {{ pageNumCount }}
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </Transition>
 </template>
 
 <style>
@@ -223,5 +229,15 @@ export default {
 
 .darkModeButton {
   margin-right: 25px;
+}
+
+/* fade-animation */
+.fade-enter-active {
+  transition: opacity 0.4s linear;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0.4;
 }
 </style>

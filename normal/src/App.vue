@@ -3,9 +3,7 @@
 <template>
   <div class="app">
     <router-view v-slot="{ Component }">
-      <Transition name="fade" mode="out-in">
-        <component :is="Component" />
-      </Transition>
+      <component :is="Component" />
     </router-view>
   </div>
 </template>
@@ -32,15 +30,5 @@
 .app {
   width: 100vw;
   height: 100vh;
-}
-
-/* fade-animation */
-.fade-enter-active {
-  transition: opacity 0.4s linear;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0.4;
 }
 </style>
