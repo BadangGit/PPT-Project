@@ -125,7 +125,7 @@ export default {
 /* Page design */
 .main {
   height: 100vh;
-  background-color: var(--main-background-color);
+  background-color: var(--old-main-background-color);
 }
 
 .mainPageGrid {

@@ -10,7 +10,7 @@
 
 <style>
 :root {
-  --main-background-color: #f3f3f3;
+  --old-main-background-color: #f3f3f3;
   --darkMode-background-color: #1d1d1d;
 }
 
