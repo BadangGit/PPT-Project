@@ -1,28 +1,16 @@
 <script setup lang="ts">
-import { projectCardList } from "@/assets/data/projectCardData";
-import itemCoin from "@/components/cards/itemCoin.vue";
-
-let items = projectCardList;
+import projectCoinMenu from "@/components/cards/projectCoinMenu.vue";
 </script>
 
 <template>
   <div class="main">
     <div class="coinMenuGrid">
-      <itemCoin
-        class="coinGrid"
-        v-for="item in items"
-        :key="item.num"
-        :projectItem="item"
-      ></itemCoin>
+      <projectCoinMenu></projectCoinMenu>
     </div>
   </div>
 </template>
 
 <style scoped>
-.main {
-  --coin-size: 170px;
-}
-
 .main {
   background-color: var(--main-background-color);
   width: 100vw;
@@ -31,22 +19,10 @@ let items = projectCardList;
 
 .coinMenuGrid {
   width: 1000px;
-  height: 800px;
+  height: 100%;
 
   display: flex;
-  position: relative;
 
   margin: auto;
-}
-
-.coinGrid {
-  width: var(--coin-size);
-  height: var(--coin-size);
-
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 </style>
