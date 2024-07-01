@@ -11,6 +11,7 @@
 <style>
 :root {
   --old-main-background-color: #f3f3f3;
+  --main-background-color: #2a9ac0;
   --darkMode-background-color: #1d1d1d;
 }
 

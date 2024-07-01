@@ -20,7 +20,6 @@ let items = projectCardList;
 
 <style scoped>
 .main {
-  --main-background-color: #2a9ac0;
   --coin-size: 170px;
 }
 
