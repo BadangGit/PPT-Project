@@ -3,7 +3,7 @@ import ProjectCard from "@/components/cards/projectCard.vue";
 import DarkModeButton from "@/components/buttons/darkModeButton.vue";
 
 import { projectCardContentsType } from "@/assets/data/types/projectCard";
-import { projectCardList } from "@/assets/data/projectCardData";
+import { projectItems } from "@/assets/data/projectCardData";
 
 import { useStore } from "vuex";
 import { ref } from "vue";
@@ -19,7 +19,7 @@ let activePageNum = ref(1);
 let renderCount = ref(0);
 
 for (let i = 0; i < 6; i++) {
-  activeProjectCardLists.push(projectCardList[i]);
+  activeProjectCardLists.push(projectItems[i]);
 }
 
 async function cardAnimation() {
@@ -44,7 +44,7 @@ function shiftPage(where: number) {
   const MARKUP_CARD_NUM: number = (activePageNum.value - 1) * MARKUP_CARD_COUNT;
 
   for (let i = MARKUP_CARD_NUM; i < MARKUP_CARD_NUM + MARKUP_CARD_COUNT; i++) {
-    activeProjectCardLists.push(projectCardList[i]);
+    activeProjectCardLists.push(projectItems[i]);
   }
 }
 

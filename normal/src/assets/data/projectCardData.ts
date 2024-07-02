@@ -1,6 +1,6 @@
 import { projectCardContentsType } from "@/assets/data/types/projectCard";
 
-const projectCardList: Array<projectCardContentsType> = [
+const projectItems: Array<projectCardContentsType> = [
   {
     title: "Old Page",
     subtitle: "what I first made",
@@ -181,4 +181,4 @@ const projectCardList: Array<projectCardContentsType> = [
   },
 ];
 
-export { projectCardList };
+export { projectItems };
