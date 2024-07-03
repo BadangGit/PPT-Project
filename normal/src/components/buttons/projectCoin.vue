@@ -56,6 +56,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
   transform: rotate(v-bind("addCoinDegToSeeStraight"));
 
   animation-name: coinAnimation;
+  animation-timing-function: ease-out;
   animation-duration: var(--rotate-animation-duration);
   animation-fill-mode: forwards;
 }
