@@ -43,6 +43,16 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
   animation-timing-function: ease-out;
   animation-duration: var(--rotate-animation-duration);
   animation-fill-mode: forwards;
+
+  pointer-events: none;
+
+  transition: all;
+  transition-duration: 0.5s;
+}
+
+.rotateBar:has(.coin:hover) {
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .coin {
@@ -59,6 +69,8 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
   animation-timing-function: ease-out;
   animation-duration: var(--rotate-animation-duration);
   animation-fill-mode: forwards;
+
+  pointer-events: auto;
 }
 
 .coin :nth-child(-n + 2) {
