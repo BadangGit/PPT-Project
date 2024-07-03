@@ -1,33 +1,41 @@
-<script setup></script>
+<script lang="ts" setup>
+import { PropType } from "vue";
+import { projectCardContentsType } from "@/assets/data/types/projectCard";
+
+const props = defineProps({
+  projectItem: {
+    type: Object as PropType<projectCardContentsType>,
+    required: true,
+  },
+});
+
+let init_deg = props.projectItem.num * 60 + "deg";
+</script>
 
 <template>
-  <div class="coin"></div>
+  <div class="rotateBar">
+    <div class="coin">
+      <div class="coin-head">asdf</div>
+      <div class="coin-tail"></div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
-.coin {
-  width: 170px;
-  height: 170px;
+.rotateBar {
+  --rotate-time: 2s;
+}
 
-  border-radius: 50%;
+.rotateBar {
+  width: var(--coin-size);
+  height: 600px;
 
   position: absolute;
 
   justify-self: center;
+  align-self: center;
 
-  background-color: green;
-
-  animation-name: translateCoinY;
-  animation-duration: var(--rotate-time);
-}
-
-@keyframes translateCoinY {
-  0% {
-    top: 40%;
-  }
-
-  100% {
-    top: 0;
-  }
+  transform: rotate(v-bind("init_deg"));
+  background-color: brown;
 }
 </style>

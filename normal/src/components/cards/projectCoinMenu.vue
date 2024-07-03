@@ -1,39 +1,40 @@
 <script setup lang="ts">
 import projectCoin from "@/components/buttons/projectCoin.vue";
+import { projectItems } from "@/assets/data/projectCardData";
+import { projectCardContentsType } from "@/assets/data/types/projectCard";
+
+const CoinCount = 6;
+
+let coinItems: Array<projectCardContentsType> = projectItems.slice(
+  0,
+  CoinCount
+);
 </script>
 
 <template>
-  <div class="rotateBar">
-    <projectCoin></projectCoin>
+  <div class="coinMenu">
+    <projectCoin
+      v-for="item in coinItems"
+      :key="item.num"
+      :projectItem="item"
+    ></projectCoin>
   </div>
 </template>
 
 <style scoped>
-.rotateBar {
-  --rotate-time: 2s;
+.coinMenu {
+  --coin-size: 180px;
 }
 
-.rotateBar {
-  width: 400px;
+.coinMenu {
+  background-color: blue;
+  width: 800px;
   height: 800px;
 
+  position: absolute;
   display: grid;
-  position: relative;
 
-  margin: auto;
-
-  animation-name: rotateCoin;
-  animation-duration: var(--rotate-time);
-  animation-timing-function: ease-out;
-}
-
-@keyframes rotateCoin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+  justify-self: center;
+  align-self: center;
 }
 </style>

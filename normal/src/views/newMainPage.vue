@@ -21,7 +21,7 @@ import projectCoinMenu from "@/components/cards/projectCoinMenu.vue";
   width: 1000px;
   height: 100%;
 
-  display: flex;
+  display: grid;
 
   margin: auto;
 }
