@@ -9,13 +9,14 @@ const props = defineProps({
   },
 });
 
-let init_deg = props.projectItem.num * 60 + "deg";
+let last_deg = props.projectItem.num * 60 + "deg";
+let addCoinDegToSeeStraight = 360 - props.projectItem.num * 60 + "deg";
 </script>
 
 <template>
   <div class="rotateBar">
     <div class="coin">
-      <div class="coin-head">asdf</div>
+      <div class="coin-head"></div>
       <div class="coin-tail"></div>
     </div>
   </div>
@@ -23,7 +24,7 @@ let init_deg = props.projectItem.num * 60 + "deg";
 
 <style scoped>
 .rotateBar {
-  --rotate-time: 2s;
+  --rotate-animation-duration: 1.5s;
 }
 
 .rotateBar {
@@ -35,7 +36,46 @@ let init_deg = props.projectItem.num * 60 + "deg";
   justify-self: center;
   align-self: center;
 
-  transform: rotate(v-bind("init_deg"));
-  background-color: brown;
+  animation-name: rotate;
+  animation-timing-function: ease-out;
+  animation-duration: var(--rotate-animation-duration);
+  animation-fill-mode: forwards;
+}
+
+.coin {
+  width: var(--coin-size);
+  height: var(--coin-size);
+
+  border-radius: calc(var(--coin-size) / 2);
+
+  background-color: red;
+
+  margin-top: 100%;
+
+  transform: rotate(v-bind("addCoinDegToSeeStraight"));
+
+  animation-name: coinAnimation;
+  animation-duration: var(--rotate-animation-duration);
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(v-bind("last_deg"));
+  }
+}
+
+@keyframes coinAnimation {
+  0% {
+    margin-top: 100%;
+  }
+
+  100% {
+    margin-top: 0%;
+  }
 }
 </style>

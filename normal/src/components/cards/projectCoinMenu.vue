@@ -27,7 +27,6 @@ let coinItems: Array<projectCardContentsType> = projectItems.slice(
 }
 
 .coinMenu {
-  background-color: blue;
   width: 800px;
   height: 800px;
 
