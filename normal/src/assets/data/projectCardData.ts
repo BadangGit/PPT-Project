@@ -11,6 +11,9 @@ const projectItems: Array<projectCardContentsType> = [
     titleIcon: "http://localhost:8080/icons/cards/old-page.png",
     cursorIcon: "http://localhost:8080/icons/cursors/newbie-cursor.png",
 
+    coinColor: "#ffeb3b",
+    coinShadowColor: "#e0c933",
+
     num: 0,
   },
   {
@@ -22,6 +25,9 @@ const projectItems: Array<projectCardContentsType> = [
     src: "/stars",
     titleIcon: "http://localhost:8080/icons/cards/stars.png",
     cursorIcon: "http://localhost:8080/icons/cursors/star-cursor.png",
+
+    coinColor: "#ff9800",
+    coinShadowColor: "#e07a00",
 
     num: 1,
   },
@@ -35,6 +41,9 @@ const projectItems: Array<projectCardContentsType> = [
     titleIcon: "http://localhost:8080/icons/cards/AI.png",
     cursorIcon: "http://localhost:8080/icons/cursors/AI-cursor.png",
 
+    coinColor: "#00e5ff",
+    coinShadowColor: "#00c1e0",
+
     num: 2,
   },
   {
@@ -46,6 +55,9 @@ const projectItems: Array<projectCardContentsType> = [
     src: "/theme-park",
     titleIcon: "http://localhost:8080/icons/cards/theme-park.png",
     cursorIcon: "http://localhost:8080/icons/cursors/ferris-wheel.png",
+
+    coinColor: "#ff4081",
+    coinShadowColor: "#e0356a",
 
     num: 3,
   },
@@ -59,15 +71,20 @@ const projectItems: Array<projectCardContentsType> = [
     titleIcon: "http://localhost:8080/icons/cards/stained-glass.png",
     cursorIcon: "http://localhost:8080/icons/cursors/glass-cursor.png",
 
+    coinColor: "#76ff03",
+    coinShadowColor: "#62e002",
+
     num: 4,
   },
-
   {
     title: "Preparing",
     subtitle: "wait for update",
 
     src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
+
+    coinColor: "#cddc39",
+    coinShadowColor: "#b0c02f",
 
     num: 5,
   },
@@ -77,6 +94,9 @@ const projectItems: Array<projectCardContentsType> = [
 
     src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
+
+    coinColor: "#cddc39",
+    coinShadowColor: "#b0c02f",
 
     num: 6,
   },

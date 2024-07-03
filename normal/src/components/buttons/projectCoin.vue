@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType } from "vue";
+import { PropType, ref } from "vue";
 import { projectCardContentsType } from "@/assets/data/types/projectCard";
 
 const props = defineProps({
@@ -11,13 +11,16 @@ const props = defineProps({
 
 let last_deg = props.projectItem.num * 60 + "deg";
 let addCoinDegToSeeStraight = 360 - props.projectItem.num * 60 + "deg";
+
+let coinColor = ref(props.projectItem.coinColor);
+let coinShadowColor = ref(props.projectItem.coinShadowColor);
 </script>
 
 <template>
   <div class="rotateBar">
     <div class="coin">
-      <div class="coin-head"></div>
-      <div class="coin-tail"></div>
+      <div class="coinHead"></div>
+      <div class="coinTail"></div>
     </div>
   </div>
 </template>
@@ -46,17 +49,37 @@ let addCoinDegToSeeStraight = 360 - props.projectItem.num * 60 + "deg";
   width: var(--coin-size);
   height: var(--coin-size);
 
-  border-radius: calc(var(--coin-size) / 2);
-
-  background-color: red;
-
   margin-top: 100%;
+
+  position: relative;
 
   transform: rotate(v-bind("addCoinDegToSeeStraight"));
 
   animation-name: coinAnimation;
   animation-duration: var(--rotate-animation-duration);
   animation-fill-mode: forwards;
+}
+
+.coin :nth-child(-n + 2) {
+  width: var(--coin-size);
+  height: var(--coin-size);
+
+  border-radius: calc(var(--coin-size) / 2);
+
+  position: absolute;
+}
+
+.coinHead {
+  background-color: v-bind("coinColor");
+
+  top: 7px;
+  left: 7px;
+}
+
+.coinTail {
+  background-color: v-bind("coinShadowColor");
+
+  z-index: -1;
 }
 
 @keyframes rotate {

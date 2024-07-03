@@ -8,5 +8,8 @@ export type projectCardContentsType = {
   titleIcon: string;
   cursorIcon?: string;
 
+  coinColor?: string;
+  coinShadowColor?: string;
+
   num: number;
 };
