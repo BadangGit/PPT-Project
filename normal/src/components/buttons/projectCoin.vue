@@ -95,7 +95,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 
 @keyframes coinAnimation {
   0% {
-    margin-top: 100%;
+    margin-top: 150%;
   }
 
   100% {
