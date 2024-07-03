@@ -32,7 +32,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 
 .rotateBar {
   width: var(--coin-size);
-  height: 600px;
+  height: 750px;
 
   position: absolute;
 
