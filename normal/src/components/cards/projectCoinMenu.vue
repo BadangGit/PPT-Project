@@ -3,11 +3,11 @@ import projectCoin from "@/components/buttons/projectCoin.vue";
 import { projectItems } from "@/assets/data/projectCardData";
 import { projectCardContentsType } from "@/assets/data/types/projectCard";
 
-const CoinCount = 6;
+let coinCount = 6;
 
 let coinItems: Array<projectCardContentsType> = projectItems.slice(
   0,
-  CoinCount
+  coinCount
 );
 </script>
 
