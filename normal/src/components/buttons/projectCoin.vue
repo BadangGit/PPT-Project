@@ -26,7 +26,6 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
           <div class="shine"></div>
           <div class="shine"></div>
           <div class="shine"></div>
-          <div class="shine"></div>
         </div>
       </div>
       <div class="coinTail"></div>
@@ -37,7 +36,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 <style scoped>
 .rotateBar {
   --rotate-animation-duration: 1s;
-  --shine-opacity: 0.3;
+  --shine-opacity: 0.8;
 }
 
 .rotateBar {
@@ -119,43 +118,34 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
   width: 100%;
   height: 100%;
 
+  top: -150px;
+  left: -150px;
+
   transform: rotate(-45deg);
+  transition: all 0.5s;
 }
 
 .shinedCoin {
   :nth-child(1) {
-    height: 30px;
-
-    top: -20px;
+    height: 35px;
   }
 
   :nth-child(2) {
-    height: 20px;
-
-    margin-top: 20px;
-  }
-
-  :nth-child(3) {
-    height: 45px;
+    height: 60px;
 
     margin-top: 35px;
   }
 
-  :nth-child(4) {
-    height: 10px;
+  :nth-child(3) {
+    height: 20px;
 
     margin-top: 60px;
   }
 }
 
 .coin:hover .shinedCoin {
-  :nth-child(1) {
-    margin-top: 10px;
-  }
-
-  :nth-child(n + 2) {
-    margin-top: 70px;
-  }
+  top: 150px;
+  left: 150px;
 }
 
 .shine {
@@ -164,7 +154,6 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
   opacity: var(--shine-opacity);
 
   background-color: white;
-  transition: all 0.2s;
 }
 
 @keyframes rotate {
