@@ -21,7 +21,14 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 <template>
   <div class="rotateBar">
     <div class="coin">
-      <div class="coinHead"></div>
+      <div class="coinHead">
+        <div class="shinedCoin">
+          <div class="shine"></div>
+          <div class="shine"></div>
+          <div class="shine"></div>
+          <div class="shine"></div>
+        </div>
+      </div>
       <div class="coinTail"></div>
     </div>
   </div>
@@ -30,6 +37,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 <style scoped>
 .rotateBar {
   --rotate-animation-duration: 1s;
+  --shine-opacity: 0.3;
 }
 
 .rotateBar {
@@ -50,8 +58,8 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 }
 
 .rotateBar:has(.coin:hover) {
-  margin-left: 10px;
-  margin-bottom: 10px;
+  margin-left: 7px;
+  margin-bottom: 7px;
 }
 
 .rotateBar,
@@ -78,7 +86,8 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
   pointer-events: auto;
 }
 
-.coin :nth-child(-n + 2) {
+.coinHead,
+.coinTail {
   width: var(--coin-size);
   height: var(--coin-size);
 
@@ -92,12 +101,70 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 
   top: 7px;
   left: 7px;
+
+  overflow: hidden;
 }
 
 .coinTail {
   background-color: v-bind("coinShadowColor");
 
   z-index: -1;
+}
+
+.shinedCoin {
+  position: absolute;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+
+  transform: rotate(-45deg);
+}
+
+.shinedCoin {
+  :nth-child(1) {
+    height: 30px;
+
+    top: -20px;
+  }
+
+  :nth-child(2) {
+    height: 20px;
+
+    margin-top: 20px;
+  }
+
+  :nth-child(3) {
+    height: 45px;
+
+    margin-top: 35px;
+  }
+
+  :nth-child(4) {
+    height: 10px;
+
+    margin-top: 60px;
+  }
+}
+
+.coin:hover .shinedCoin {
+  :nth-child(1) {
+    margin-top: 10px;
+  }
+
+  :nth-child(n + 2) {
+    margin-top: 40px;
+  }
+}
+
+.shine {
+  width: 220px;
+
+  opacity: var(--shine-opacity);
+
+  background-color: white;
+  transition: all 0.2s;
 }
 
 @keyframes rotate {
