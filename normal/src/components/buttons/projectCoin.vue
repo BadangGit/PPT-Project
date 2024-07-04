@@ -10,7 +10,7 @@ const props = defineProps({
 });
 
 let last_deg = props.projectItem.num * 60 + "deg";
-let rotate_delay = props.projectItem.num * 0.15 + 0.2 + "s";
+let rotate_delay = 0.95 - (props.projectItem.num * 0.15 + 0.2) + "s";
 
 let addCoinDegToSeeStraight = 360 - props.projectItem.num * 60 + "deg";
 
