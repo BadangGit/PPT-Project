@@ -100,6 +100,9 @@ const projectItems: Array<projectCardContentsType> = [
 
     num: 6,
   },
+
+  // down here no more use in new main page
+
   {
     title: "Preparing",
     subtitle: "wait for update",
