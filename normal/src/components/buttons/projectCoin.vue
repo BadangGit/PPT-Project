@@ -85,6 +85,18 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
   pointer-events: auto;
 }
 
+.coin:hover {
+  .coinHead {
+    top: 7px;
+    left: 7px;
+  }
+
+  .shinedCoin {
+    top: 150px;
+    left: 150px;
+  }
+}
+
 .coinHead,
 .coinTail {
   width: var(--coin-size);
@@ -98,10 +110,12 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 .coinHead {
   background-color: v-bind("coinColor");
 
-  top: 7px;
-  left: 7px;
+  top: 0px;
+  left: 0px;
 
   overflow: hidden;
+
+  transition: all 0.2s;
 }
 
 .coinTail {
@@ -122,7 +136,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
   left: -150px;
 
   transform: rotate(-45deg);
-  transition: all 0.5s;
+  transition: all 0.5s ease-out;
 }
 
 .shinedCoin {
@@ -141,11 +155,6 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 
     margin-top: 60px;
   }
-}
-
-.coin:hover .shinedCoin {
-  top: 150px;
-  left: 150px;
 }
 
 .shine {
