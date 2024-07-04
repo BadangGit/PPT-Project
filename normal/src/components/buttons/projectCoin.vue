@@ -154,7 +154,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
   }
 
   :nth-child(n + 2) {
-    margin-top: 40px;
+    margin-top: 70px;
   }
 }
 
