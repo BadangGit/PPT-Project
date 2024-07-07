@@ -44,7 +44,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 .rotateBar {
   --rotate-animation-duration: v-bind("rotate.duration");
   --rotate-animation-delay: v-bind("rotate.delay");
-  --shine-opacity: 0.8;
+  --shine-opacity: 0.7;
 }
 
 .rotateBar {
