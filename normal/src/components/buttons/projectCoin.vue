@@ -83,6 +83,8 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
   width: var(--coin-size);
   height: var(--coin-size);
 
+  border-radius: 50%;
+
   margin-top: 100%;
 
   position: relative;
