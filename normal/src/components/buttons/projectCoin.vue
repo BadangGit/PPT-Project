@@ -9,8 +9,15 @@ const props = defineProps({
   },
 });
 
+const ROTATE_TIME_DISTANCE = 0.2;
+const MAX_DELAY = ROTATE_TIME_DISTANCE * 6;
+const MIN_DURATION = 0.5;
+
 let last_deg = props.projectItem.num * 60 + "deg";
-let rotate_delay = 0.95 - (props.projectItem.num * 0.15 + 0.2) + "s";
+let rotate = {
+  delay: MAX_DELAY - props.projectItem.num * ROTATE_TIME_DISTANCE + "s",
+  duration: props.projectItem.num * ROTATE_TIME_DISTANCE + MIN_DURATION + "s",
+};
 
 let addCoinDegToSeeStraight = 360 - props.projectItem.num * 60 + "deg";
 
@@ -35,7 +42,8 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 
 <style scoped>
 .rotateBar {
-  --rotate-animation-duration: 1s;
+  --rotate-animation-duration: v-bind("rotate.duration");
+  --rotate-animation-delay: v-bind("rotate.delay");
   --shine-opacity: 0.8;
 }
 
@@ -66,7 +74,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
   animation-timing-function: ease-out;
   animation-duration: var(--rotate-animation-duration);
   animation-fill-mode: forwards;
-  animation-delay: v-bind("rotate_delay");
+  animation-delay: var(--rotate-animation-delay);
   opacity: 0;
 }
 
