@@ -88,6 +88,10 @@ const projectItems: Array<projectCardContentsType> = [
 
     num: 5,
   },
+
+  // down here no more use in new main page
+  // only use in @/views/ItemPages/oldMainPage.vue
+
   {
     title: "Preparing",
     subtitle: "wait for update",
@@ -95,14 +99,8 @@ const projectItems: Array<projectCardContentsType> = [
     src: "/",
     titleIcon: "http://localhost:8080/icons/cards/preparing.png",
 
-    coinColor: "#cddc39",
-    coinShadowColor: "#b0c02f",
-
     num: 6,
   },
-
-  // down here no more use in new main page
-  // only use in @/views/ItemPages/oldMainPage.vue
 
   {
     title: "Preparing",
