@@ -29,6 +29,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
   <div class="rotateBar">
     <div class="coin">
       <div class="coinHead">
+        <img class="titleImage" :src="props.projectItem.titleIcon" />
         <div class="shinedCoin">
           <div class="shine"></div>
           <div class="shine"></div>
@@ -118,12 +119,22 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 .coinHead {
   background-color: v-bind("coinColor");
 
+  display: grid;
+
   top: 0px;
   left: 0px;
 
   overflow: hidden;
 
   transition: all 0.2s;
+}
+
+.titleImage {
+  width: 40px;
+  height: 40px;
+
+  justify-self: center;
+  align-self: center;
 }
 
 .coinTail {
