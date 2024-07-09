@@ -27,17 +27,19 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 
 <template>
   <div class="rotateBar">
-    <div class="coin">
-      <div class="coinHead">
-        <img class="titleImage" :src="props.projectItem.titleIcon" />
-        <div class="shinedCoin">
-          <div class="shine"></div>
-          <div class="shine"></div>
-          <div class="shine"></div>
+    <router-link :to="{ path: props.projectItem.src }">
+      <div class="coin">
+        <div class="coinHead">
+          <img class="titleImage" :src="props.projectItem.titleIcon" />
+          <div class="shinedCoin">
+            <div class="shine"></div>
+            <div class="shine"></div>
+            <div class="shine"></div>
+          </div>
         </div>
+        <div class="coinTail"></div>
       </div>
-      <div class="coinTail"></div>
-    </div>
+    </router-link>
   </div>
 </template>
 
@@ -93,7 +95,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 
   animation-name: coinAnimation;
 
-  pointer-events: auto;
+  pointer-events: all;
 }
 
 .coin:hover {
