@@ -90,7 +90,7 @@ const projectItems: Array<projectCardContentsType> = [
   },
 
   // down here no more use in new main page
-  // only use in @/views/ItemPages/oldMainPage.vue
+  // only use in @/views/ItemPages/oldMainPage.vue test cases
 
   {
     title: "Preparing",
