@@ -27,9 +27,9 @@ const PROGRESS_INFO = ref({
 .progressGrid {
   overflow: hidden;
 
-  background-color: var(--main-background-color);
+  background-color: var(--old-main-background-color);
 
-  box-shadow: var(--main-background-color) 0px 0px 0px 2px,
+  box-shadow: var(--old-main-background-color) 0px 0px 0px 2px,
     rgb(31, 193, 27) 0px 0px 0px 4px;
 }
 
