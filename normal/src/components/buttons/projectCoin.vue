@@ -13,11 +13,12 @@ const ROTATE_TIME_DISTANCE = 0.2;
 const MAX_DELAY = ROTATE_TIME_DISTANCE * 6;
 const MIN_DURATION = 0.5;
 
-let last_deg = props.projectItem.num * 60 + "deg";
 let rotate = {
   delay: MAX_DELAY - props.projectItem.num * ROTATE_TIME_DISTANCE + "s",
   duration: props.projectItem.num * ROTATE_TIME_DISTANCE + MIN_DURATION + "s",
 };
+
+let last_deg = props.projectItem.num * 60 + "deg";
 
 let addCoinDegToSeeStraight = 360 - props.projectItem.num * 60 + "deg";
 
