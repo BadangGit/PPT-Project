@@ -16,14 +16,14 @@ const MIN_DURATION = 0.5;
 let rotate = {
   delay: MAX_DELAY - props.projectItem.num * ROTATE_TIME_DISTANCE + "s",
   duration: props.projectItem.num * ROTATE_TIME_DISTANCE + MIN_DURATION + "s",
+  last_deg: props.projectItem.num * 60 + "deg",
+  addCoinDegToSeeStraight: 360 - props.projectItem.num * 60 + "deg",
 };
 
-let last_deg = props.projectItem.num * 60 + "deg";
-
-let addCoinDegToSeeStraight = 360 - props.projectItem.num * 60 + "deg";
-
-let coinColor = ref(props.projectItem.coinColor);
-let coinShadowColor = ref(props.projectItem.coinShadowColor);
+let coinStyle = ref({
+  mainColor: props.projectItem.coinColor,
+  shadowColor: props.projectItem.coinShadowColor,
+});
 </script>
 
 <template>
@@ -48,7 +48,13 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 .rotateBar {
   --rotate-animation-duration: v-bind("rotate.duration");
   --rotate-animation-delay: v-bind("rotate.delay");
+  --rotate-last-deg: v-bind("rotate.last_deg");
+  --rotate-straight-deg: v-bind("rotate.addCoinDegToSeeStraight");
+
   --shine-opacity: 0.7;
+
+  --coin-main-color: v-bind("coinStyle.mainColor");
+  --coin-shadow-color: v-bind("coinStyle.shadowColor");
 }
 
 .rotateBar {
@@ -92,7 +98,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 
   position: relative;
 
-  transform: rotate(v-bind("addCoinDegToSeeStraight"));
+  transform: rotate(var(--rotate-straight-deg));
 
   animation-name: coinAnimation;
 
@@ -122,7 +128,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 }
 
 .coinHead {
-  background-color: v-bind("coinColor");
+  background-color: var(--coin-main-color);
 
   display: grid;
 
@@ -143,7 +149,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
 }
 
 .coinTail {
-  background-color: v-bind("coinShadowColor");
+  background-color: var(--coin-shadow-color);
 
   z-index: -1;
 }
@@ -199,7 +205,7 @@ let coinShadowColor = ref(props.projectItem.coinShadowColor);
   }
 
   100% {
-    transform: rotate(v-bind("last_deg"));
+    transform: rotate(var(--rotate-last-deg));
     opacity: 1;
   }
 }
