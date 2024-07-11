@@ -28,19 +28,17 @@ let coinStyle = ref({
 
 <template>
   <div class="rotateBar">
-    <router-link :to="{ path: props.projectItem.src }">
-      <div class="coin">
-        <div class="coinHead">
-          <img class="titleImage" :src="props.projectItem.titleIcon" />
-          <div class="shinedCoin">
-            <div class="shine"></div>
-            <div class="shine"></div>
-            <div class="shine"></div>
-          </div>
+    <div class="coin">
+      <div class="coinHead">
+        <img class="titleImage" :src="props.projectItem.titleIcon" />
+        <div class="shinedCoin">
+          <div class="shine"></div>
+          <div class="shine"></div>
+          <div class="shine"></div>
         </div>
-        <div class="coinTail"></div>
       </div>
-    </router-link>
+      <div class="coinTail"></div>
+    </div>
   </div>
 </template>
 
