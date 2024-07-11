@@ -6,7 +6,7 @@
 
 <style scoped>
 .selectedMenu {
-  --animation-duration: 1.7s;
+  --animation-delay: 1.7s;
 }
 
 .selectedMenu {
