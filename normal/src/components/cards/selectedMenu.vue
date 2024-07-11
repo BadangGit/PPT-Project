@@ -1,11 +1,15 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="selectedCoin"></div>
+  <div class="selectedMenu"></div>
 </template>
 
 <style scoped>
-.selectedCoin {
+.selectedMenu {
+  --animation-duration: 1.7s;
+}
+
+.selectedMenu {
   width: 250px;
   height: 250px;
 
