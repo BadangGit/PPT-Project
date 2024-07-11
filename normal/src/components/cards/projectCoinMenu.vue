@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import projectCoin from "@/components/buttons/projectCoin.vue";
+import selectedCoin from "@/components/cards/selectedCoin.vue";
+
 import { projectItems } from "@/assets/data/projectCardData";
+
 import { projectCardContentsType } from "@/assets/data/types/projectCard";
 
 let coinCount = 6;
@@ -13,11 +16,9 @@ let coinItems: Array<projectCardContentsType> = projectItems.slice(
 
 <template>
   <div class="coinMenu">
-    <projectCoin
-      v-for="item in coinItems"
-      :key="item.num"
-      :projectItem="item"
-    ></projectCoin>
+    <projectCoin v-for="item in coinItems" :key="item.num" :projectItem="item">
+    </projectCoin>
+    <selectedCoin></selectedCoin>
   </div>
 </template>
 
