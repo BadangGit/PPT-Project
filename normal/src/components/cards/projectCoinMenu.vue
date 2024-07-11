@@ -4,16 +4,13 @@ import selectedMenu from "@/components/cards/selectedMenu.vue";
 
 import { projectItems } from "@/assets/data/projectCardData";
 
-import { projectCardContentsType } from "@/assets/data/types/projectCard";
+import { projectContentType } from "@/assets/data/types/projectCard";
 
 import { ref } from "vue";
 
 let coinCount = 6;
 
-let coinItems: Array<projectCardContentsType> = projectItems.slice(
-  0,
-  coinCount
-);
+let coinItems: Array<projectContentType> = projectItems.slice(0, coinCount);
 
 let selectedItemNum: number = 0;
 let rerender = ref(0);

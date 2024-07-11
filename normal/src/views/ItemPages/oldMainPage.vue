@@ -2,7 +2,7 @@
 import ProjectCard from "@/components/cards/projectCard.vue";
 import DarkModeButton from "@/components/buttons/darkModeButton.vue";
 
-import { projectCardContentsType } from "@/assets/data/types/projectCard";
+import { projectContentType } from "@/assets/data/types/projectCard";
 import { projectItems } from "@/assets/data/projectCardData";
 
 import { useStore } from "vuex";
@@ -13,7 +13,7 @@ const store = useStore();
 const MARKUP_CARD_COUNT: number = 6;
 const PAGENUM_COUNT: number = 3;
 
-let activeProjectCardLists: Array<projectCardContentsType> = [];
+let activeProjectCardLists: Array<projectContentType> = [];
 let activePageDarkMode = store.state.IsDarkMode;
 let activePageNum = ref(1);
 let renderCount = ref(0);

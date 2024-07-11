@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { onMounted, PropType, ref } from "vue";
-import { projectCardContentsType } from "@/assets/data/types/projectCard";
+import { projectContentType } from "@/assets/data/types/projectCard";
 
 import ProgressBar from "../effects/progressBar.vue";
 
 const props = defineProps({
   activeProjectCardList: {
-    type: Object as PropType<projectCardContentsType>,
+    type: Object as PropType<projectContentType>,
     required: true,
   },
 });

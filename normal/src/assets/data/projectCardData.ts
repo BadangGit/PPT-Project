@@ -1,6 +1,6 @@
-import { projectCardContentsType } from "@/assets/data/types/projectCard";
+import { projectContentType } from "@/assets/data/types/projectCard";
 
-const projectItems: Array<projectCardContentsType> = [
+const projectItems: Array<projectContentType> = [
   {
     title: "Old Page",
     subtitle: "what I first made",

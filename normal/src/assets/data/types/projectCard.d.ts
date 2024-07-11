@@ -1,4 +1,4 @@
-export type projectCardContentsType = {
+export type projectContentType = {
   title: string;
   subtitle: string;
   src: string;

@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { PropType, ref } from "vue";
-import { projectCardContentsType } from "@/assets/data/types/projectCard";
+import { projectContentType } from "@/assets/data/types/projectCard";
 
 const props = defineProps({
   projectItem: {
-    type: Object as PropType<projectCardContentsType>,
+    type: Object as PropType<projectContentType>,
     required: true,
   },
 });
