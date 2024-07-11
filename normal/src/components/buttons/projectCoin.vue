@@ -74,11 +74,6 @@ let coinStyle = ref({
   transition-duration: 0.5s;
 }
 
-.rotateBar:has(.coin:hover) {
-  margin-left: 7px;
-  margin-bottom: 7px;
-}
-
 .rotateBar,
 .coin {
   animation-timing-function: ease-out;
