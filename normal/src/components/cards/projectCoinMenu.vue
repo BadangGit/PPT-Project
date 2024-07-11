@@ -6,19 +6,34 @@ import { projectItems } from "@/assets/data/projectCardData";
 
 import { projectCardContentsType } from "@/assets/data/types/projectCard";
 
+import { ref } from "vue";
+
 let coinCount = 6;
 
 let coinItems: Array<projectCardContentsType> = projectItems.slice(
   0,
   coinCount
 );
+
+let selectedItemNum: number = 0;
+let rerender = ref(0);
+
+function selectCoin(selected: number) {
+  selectedItemNum = selected;
+
+  rerender.value += 1;
+}
 </script>
 
 <template>
   <div class="coinMenu">
-    <projectCoin v-for="item in coinItems" :key="item.num" :projectItem="item">
-    </projectCoin>
-    <selectedMenu></selectedMenu>
+    <projectCoin
+      v-for="item in coinItems"
+      :key="item.num"
+      :projectItem="item"
+      @click="selectCoin(item.num)"
+    ></projectCoin>
+    <selectedMenu :key="rerender" :selected="selectedItemNum"></selectedMenu>
   </div>
 </template>
 

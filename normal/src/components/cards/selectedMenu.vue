@@ -1,7 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps({
+  selected: {
+    type: Number,
+    required: true,
+  },
+});
+</script>
 
 <template>
-  <div class="selectedMenu"></div>
+  <div class="selectedMenu">{{ props.selected }}</div>
 </template>
 
 <style scoped>
