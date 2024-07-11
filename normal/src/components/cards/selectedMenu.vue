@@ -1,14 +1,18 @@
 <script setup lang="ts">
+import { PropType } from "vue";
+
+import { projectCardContentsType } from "@/assets/data/types/projectCard";
+
 const props = defineProps({
-  selected: {
-    type: Number,
+  selectedItem: {
+    type: Object as PropType<projectCardContentsType>,
     required: true,
   },
 });
 </script>
 
 <template>
-  <div class="selectedMenu">{{ props.selected }}</div>
+  <div class="selectedMenu">{{ props.selectedItem.title }}</div>
 </template>
 
 <style scoped>

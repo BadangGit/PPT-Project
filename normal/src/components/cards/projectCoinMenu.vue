@@ -33,7 +33,10 @@ function changeSelectCoinNum(selected: number) {
       :projectItem="item"
       @click="changeSelectCoinNum(item.num)"
     ></projectCoin>
-    <selectedMenu :key="rerender" :selected="selectedItemNum"></selectedMenu>
+    <selectedMenu
+      :key="rerender"
+      :selectedItem="coinItems[selectedItemNum]"
+    ></selectedMenu>
   </div>
 </template>
 
