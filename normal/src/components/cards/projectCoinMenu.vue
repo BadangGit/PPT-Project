@@ -18,7 +18,7 @@ let coinItems: Array<projectCardContentsType> = projectItems.slice(
 let selectedItemNum: number = 0;
 let rerender = ref(0);
 
-function selectCoin(selected: number) {
+function changeSelectCoinNum(selected: number) {
   selectedItemNum = selected;
 
   rerender.value += 1;
@@ -31,7 +31,7 @@ function selectCoin(selected: number) {
       v-for="item in coinItems"
       :key="item.num"
       :projectItem="item"
-      @click="selectCoin(item.num)"
+      @click="changeSelectCoinNum(item.num)"
     ></projectCoin>
     <selectedMenu :key="rerender" :selected="selectedItemNum"></selectedMenu>
   </div>
