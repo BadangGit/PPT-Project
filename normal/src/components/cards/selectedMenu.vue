@@ -1,18 +1,13 @@
 <script setup lang="ts">
-import { PropType } from "vue";
+import { useStore } from "vuex";
 
-import { projectContentType } from "@/assets/data/types/projectCard";
-
-const props = defineProps({
-  selectedItem: {
-    type: Object as PropType<projectContentType>,
-    required: true,
-  },
-});
+const store = useStore();
 </script>
 
 <template>
-  <div class="selectedMenu">{{ props.selectedItem.title }}</div>
+  <div class="selectedMenu">
+    {{ store.state.selectedItemNum }}
+  </div>
 </template>
 
 <style scoped>
@@ -32,5 +27,22 @@ const props = defineProps({
 
   justify-self: center;
   align-self: center;
+
+  animation-name: selectedMenu;
+  animation-duration: 1s;
+  animation-delay: var(--animation-delay);
+  animation-fill-mode: forwards;
+
+  opacity: 0;
+}
+
+@keyframes selectedMenu {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 </style>

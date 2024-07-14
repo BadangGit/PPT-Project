@@ -4,6 +4,8 @@ const store = createStore({
   state: {
     activePageNum: 1,
     IsDarkMode: false,
+
+    selectedItemNum: 0,
   },
   mutations: {
     SHIFT_PAGE(state, value) {
@@ -13,6 +15,10 @@ const store = createStore({
     SHIFT_DARK_MODE(state, isTrue) {
       state.IsDarkMode = isTrue;
     },
+
+    SELECT_ITEM(state, value) {
+      state.selectedItemNum = value;
+    },
   },
   actions: {
     shiftPage({ commit }, value) {
@@ -21,6 +27,10 @@ const store = createStore({
 
     shiftDarkMode({ commit }, isTrue) {
       commit("SHIFT_DARK_MODE", isTrue);
+    },
+
+    selectItem({ commit }, value) {
+      commit("SELECT_ITEM", value);
     },
   },
 });
