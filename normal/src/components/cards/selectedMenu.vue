@@ -1,12 +1,19 @@
 <script setup lang="ts">
-import { useStore } from "vuex";
+import { PropType } from "vue";
 
-const store = useStore();
+import { projectContentType } from "@/assets/data/types/projectCard";
+
+const props = defineProps({
+  selectedItem: {
+    type: Object as PropType<projectContentType>,
+    required: true,
+  },
+});
 </script>
 
 <template>
   <div class="selectedMenu">
-    {{ store.state.selectedItemNum }}
+    {{ props.selectedItem.title }}
   </div>
 </template>
 

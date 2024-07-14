@@ -27,7 +27,9 @@ function dispatchSelectedItem(num: number) {
       :projectItem="item"
       @click="dispatchSelectedItem(item.num)"
     ></projectCoin>
-    <selectedMenu></selectedMenu>
+    <selectedMenu
+      :selectedItem="coinItems[store.state.selectedItemNum]"
+    ></selectedMenu>
   </div>
 </template>
 
