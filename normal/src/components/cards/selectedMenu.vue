@@ -3,7 +3,7 @@ import { PropType } from "vue";
 
 import { projectContentType } from "@/assets/data/types/projectCard";
 
-import arrowButton from "@/components/buttons/arrowButton.vue";
+import baseButton from "@/components/buttons/baseButton.vue";
 
 const props = defineProps({
   selectedItem: {
@@ -15,9 +15,8 @@ const props = defineProps({
 
 <template>
   <div class="selectedMenu">
-    {{ props.selectedItem.title }}
-    <router-link :to="props.selectedItem.src">
-      <arrowButton></arrowButton>
+    <router-link class="arrowButton" :to="props.selectedItem.src">
+      <baseButton></baseButton>
     </router-link>
   </div>
 </template>
@@ -35,6 +34,7 @@ const props = defineProps({
 
   background-color: white;
 
+  display: grid;
   position: absolute;
 
   justify-self: center;
@@ -46,6 +46,16 @@ const props = defineProps({
   animation-fill-mode: forwards;
 
   opacity: 0;
+}
+
+.arrowButton {
+  display: flex;
+
+  width: 70px;
+  height: 70px;
+
+  justify-self: center;
+  margin-top: 150px;
 }
 
 @keyframes selectedMenu {
