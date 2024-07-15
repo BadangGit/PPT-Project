@@ -3,6 +3,8 @@ import { PropType } from "vue";
 
 import { projectContentType } from "@/assets/data/types/projectCard";
 
+import arrowButton from "@/components/buttons/arrowButton.vue";
+
 const props = defineProps({
   selectedItem: {
     type: Object as PropType<projectContentType>,
@@ -14,6 +16,9 @@ const props = defineProps({
 <template>
   <div class="selectedMenu">
     {{ props.selectedItem.title }}
+    <router-link :to="props.selectedItem.src">
+      <arrowButton></arrowButton>
+    </router-link>
   </div>
 </template>
 
