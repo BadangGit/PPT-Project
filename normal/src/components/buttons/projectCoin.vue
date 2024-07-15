@@ -9,7 +9,7 @@ const props = defineProps({
   },
 });
 
-const ROTATE_TIME_DISTANCE = 0.2;
+const ROTATE_TIME_DISTANCE = 0.15;
 const MAX_DELAY = ROTATE_TIME_DISTANCE * 6;
 const MIN_DURATION = 0.5;
 

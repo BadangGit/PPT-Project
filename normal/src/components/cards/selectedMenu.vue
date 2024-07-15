@@ -23,7 +23,7 @@ const props = defineProps({
 
 <style scoped>
 .selectedMenu {
-  --animation-delay: 1.7s;
+  --animation-delay: 1.4s;
 }
 
 .selectedMenu {
