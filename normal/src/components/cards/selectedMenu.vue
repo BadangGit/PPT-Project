@@ -3,7 +3,7 @@ import { PropType } from "vue";
 
 import { projectContentType } from "@/assets/data/types/projectCard";
 
-import baseButton from "@/components/buttons/baseButton.vue";
+// import baseButton from "@/components/buttons/baseButton.vue";
 import itemsBoard from "@/components/cards/itemsBoard.vue";
 
 const props = defineProps({
@@ -17,9 +17,9 @@ const props = defineProps({
 <template>
   <div class="selectedMenu">
     <itemsBoard :selectedItem="props.selectedItem"></itemsBoard>
-    <router-link class="arrowButton" :to="props.selectedItem.src">
+    <!-- <router-link class="arrowButton" :to="props.selectedItem.src">
       <baseButton></baseButton>
-    </router-link>
+    </router-link> -->
   </div>
 </template>
 
