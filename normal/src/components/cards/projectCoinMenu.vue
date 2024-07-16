@@ -35,12 +35,12 @@ function dispatchSelectedItem(num: number) {
 
 <style scoped>
 .coinMenu {
-  --coin-size: 170px;
+  --coin-size: 180px;
 }
 
 .coinMenu {
-  width: 800px;
-  height: 800px;
+  width: 850px;
+  height: 850px;
 
   position: absolute;
   display: grid;
