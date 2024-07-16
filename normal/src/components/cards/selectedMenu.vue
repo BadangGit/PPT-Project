@@ -29,10 +29,10 @@ const props = defineProps({
 }
 
 .selectedMenu {
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
 
-  border-radius: 100px;
+  border-radius: 150px;
 
   background-color: white;
 

@@ -57,7 +57,7 @@ let coinStyle = ref({
 
 .rotateBar {
   width: var(--coin-size);
-  height: 750px;
+  height: 850px;
 
   position: absolute;
 

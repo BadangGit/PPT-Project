@@ -13,6 +13,8 @@ const props = defineProps({
 });
 
 const items = projectItems.slice(0, 6);
+
+console.log(props);
 </script>
 
 <template>
@@ -20,9 +22,24 @@ const items = projectItems.slice(0, 6);
     <div class="board" v-for="item in items" :key="item.num">
       {{ item.title }}
     </div>
-
-    {{ props.selectedItem.title }}
   </div>
 </template>
 
-<style></style>
+<style>
+.boardGrid {
+  height: 150px;
+  width: 200px;
+}
+
+.board {
+  height: 25px;
+  width: 200px;
+
+  background-color: red;
+
+  position: absolute;
+}
+
+.boardGrid:hover .board {
+}
+</style>
