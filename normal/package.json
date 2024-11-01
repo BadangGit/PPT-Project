@@ -13,6 +13,7 @@
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
     "vue-class-component": "^8.0.0-0",
+    "vue-cli": "^2.9.6",
     "vue-eslint-parser": "^9.4.0",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.2"
