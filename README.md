@@ -1,4 +1,4 @@
-# :blue_book: PPT-Project
+# :blue_book: Vue-PPT
 
 ### :wrench: 사용기술
 
